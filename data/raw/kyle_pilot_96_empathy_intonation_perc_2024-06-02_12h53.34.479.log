@@ -1,0 +1,230 @@
+2.4542 	ERROR 	Support for the `sounddevice` audio backend is not available this session. Please install `psychopy-sounddevice` and restart the session to enable support.
+12.2539 	INFO 	Loaded monitor calibration from ['2023_08_14 09:34']
+12.5110 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x7f7d696906d0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x7f7d69690970>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7f7d69690760>, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7f7d8c19cc10>, multiSample=False, name='window1', numSamples=2, pos=[300.0, 187.5], screen=0, size=array([3360, 2100]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+12.5112 	EXP 	window1: mouseVisible = True
+12.5112 	EXP 	window1: backgroundImage = ''
+12.5112 	EXP 	window1: backgroundFit = 'none'
+12.5114 	EXP 	window1: mouseVisible = True
+12.5116 	EXP 	window1: mouseVisible = True
+12.5141 	EXP 	window1: mouseVisible = True
+12.5146 	EXP 	window1: mouseVisible = True
+12.5276 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5289 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5303 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5324 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5343 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5349 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5363 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5382 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5386 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5389 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5404 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5417 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5429 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5442 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5452 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5467 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5480 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5484 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5490 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5510 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5513 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5520 	DEBUG 	Uploading Texture Font fontname to graphics card
+12.5566 	DEBUG 	Upload of Texture Font fontname complete
+12.5592 	EXP 	window1: mouseVisible = True
+12.5593 	EXP 	window1: mouseVisible = True
+12.5599 	EXP 	window1: mouseVisible = True
+12.5603 	EXP 	window1: mouseVisible = True
+12.5652 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5672 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5690 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.5692 	DEBUG 	Uploading Texture Font fontname to graphics card
+12.5713 	DEBUG 	Upload of Texture Font fontname complete
+12.5741 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+12.5741 	EXP 	window1: recordFrameIntervals = False
+12.8216 	EXP 	window1: recordFrameIntervals = True
+13.0066 	EXP 	Screen (0) actual frame rate measured at 60.06Hz
+13.0066 	EXP 	window1: recordFrameIntervals = False
+13.0067 	EXP 	window1: mouseVisible = True
+13.0418 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+15.1852 	INFO 	keyboard.Keyboard is using iohub backend.
+15.1852 	INFO 	keyboard.Keyboard is using iohub backend.
+15.1852 	INFO 	keyboard.Keyboard is using iohub backend.
+15.1853 	INFO 	keyboard.Keyboard is using iohub backend.
+15.1853 	INFO 	keyboard.Keyboard is using iohub backend.
+15.1853 	INFO 	keyboard.Keyboard is using iohub backend.
+15.1853 	EXP 	empathy_intonation_perc: status = STARTED
+15.1857 	EXP 	window1: mouseVisible = True
+15.1926 	EXP 	Created text_lextale_instructions = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='text_lextale_instructions', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=0.8)
+15.1927 	EXP 	window1: mouseVisible = True
+15.1940 	EXP 	Created text_lextale_instructions_continue = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='text_lextale_instructions_continue', opacity=1.0, ori=0, pos=array([ 0.  , -0.35]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.1941 	EXP 	window1: mouseVisible = True
+15.2272 	EXP 	Created text_lextale_practice_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([ 1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_practice_label', opacity=1.0, ori=0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='PRÁCTICA', units='height', win=Window(...), wrapWidth=1)
+15.2273 	EXP 	window1: mouseVisible = True
+15.2282 	EXP 	Created text_lextale_practice_word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_practice_word', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.2283 	EXP 	window1: mouseVisible = True
+15.2292 	EXP 	Created text_lextale_practice_real_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_practice_real_label', opacity=1.0, ori=0, pos=array([-0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.2293 	EXP 	window1: mouseVisible = True
+15.2302 	EXP 	Created text_lextale_practice_false_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_practice_false_label', opacity=1.0, ori=0, pos=array([ 0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.2303 	EXP 	window1: mouseVisible = True
+15.2311 	EXP 	Created text_lextale_practice_feedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_practice_feedback', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.2312 	EXP 	window1: mouseVisible = True
+15.2437 	EXP 	Created text_lextale_check = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_check', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+15.2438 	EXP 	window1: mouseVisible = True
+15.2446 	EXP 	Created text_lextale_trial_word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1.,  1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_trial_word', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.2447 	EXP 	window1: mouseVisible = True
+15.2456 	EXP 	Created text_lextale_trial_real_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_trial_real_label', opacity=1.0, ori=0, pos=array([-0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+15.2457 	EXP 	window1: mouseVisible = True
+15.2465 	EXP 	Created text_lextale_trial_false_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_trial_false_label', opacity=1.0, ori=0, pos=array([ 0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+0.0261 	DEBUG 	Read csv file with pandas: instructions/lextale_instructions_text.csv
+0.0294 	DEBUG 	Clearing unnamed columns from instructions/lextale_instructions_text.csv
+0.0297 	EXP 	Imported instructions/lextale_instructions_text.csv as conditions, 4 conditions, 2 params
+0.0304 	EXP 	Created sequence: sequential, trialTypes=4, nReps=1, seed=None
+0.0305 	EXP 	New trial (rep=0, index=0): OrderedDict([('instructions_text', "Este es un test de vocabulario en español. \n  \n  A continuación vas a ver 90 secuencias de letras que parecen 'españolas'.\n  \n  Solo algunas de ellas son palabras de verdad."), ('continue_text', '(presiona la barra espaciadora para continuar)')])
+0.0602 	INFO 	Keyboard events cleared
+0.0599 	EXP 	text_lextale_instructions: height = 0.05
+0.0599 	EXP 	text_lextale_instructions: height = 0.05
+0.0599 	EXP 	text_lextale_instructions: height = 0.05
+0.0599 	EXP 	text_lextale_instructions: text = "Este es un test de vocabulario en español. \n  \n  A continuación vas a ver 90 secuencias de letras que parecen 'españolas'.\n  \n  Solo algunas de ellas son palabras de verdad."
+0.0599 	EXP 	text_lextale_instructions_continue: height = 0.04
+0.0599 	EXP 	text_lextale_instructions_continue: height = 0.04
+0.0599 	EXP 	text_lextale_instructions_continue: height = 0.04
+0.0599 	EXP 	text_lextale_instructions_continue: text = '(presiona la barra espaciadora para continuar)'
+0.0599 	EXP 	text_lextale_instructions: autoDraw = True
+2.4780 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.4947 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.4949 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.5094 	EXP 	text_lextale_instructions_continue: autoDraw = True
+2.5118 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.5277 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+2.5451 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+2.5610 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.5784 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.5941 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.6120 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.6272 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.6455 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.6613 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.6798 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.6945 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.7122 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.7288 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.7439 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.7618 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.7779 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.7955 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.8123 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.8287 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.8445 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.8621 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.8780 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.8955 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.9125 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.9285 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+2.9449 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.9799 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.9938 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+2.9940 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.0612 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.0786 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.0946 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.1118 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.1280 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.1455 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.1613 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.1948 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.2110 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.2285 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.2440 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.2619 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.2779 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.2951 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.3114 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.3286 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.3448 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.3610 	DATA 	Mouse: wheel shift=(0,-1), pos=(394,954)
+3.3612 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.4118 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.4280 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.4282 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.4460 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.4614 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.4786 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.4944 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.4946 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+3.5279 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.5452 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.5614 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.5785 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.5948 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.6108 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.6294 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.6449 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.6618 	DATA 	Mouse: wheel shift=(0,1), pos=(394,954)
+3.6782 	DATA 	Mouse: wheel shift=(0,0), pos=(394,954)
+4.9446 	EXP 	New trial (rep=0, index=1): OrderedDict([('instructions_text', 'Por favor, señala las palabras que tú conoces (aquellas que estás convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).'), ('continue_text', '(presiona la barra espaciadora para continuar)')])
+4.9560 	DATA 	Keypress: space
+4.9625 	INFO 	Keyboard events cleared
+4.9621 	EXP 	text_lextale_instructions: autoDraw = False
+4.9621 	EXP 	text_lextale_instructions_continue: autoDraw = False
+4.9621 	EXP 	text_lextale_instructions: height = 0.05
+4.9621 	EXP 	text_lextale_instructions: height = 0.05
+4.9621 	EXP 	text_lextale_instructions: height = 0.05
+4.9621 	EXP 	text_lextale_instructions: text = 'Por favor, señala las palabras que tú conoces (aquellas que estás convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).'
+4.9621 	EXP 	text_lextale_instructions_continue: text = '(presiona la barra espaciadora para continuar)'
+4.9621 	EXP 	text_lextale_instructions: autoDraw = True
+5.8279 	EXP 	New trial (rep=0, index=2): OrderedDict([('instructions_text', 'Pero cuidado: los errores se penalizan. Por eso no tiene sentido tratar de incrementar tu puntuación marcando como reales palabras que nunca has visto.'), ('continue_text', '(presiona la barra espaciadora para continuar)')])
+5.8409 	DATA 	Keypress: space
+5.8468 	INFO 	Keyboard events cleared
+5.8463 	EXP 	text_lextale_instructions: autoDraw = False
+5.8463 	EXP 	text_lextale_instructions_continue: autoDraw = False
+5.8463 	EXP 	text_lextale_instructions: height = 0.05
+5.8463 	EXP 	text_lextale_instructions: height = 0.05
+5.8463 	EXP 	text_lextale_instructions: height = 0.05
+5.8463 	EXP 	text_lextale_instructions: text = 'Pero cuidado: los errores se penalizan. Por eso no tiene sentido tratar de incrementar tu puntuación marcando como reales palabras que nunca has visto.'
+5.8463 	EXP 	text_lextale_instructions_continue: text = '(presiona la barra espaciadora para continuar)'
+5.8463 	EXP 	text_lextale_instructions: autoDraw = True
+8.3436 	EXP 	text_lextale_instructions_continue: autoDraw = True
+9.2952 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.3127 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.3285 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.3457 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.3616 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.3793 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.3941 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.4121 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.4283 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.4444 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.4627 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.4778 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.4951 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.5123 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.5288 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.5451 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.5618 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.5793 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.5956 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.6118 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.6278 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.6450 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.6613 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.6786 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.6950 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.7122 	DATA 	Mouse: wheel shift=(0,1), pos=(228,875)
+9.7282 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.7442 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.7628 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.7779 	DATA 	Mouse: wheel shift=(0,1), pos=(228,875)
+9.7954 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.8113 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+9.8288 	DATA 	Mouse: wheel shift=(0,0), pos=(228,875)
+52.8979 	DATA 	Keypress: lcommand
+52.9997 	DATA 	Keypress: loption
+53.5295 	EXP 	empathy_intonation_perc: status = STOPPED
+53.5446 	EXP 	text_lextale_instructions: autoDraw = False
+53.5446 	EXP 	text_lextale_instructions_continue: autoDraw = False
+53.5447 	EXP 	empathy_intonation_perc: status = STOPPED
+53.5491 	INFO 	saved data to '/Users/kyleparrish/Downloads/lextale_span-main 3/data/kyle_pilot_96_empathy_intonation_perc_2024-06-02_12h53.34.479.csv'
+53.5502 	INFO 	saved data to /Users/kyleparrish/Downloads/lextale_span-main 3/data/kyle_pilot_96_empathy_intonation_perc_2024-06-02_12h53.34.479.psydat
+53.5684 	EXP 	window1: mouseVisible = True
+53.7061 	DEBUG 	Saving data for empathy_intonation_perc ExperimentHandler

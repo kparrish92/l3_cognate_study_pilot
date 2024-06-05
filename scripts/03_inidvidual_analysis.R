@@ -1,5 +1,6 @@
 library(lmerTest)
 p_data = read.csv(here("data", "tidy", "pilot_data.csv")) 
+
 # Function to check for influential data points at the individual level per word type
 # Plot returns the index (row no.) of the influence of indvidual data points on an 
 # intercept only model for RT
