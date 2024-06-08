@@ -2,7 +2,6 @@ library(lmerTest)
 p_data = read.csv(here("data", "tidy", "pilot_data.csv"))
 
 
-# intercept only model for RT
 
 p_data %>% 
   group_by(type) %>% 
@@ -11,7 +10,7 @@ p_data %>%
   ggplot(aes(x = type, y = mean_rt, fill = type)) + geom_col(position = "dodge") 
 
 p_data %>% 
-  ggplot(aes(x = type, y = key_resp_lextale_trial.rt, fill = type)) + geom_boxplot()
+  ggplot(aes(x = type, y = key_resp_lextale_trial.rt, fill = type)) + geom_boxplot() + facet_wrap(~source)
 
 
 p_data %>% 
@@ -39,6 +38,8 @@ cdf %>%
 
 ## Model 
 library(lmerTest)
+
+model = lm(log_rt ~ type, data = p_data)
 
 model = lmerTest::lmer(log_rt ~ type + (1 | word) + (1 | ppt), data = p_data)
 
@@ -72,9 +73,13 @@ no_correct = p_data %>%
 
 eff_df %>% 
   left_join(no_correct, by = "ppt") %>% 
-  ggplot(aes(x = n, y = eff_two)) + geom_point() + geom_smooth(method = "lm")
+  pivot_longer(cols = c(eff_two, eff_three), names_to = "eff", values_to = "size") %>% 
+  ggplot(aes(x = n, y = size, color = eff)) + geom_point() + geom_smooth(method = "lm")
 
 
 eff_df %>% 
   left_join(no_correct, by = "ppt") %>% 
   ggplot(aes(x = n, y = eff_three)) + geom_point() + geom_smooth(method = "lm")
+
+
+

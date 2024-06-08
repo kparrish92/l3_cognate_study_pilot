@@ -1,0 +1,12 @@
+﻿lextale_instructions.started,lextale_instructions.stopped,lextale_instructions_loop.thisRepN,lextale_instructions_loop.thisTrialN,lextale_instructions_loop.thisN,lextale_instructions_loop.thisIndex,lextale_instructions_loop.ran,instructions_text,continue_text,participant,session,date,expName,psychopyVersion,OS,frameRate
+0.0083,17.3419,0,0,0,0,1,"Este es un test de vocabulario en español. 
+  
+  A continuación vas a ver 90 secuencias de letras que parecen 'españolas'.
+  
+  Solo algunas de ellas son palabras de verdad.",(presiona la barra espaciadora para continuar),,001,2024-06-07_12h42.24.379,empathy_intonation_perc,2024.1.4,Win32,9.596928983
+17.3425,30.4478,0,1,1,1,1,"Por favor, señala las palabras que tú conoces (aquellas que estás convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).",(presiona la barra espaciadora para continuar),,001,2024-06-07_12h42.24.379,empathy_intonation_perc,2024.1.4,Win32,9.596928983
+30.448,31.1331,0,2,2,2,1,Pero cuidado: los errores se penalizan. Por eso no tiene sentido tratar de incrementar tu puntuación marcando como reales palabras que nunca has visto.,(presiona la barra espaciadora para continuar),,001,2024-06-07_12h42.24.379,empathy_intonation_perc,2024.1.4,Win32,9.596928983
+31.1335,31.4797,0,3,3,3,1,"Presiona la tecla 1 si piensas que es una palabra real y la tecla 
+  0 si piensas que es una palabra falsa. 
+  
+  Vamos a practicar un poco...",(presiona la barra espaciadora para continuar),,001,2024-06-07_12h42.24.379,empathy_intonation_perc,2024.1.4,Win32,9.596928983
