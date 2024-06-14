@@ -7,7 +7,15 @@ p_data %>%
   group_by(type) %>% 
   summarize(mean_rt = mean(key_resp_lextale_trial.rt),
             sd_rt = sd(key_resp_lextale_trial.rt)) %>% 
-  ggplot(aes(x = type, y = mean_rt, fill = type)) + geom_col(position = "dodge") 
+  ggplot(aes(x = type, y = mean_rt, fill = type)) + 
+  geom_col(position = "dodge", color = "black") + theme_classic() + xlab("Word Type") + ylab("Reaction Time (ms)") +
+  theme(legend.position = "none")
+
+
+p_data %>% 
+  ggplot(aes(x = type, y = key_resp_lextale_trial.rt, fill = type)) + 
+  geom_boxplot() + theme_classic() + xlab("Word Type") + ylab("Reaction Time (ms)") +
+  theme(legend.position = "none")
 
 p_data %>% 
   ggplot(aes(x = type, y = key_resp_lextale_trial.rt, fill = type)) + geom_boxplot() + facet_wrap(~source)
@@ -33,7 +41,7 @@ cdf %>%
   geom_col() +
   labs(x = "ppt", y = "Number Correct", fill = "ppt") +
   theme_minimal() +
-  coord_flip() + ggtitle("No. total correct answers (96 possible) per participant")
+  coord_flip() + ggtitle("No. total correct answers (144 possible) per participant")
 
 
 ## Model 
@@ -45,6 +53,11 @@ model = lmerTest::lmer(log_rt ~ type + (1 | word) + (1 | ppt), data = p_data)
 
 summary(model) # There is an effect for two-way cognates, but not 3 
 
+library(sjPlot)
+tab_model(model, file="tab.html")
+library(webshot)
+webshot("tab.html", "tab.png")
+
 ## Check random effects to see if any of the stimuli are causing issues (have high leverage)
 word_cats = read.csv(here("data", "stimuli", "word_list.csv"))
 
@@ -55,10 +68,22 @@ res = (ranef(model)$word) %>%
 
 res %>% 
   filter(type == "three_way_cognate") %>% 
-    ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() 
+    ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() + 
+  theme_minimal() + xlab("Random Effect in log rt") + ylab("Three-way cognates") 
+
+res %>% 
+  filter(type == "two_way_cognate") %>% 
+  ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() +
+  theme_minimal() + xlab("Random Effect in log rt") + ylab("Two-way cognates")
 
 
+res %>% 
+  filter(type == "non_cognate") %>% 
+  ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() +
+  theme_minimal() + xlab("Random Effect in log rt") + ylab("non cognates")
 
+
+sjplot::report
 
 eff_df = p_data %>% 
   group_by(ppt, type) %>% 
@@ -74,7 +99,18 @@ no_correct = p_data %>%
 eff_df %>% 
   left_join(no_correct, by = "ppt") %>% 
   pivot_longer(cols = c(eff_two, eff_three), names_to = "eff", values_to = "size") %>% 
-  ggplot(aes(x = n, y = size, color = eff)) + geom_point() + geom_smooth(method = "lm")
+  ggplot(aes(x = n, y = size, color = eff)) + geom_point() + geom_smooth(method = "lm") +
+  theme_classic() + xlab("Number of total correct answers") + ylab("Effect compared to non-cognates") 
+
+prof_mod_df = 
+  eff_df %>% 
+  left_join(no_correct, by = "ppt") %>% 
+  pivot_longer(cols = c(eff_two, eff_three), names_to = "eff", values_to = "size") 
+
+model_prof = lm(size ~ n, data = prof_mod_df)
+
+
+summary(model_prof) # There is an effect for two-way cognates, but not 3 
 
 
 eff_df %>% 
