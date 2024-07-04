@@ -408,7 +408,7 @@ class: title-slide-section, middle
 
 class: title-slide-section, middle
 
-<h2 style="text-align: center;">Partial pooling of the model a positive measured effect of null participants to negative **81.5% of the time**.</h1> <!-- Centered h1 text -->
+<h2 style="text-align: center;">Partial pooling of the model a positive changed the effect of null participants to negative **81.5% of the time**.</h1> <!-- Centered h1 text -->
 
 ---
 
