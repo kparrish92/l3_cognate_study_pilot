@@ -1,0 +1,51 @@
+---
+title: "report"
+output: html_document
+date: "2024-06-30"
+---
+
+```{r setup, include=FALSE}
+library(here)
+knitr::opts_chunk$set(echo = FALSE)
+pf = read.csv(here("data", "tidy", "pre_filtered_ldt.csv"))
+source(here("scripts", "01_tidy.R"))
+
+tokens_over_3 = nrow(pf) - nrow(pf %>% filter(key_resp_lextale_trial.rt < 3))
+
+incorrect_tokens = nrow(pf %>% filter(key_resp_lextale_trial.rt < 3)) - nrow(pf %>% 
+  filter(key_resp_lextale_trial.rt < 3)  %>%  # no trials longer than 2s or less than 300ms
+  filter(is_correct == 1))
+
+ind_outliers = nrow(pf %>% 
+  filter(key_resp_lextale_trial.rt < 3)  %>%  # no trials longer than 2s or less than 300ms
+  filter(is_correct == 1)) - nrow(df_after_outliers)
+```
+
+There were `r length(unique(pf$ppt))` total participants who responded to 192 trials each, yielding 
+`r nrow(pf)` total tokens. 
+
+The overall accuracy rate was `r round(sum(pf$is_correct)/nrow(pf), digits = 2)` (
+`r incorrect_tokens` incorrect tokens were removed).
+
+`r tokens_over_3` tokens with an RT > 3 second were removed.
+
+After the removal of these tokens, `r ind_outliers` tokens +/- 2 standard deviations from an individual's overall mean, and `r removed_low_corr_rate` tokens with an overall correctness rate of less than 25% were removed.
+
+Thus, the final data set contained `r nrow(df_after_outliers)` tokens.
+
+
+## Data trimming
+
+`r nrow(pf)` total tokens were collected and `r nrow(df_after_outliers %>% filter(!word %in% remove$word)) ` were used in the final analysis.
+
+Summary of removed tokens:
+
+`r incorrect_tokens` incorrect Tokens (accuracy rate = `r round(sum(pf$is_correct)/nrow(pf), digits = 2)*100`%). 
+
+`r tokens_over_3` tokens > 3 seconds.
+
+`r ind_outliers` tokens +/- 2 standard deviations from an individual's overall mean.
+
+`r removed_low_corr_rate` overall word correctness rate of less than 25%.
+
+

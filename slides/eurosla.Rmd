@@ -1,0 +1,477 @@
+---
+title: "The cognate faciliation effect in L3 lexical processing"
+subtitle: 'EUROSLA 33'
+author  : "Kyle Parrish"
+date    : "Goethe Uni Frankfurt</br>July 2024</br>Last update: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, hygge, my-css.css, rutgers-fonts]
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: true
+      ratio: 16:9
+---
+```{r, include = FALSE}
+library(here)
+library(here)
+knitr::opts_chunk$set(echo = FALSE)
+pf = read.csv(here("data", "tidy", "pre_filtered_ldt.csv"))
+source(here("scripts", "01_tidy.R"))
+
+tokens_over_3 = nrow(pf) - nrow(pf %>% filter(key_resp_lextale_trial.rt < 3))
+
+incorrect_tokens = nrow(pf %>% filter(key_resp_lextale_trial.rt < 3)) - nrow(pf %>% 
+  filter(key_resp_lextale_trial.rt < 3)  %>%  # no trials longer than 2s or less than 300ms
+  filter(is_correct == 1))
+
+ind_outliers = nrow(pf %>% 
+  filter(key_resp_lextale_trial.rt < 3)  %>%  # no trials longer than 2s or less than 300ms
+  filter(is_correct == 1)) - nrow(df_after_outliers)
+```
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  comment = '', fig.width = 6, fig.height = 6, message = FALSE, warning = FALSE, echo = FALSE
+)
+```
+ 
+multilingual Word representations are thought to exist in a shared space and are all always active.
+
+(pitcure of words in a shared space in three languages)
+
+---
+
+When we produce words in a language, translation equivalents competitors active and must be inhibited in production.
+
+Example of non-cognate 
+
+---
+
+Cognate words, however, share semantic and orthographic overlap and have been shown be processed more easily
+
+Example of a cognate 
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Cognates**<sup>\*</sup> are processed faster than **non-cognates**</h2> <!-- Centered h1 text -->
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Cognates**<sup>\*</sup> are processed faster than **non-cognates**</h2> <!-- Centered h1 text -->
+
+--
+
+.footnote[<sup>\*</sup> Words which share semantic and orthographic overlap between languages]
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">This is referred to as the **cognate facilitation effect**</h1> 
+<!-- Centered h1 text -->
+
+Spanish - English
+color - color 
+century - siglo 
+
+---
+
+background-image: url(./img/ldt_ex.png)
+background-size: contain
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Faster reaction times** are evidence of facilitation in processing.</h1> <!-- Centered h1 text -->
+
+
+---
+
+# Previous work
+
+.pull-left[
+.content-box-blue[
+**L2 cognate facilitation** 
+
+Word naming latencies (Costa & Caramazza, 2002)
+
+Lexical Decisions and eye tracking (Tiffin-Richards, 2024)
+
+Costa, Santesteban, & Caño, 2005; De Groot & Nas, 1991; Dijkstra, Grainger, & Van Heuven, 1999; Lemhöfer et al., 2008; Voga & Grainger, 2007
+]]
+
+--
+
+.pull-right[
+.content-box-blue[
+**L3/Ln cognate facilitation** 
+
+L3 German lexical decision task (Szubko-Sitarek, 2011)
+
+- L1 Polish L2 English L3 German
+
+- PGE cognates (three-way cognates)
+
+- PG cognates (two-way cognates)
+
+- Non cognates
+
+Results: PGE cognates < PG cognates < Non cognates
+]]
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Not much is known about the relationship between **language proficiency** of the magnitude of the cognate facilitation effect.</h1> <!-- Centered h1 text -->
+
+
+---
+
+# The development of the Cognate Facilitation Effect
+
+.pull-left[
+.content-box-blue[
+Not much is known about the trajectory of the CFE in L2 or L3.
+
+It is unclear whether the reaction times of cognates **decrease with as proficiency increases**, and if/when it plateaus (is acquired).
+]
+]
+
+--
+---
+
+Why is it needed?
+
+---
+.pull-right[
+```{r}
+knitr::include_graphics(here("slides", "img", "prof_h.png"))
+```
+]
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">The **presence or absence** of the CFE in L3 speakers could inform L3 models</h1> <!-- Centered h1 text -->
+
+---
+
+How?
+
+- Wholesale transfer would predict that L3 learners transfer and have access to **just one language**. 
+
+- If there's no CFE, it might be evidence of wholesale transfer 
+
+---
+
+# The Cognate Facilitation Effect as access to a language-specific lexicon 
+
+.pull-left[
+.content-box-blue[
+If there are differences in facilitation effects between two-way and three-way cognates, it could suggest **inhibition of a specific lexicon**. 
+
+ 
+Example: The L2 and L3 speakers speak the same languages, but only the L2 group shows an effect of cognate.
+]
+]
+--
+
+.pull-right[
+```{r}
+knitr::include_graphics(here("slides", "img", "boxplot_es_h.png"))
+```
+]
+
+---
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**The present study** is conceptual replication of Szubko-Sitarek (2011) in L3 Spanish.</h1> <!-- Centered h1 text -->
+--
+<h3 style="text-align: center;">We added **proficiency measures** and an **L2 Spanish group**</h3> <!-- Centered h1 text -->
+
+---
+
+# Research Questions and hypotheses
+
+.pull-left[
+.content-box-blue[
+.red[RQ1]: **Within-L3 speakers**: Will L3 Spanish speakers show cognate facilitation, and will this be stronger for three-way vs two-way cognates? 
+
+.red[RQ2]: **Comparing L2 and L3 speakers**: Will L3 Spanish speakers show a stronger cognate facilitation effect for three-way cognates when compared to L2 learners?
+
+.red[RQ3]: **The role of proficiency**: How will cognate facilitation change as a function of proficiency in both groups? 
+]
+]
+--
+
+.pull-right[
+.content-box-blue[
+.blue[H1]: As in previous work, we predict that the **CFE will be greater for three-way cognates** in the L3 Spanish group and that the two-way and three-way cognates similar be the same for the L2 group. 
+
+.blue[H2]: We predict that the L3 Spanish speakers and L2 Spanish speakers **differ for three-way cognates, but not two-way cognates**.
+
+.blue[H3]: As **proficiency increases** in both groups, it is predicted that the **CFE increases** in a linear fashion. 
+]
+]
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Within **L3** Spanish speakers: <br>
+RT non-cognates > RT two-way cognates **>** RT three-way cognates </h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Within **L2** Spanish speakers: <br>
+RT non-cognates > RT two-way cognates **=** RT three-way cognates</h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Participants**</h1> <!-- Centered h1 text -->
+
+---
+
+# Participants
+
+.pull-left[
+.content-box-blue[
+**L3 Spanish speakers**
+
+n = 10
+
+L1 German - L2 English - L3 Spanish 
+
+University students in Germany training to be either Spanish language teachers or linguists
+]
+]
+--
+
+.pull-right[
+.content-box-blue[
+**L2 Spanish group**
+
+n = 27
+
+L1 American English - L2 Spanish 
+
+Recruited on Prolific
+
+Filtered for being raised monolingual in English and currently living in the United States.
+]
+]
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Procedure and materials**</h1> <!-- Centered h1 text -->
+
+---
+
+# Procedure and materials
+
+.pull-left[
+.content-box-blue[
+**Procedure**
+
+All participants completed:
+
+a) 192 item lexical decision task
+
+b) a brief background questionnaire
+]
+]
+
+--
+
+.pull-right[
+.content-box-blue[
+**Data collection**
+
+L3 participants completed the task in person, using either a personal computer or the researcher's.
+
+L2 participants completed the task online with written instructions.
+
+]
+]
+
+---
+
+background-image: url(./img/ldt_real.png)
+background-size: contain
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Lexical Decision Task: Word list**</h1> 
+--
+<h3 style="text-align: center;">96 real word: 96 pseudoword</h3> 
+--
+<h3 style="text-align: center;">48 non-cognates: 48 cognates</h3> 
+--
+<h3 style="text-align: center;">24 Spanish-English cognates: 24 Spanish-English-German cognates</h3> 
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Data analysis**</h1> <!-- Centered h1 text -->
+
+---
+
+# Data analysis
+
+.pull-left[
+.content-box-blue[
+**Data trimming**
+
+`r nrow(pf)` total tokens were collected and `r nrow(df_after_outliers %>% filter(!word %in% remove$word)) ` were used in the final analysis.
+
+Summary of removed tokens:
+
+`r incorrect_tokens` incorrect Tokens (accuracy rate = `r round(sum(pf$is_correct)/nrow(pf), digits = 2)*100`%). 
+
+`r tokens_over_3` tokens > 3 seconds.
+
+`r ind_outliers` tokens +/- 2 standard deviations from an individual's overall mean.
+
+`r removed_low_corr_rate` overall word correctness rate of less than 25%.
+]]
+
+--
+
+.pull-right[
+.content-box-blue[
+**Data analysis**
+
+Bayesian Models:
+
+L3 within-subjects analysis: `log reaction time ~ word type + (1 | word) + (word type | participant)`
+
+L2-L3 between-subjects analysis: `log reaction time ~ group:word type + (1 | word) + (word type | participant)`
+
+Analysis of proficiency: `facilitation effect ~ percentage of correct answers:cognate_type:group` 
+]]
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Results**</h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">L3 Spanish speakers behaved like we predicted for the L2 group.</h1> <!-- Centered h1 text -->
+
+---
+background-image: url(./img/desc_bar.png)
+background-size: contain
+
+---
+
+background-image: url(./img/mcmc_l3_plot.png)
+background-size: contain
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">L2 Spanish speaker showed inconclusive effects at the group level.</h1> <!-- Centered h1 text -->
+
+
+---
+
+background-image: url(./img/desc_bar_l2.png)
+background-size: contain
+
+---
+
+background-image: url(./img/mcmc_l2_plot.png)
+background-size: contain
+
+---
+
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Reaction times followed a u-shaped curve as a function of proficiency</h1> <!-- Centered h1 text -->
+
+
+---
+
+background-image: url(./img/prof_plot.png)
+background-size: contain
+
+---
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Discussion and Conclusion**</h1> <!-- Centered h1 text -->
+
+---
+
+# The development of the Cognate Facilitation Effect
+
+.pull-left[
+```{r}
+knitr::include_graphics(here("slides", "img", "prof_h.png"))
+```
+]
+
+--
+
+.pull-right[
+```{r}
+knitr::include_graphics(here("slides", "img", "comp_to_h.png"))
+```
+]
+
+---
+
+# The Cognate Facilitation Effect as access to a langauge-specific lexicon 
+
+.pull-left[
+```{r}
+knitr::include_graphics(here("slides", "img", "boxplot_es_h.png"))
+```
+]
+
+--
+
+.pull-right[
+```{r}
+knitr::include_graphics(here("slides", "img", "comp_to_h_b.png"))
+```
+]
+
+
+---
+
+# Key take-aways 
+
+- L2 learners showed only descriptive evidence of a CFE
+
+- L3 learners showed similar effects for both two and three-way cognates
+
+- The role of language proficiency the CFE may be non-linear, and follow u-shaped curve 
+
+- A null CFE makes sense if there is a full spectrum of proficiency
+
+- GAMMs are a good option to analyze this non-linear relationship 

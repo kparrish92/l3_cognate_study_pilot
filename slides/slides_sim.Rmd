@@ -1,0 +1,436 @@
+---
+title: "The cognate faciliation effect in L3 lexical processing"
+subtitle: 'EUROSLA 33'
+author  : "Kyle Parrish"
+date    : "Goethe Uni Frankfurt</br>July 2024</br>Last update: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, hygge, my-css.css, rutgers-fonts]
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: true
+      ratio: 16:9
+---
+```{r, include = FALSE}
+library(here)
+library(here)
+knitr::opts_chunk$set(echo = FALSE)
+pf = read.csv(here("data", "tidy", "pre_filtered_ldt.csv"))
+source(here("scripts", "01_tidy.R"))
+
+tokens_over_3 = nrow(pf) - nrow(pf %>% filter(key_resp_lextale_trial.rt < 3))
+
+incorrect_tokens = nrow(pf %>% filter(key_resp_lextale_trial.rt < 3)) - nrow(pf %>% 
+  filter(key_resp_lextale_trial.rt < 3)  %>%  # no trials longer than 2s or less than 300ms
+  filter(is_correct == 1))
+
+ind_outliers = nrow(pf %>% 
+  filter(key_resp_lextale_trial.rt < 3)  %>%  # no trials longer than 2s or less than 300ms
+  filter(is_correct == 1)) - nrow(df_after_outliers)
+```
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  comment = '', fig.width = 6, fig.height = 6, message = FALSE, warning = FALSE, echo = FALSE
+)
+```
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Multilingual speakers** are often distinct from **bilingual speakers** in important ways.</h2> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Bilingual speakers may experience influence from their L1, while multilinguals have **at least two languages** that may impact their Ln.</h2> <!-- Centered h1 text -->
+
+---
+
+# Work in multilingualism 
+
+--
+
+.pull-left[
+.content-box-blue[
+- Focuses on the initial stages of L3 acquisition.
+
+- **Facilitative** and **non-facilitative transfer** occur. 
+
+- **Third languages** are not simply influenced by the L1.
+]
+]
+
+--
+
+.pull-right[
+.content-box-blue[
+- Most work is in offline studies, little knowledge of Ln processing.
+
+- The present work focuses on the processing of **cognates** by multilinguals.
+
+- Lexical transfer may also transfer syntactic frames (Ecke & Hall, 2014).
+]]
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Bilingual lexical representations are thought to exist in a **shared space** and are all **always active**.</h2> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">During language use, the **translation equivalents** in the non-active lexicon must be **inhibited.**</h2> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">This makes **cognate words** special because they share both meaning and orthographic form.</h2> <!-- Centered h1 text -->
+
+--
+
+<table style="width:50%; margin: auto; border-collapse: collapse;">
+  <tr>
+    <th style="border: 1px solid #000; padding: 8px;">English word</th>
+    <th style="border: 1px solid #000; padding: 8px;">Spanish word</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 8px;">color</td>
+    <td style="border: 1px solid #000; padding: 8px;">color</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 8px;">century</td>
+    <td style="border: 1px solid #000; padding: 8px;">siglo</td>
+  </tr>
+</table>
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Cognates are processed faster than non-cognates and this is referred to as the **cognate facilitation effect**.</h2> <!-- Centered h1 text -->
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Two studies to date have shown that **three-way cognates**\* are processed even faster than two-way cognates in L3 German.</h1> <!-- Centered h1 text -->
+
+.footnote[<sup>\*</sup> Words that are cognates in three languages]
+
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">L3 German-L2 English-L1 Dutch (Lemhöfer et al., 2004)</h1> 
+
+--
+
+<h3 style="text-align: center;">RT triple cognates < RT double cognates < RT non-cognates</h3> 
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">L3 German-L2 English-L1 Polish (Szubko-Sitarek, 2011)</h1> 
+
+--
+
+<h3 style="text-align: center;">RT triple cognates < RT double cognates < RT non-cognates</h3> 
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">This effect has not yet been studied in **distinct third languages**</h1> 
+
+---
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">We examined if there are also cognate facilitation effects in **L3 Spanish**.</h1> <!-- Centered h1 text -->
+
+.footnote[L3 Spanish-L2 English-L1 German]
+
+---
+
+# Research Questions and hypotheses
+
+.pull-left[
+.content-box-blue[
+.red[Research Question]: **Within-L3 speakers**, will cognate words be processed faster than non-cognate words, and triple cognates faster than double cognates? 
+]
+]
+--
+
+.pull-right[
+.content-box-blue[
+.blue[Hypothesis]: As in previous work, we predict that the **reaction times** in correct trials will be lowest for three-way cognates, followed by two-way cognates, and then non-cognates.
+]
+]
+
+---
+
+# Participants
+
+.pull-left[
+.content-box-blue[
+**L3 Spanish speakers**
+
+n = 10 (more data will be collected)
+
+L1 German - L2 English - L3 Spanish 
+
+University students in Germany training to be either Spanish language teachers or linguists.
+
+Age of onset English < age of onset Spanish
+
+English proficiency > Spanish proficiency 
+]
+]
+
+---
+
+# Procedure and materials
+
+.pull-left[
+.content-box-blue[
+**Procedure**
+
+All participants completed:
+
+a) 192 item lexical decision task
+
+b) a brief background questionnaire
+]
+]
+
+--
+
+.pull-right[
+.content-box-blue[
+**Data collection**
+The task was completed the task in person, using either a personal computer or the researcher's.
+]
+]
+
+---
+
+background-image: url(./img/ldt_real.png)
+background-size: contain
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Lexical Decision Task: Word list**</h1> 
+--
+<h3 style="text-align: center;">96 real word: 96 pseudowords</h3> 
+--
+<h3 style="text-align: center;">48 non-cognates: 48 cognates</h3> 
+--
+<h3 style="text-align: center;">24 Spanish-English cognates: 24 Spanish-English-German cognates</h3> 
+
+.footnote[<sup>\*</sup> Lists were matched for word length and lexical frequency]
+
+---
+
+# Stimuli 
+
+.pull-left[
+.content-box-blue[
+- Stimuli were chosen by carrying out an analysis of the PHOR-in-one data base (Costa et al., 2023)
+
+- Stimuli were matched for word length and lexical frequency.
+
+- Cognates with 100% orthographic overlap were chosen.
+
+- Psuedowords were generated in Unipsuedo (New et al., 2024).
+
+**Examples:**
+
+- *Three-way cognate*: horror, horror, Horror 
+- *Two-way cognate*: piano, piano, Klavier 
+- *Non-cognate*: face, rostro, Gesicht 
+]]
+
+
+---
+
+# Data analysis
+
+.pull-left[
+.content-box-blue[
+**Data trimming**
+
+`r nrow(pf)` total tokens were collected and `r nrow(df_after_outliers %>% filter(!word %in% remove$word)) ` were used in the final analysis.
+
+Some tokens had to be removed for the following reasons:
+
+**Incorrect**: `r incorrect_tokens`  (accuracy rate = `r round(sum(pf$is_correct)/nrow(pf), digits = 2)*100`%). 
+
+**Longer than 3 seconds**: `r tokens_over_3`.
+
+**+/- 2 SD from an individual's mean**:`r ind_outliers`.
+
+**Words that 75%+ participants got incorrect**: `r removed_low_corr_rate`.
+
+]]
+
+--
+
+.pull-right[
+.content-box-blue[
+**Data analysis**
+
+Bayesian mixed effects linear regression:
+
+Default R Priors
+
+L3 within-subjects analysis: `log reaction time ~ word type + (1 | word) + (word type | participant)`
+]]
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**Results**</h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">L3 Spanish speakers behaved **as if they were L2 Spanish speakers**.</h1> <!-- Centered h1 text -->
+
+---
+
+background-image: url(./img/desc_bar.png)
+background-size: contain
+
+---
+
+background-image: url(./img/mcmc_l3_plot.png)
+background-size: contain
+
+---
+
+# Discussion 
+
+.pull.left[
+.content-box-blue[
+- The effect of double and triple cognates was similar in L3 Spanish speakers: this would suggest that their **L1 German did not benefit them in processing** (all stimuli were at least Spanish-English cognates).
+
+- The **experimental setting** could have played a role (language modes): these students only hear their instructor speak Spanish with occasional switches to English and took the experiment in a classroom setting.
+
+- We plan to **add an L1 English - L2 Spanish group** to determine whether the results have to do with some unknown confounding aspect of the stimulus list.
+]]
+
+---
+
+# Discussion 
+
+.pull-left[
+.content-box-blue[
+- An analysis of the random effects also showed that not every participant showed evidence of the effects.
+
+- The results might also be a result of **biased estimates** of the group model due to shrinkage of partially pooled random effect estimates.
+]]
+
+---
+
+background-image: url(./img/ind_eff.png)
+background-size: contain
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">What if **7/10** truly show the effect and **3 do not?**</h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">What is the probability that a group level model would show the CFE when this is the case?</h1> <!-- Centered h1 text -->
+
+---
+
+# Simulation
+
+.pull-left[
+.content-box-blue[
+**Details**
+
+Data sets were simulated using measures of variation and the number of items from the collected data.
+
+10 participants were simulated in which:
+
+- 4 had a true medium effect
+
+- 3 had a true small effect 
+
+- 3 had a true null effect
+
+A mixed effects model was fit to each simulated data set.
+]
+]
+
+--
+
+.pull-right[
+.content-box-blue[
+**The goal was to determine:**
+
+How many models would show a **significant cognate effect** at the **group level**, when it's really only true for 70% of participants?
+
+What was the average (or distribution of) change to the effect of true-null participants as compared to the medium and small effect participants?
+]]
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">If 70% of participants show the effect, and 30% do not, then...</h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">...the group level model finds an effect **72.6 % of the time**</h1> <!-- Centered h1 text -->
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Partial pooling of the model a positive measured effect of null participants to negative **81.5% of the time**.</h1> <!-- Centered h1 text -->
+
+---
+
+background-image: url(./img/ef_change_dist.png)
+background-size: contain
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Closer evaluations of individuals may be warranted in the cases in which we expect individual variation in the **direction of an effect**</h1> 
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">**More data per individual** or novel analyses can help to uncover how L3 learners show variation in the **size and direction** of effects</h1> 
+
+---
+
+class: title-slide-section, middle
+
+<h2 style="text-align: center;">Thank you for your attention!</h1> 
+
+
