@@ -1,0 +1,120 @@
+---
+main_topsize: 0.1 #percent coverage of the poster
+main_bottomsize: 0.1
+#ESSENTIALS
+title: "A Simulated Analysis of repeated measures in VOT: We need more tokens!"
+author:
+  - name: Kyle Parrish
+    affil: 1
+    email: kyle.parrish@rutgers.edu
+    orcid: 0000-0001-8227-1370
+    main: true
+primary_colour: "#CC0033"    
+secondary_colour: "#5F6A72" 
+affiliation:
+  - num: 1
+    address: Department of Spanish and Portuguese, Rutgers University
+logoleft_name: ./docs/includes/figures/app_qr.png
+logoright_name: ./docs/includes/figures/materials_qr.png
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+bibliography: icphs2019.bib
+link-citations: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+library(tidyverse)
+```
+
+<!---pagedown::chrome_print("port_poster.Rmd")-->
+
+# Introduction
+
+The cognate facilitation effect refers to faster processing of words that are cognates between languages (e.g., words that have high orthographic, semantic, and sometimes phonological overlap). This effect has been well-documented in L2 research across various language combinations and tasks, suggesting that bilingual speakers have an integrated and non-selective lexicon (Costa et al., 2000). However, little is known about how this effect manifests in multilingual speakers. Szubko-Sitarek (2011) found additive effects of cognate facilitation, with multilingual speakers responding faster to cognates across three languages than cognates across two languages relative to non-cognates. While Szubko-Sitarek (2011) suggests that L3 speakers have simultaneous activation of  L1 and L2 lexical representations, it remains unclear whether the magnitude of the cognate facilitation effect is equal coming from L1 to L3 and from L2 to L3, and how these effects change as 
+L2 and L3 proficiency increase. 
+
+The present study examines this gap using a lexical decision task by L3 Spanish speakers (L1 German-L2 English). The lexical items of the three languages allowed for three primary stimuli conditions: non-cognate words, two-way cognates (between English and Spanish) and three-way cognates (between German, English, and Spanish).  L2 and L3 proficiency were measured using LexTALE tests. 
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+## Research Question
+
+
+# Methods
+
+- Data was simulated in R.
+
+- For each stop (/p/,/t/,/k/,/b/,/d/,/g/), an underlying distribution of 1000 points each was generated based on means reported in the literature (@chodroff2017structure; see Table \@ref(tab:means)).
+
+- For each segment, 10, 20, 30, 40, 50, 60, 70, and 80 tokens were randomly sampled which were looped 100 times each.
+
+- Following the selection of the  random tokens, a test of equivalence [@lakens2017equivalence], and a Welch's t-test were carried out between the random sample and the simulated underlying distribution (all 1000 tokens).
+
+- This process was repeated 10 times and generated 48000 total data points (100 simulations x 8 sample sizes x 6 segments x 10 repetitions).
+
+- The percentage of equivalent samples per segment per sample size was calculated.
+
+```{r, means}
+library(tidyverse)
+data.frame(Segment = c("/p/","/t/","/k/","/b/","/d/","/g/"),
+"Mean (SD)" = c("89 (27)","98 (28)","99 (24)","13 (5)","21 (7)","28 (10)")) %>% 
+  knitr::kable(caption = "Means and Standard Deviations for each Stop Consonant in American English from Chodroff & Wilson (2017)")
+
+```
+
+# Results
+
+```{r, irisfigure, fig.cap='Percentage of significant Tests of Equivalence per sample size and segment', out.width="80%"}
+#knitr::include_graphics(here::here("docs", "includes", "figures", "tost.png"))
+```
+
+- Each box in Figure 1 made up of 10 total data points, where each of them is the total number of practically equivalent samples out of 100.
+
+- At least 60 samples of a given segment are needed to achieve a sample that is within d = +/- .4 at least 80 percent of the time. 
+
+- 10 tokens per segment was the least successful at producing a practically equivalent sample, as all segments were practically equivalent 0 percent of the time.
+
+- Table \@ref(tab:nums)) reports the percentage of significant tests of equivalence for each segment and each sample size.
+
+```{r, nums}
+library(tidyverse)
+
+```
+
+- False positive results were around the expected 5 percent for all segments
+
+- Table \@ref(tab:nums)) reports the percentage of significant t-tests of each segment and each sample size.
+
+```{r, fig.cap='Percentage of significant t-tests per sample size and segment', out.width="80%"}
+```
+
+```{r, numsfp}
+library(tidyverse)
+
+```
+
+# Discussion
+
+- 60+ tokens per stop was sufficient to extract a random sample that was reliably within a small effect size (d = +/- .4) of an underlying distribution.
+
+- This simulation did **not address** variation in items or individuals. 
+
+- Future work can consider whether this recommendation varies meaningfully as a function of individual differences.
+
+- A shiny application was created to replicate this analysis given a number of repeated measures, mean and standard deviation: https://kparrish92.shinyapps.io/repeated_measures_app/. 
+
+- All code used to create this poster, the conference paper, and the application are available at https://osf.io/k8534/.
+
+# References

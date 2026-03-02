@@ -1,0 +1,10 @@
+﻿key_resp_lextale_trial.keys,key_resp_lextale_trial.corr,key_resp_lextale_trial.rt,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,trials.ran,stim,word,correct_response,button_real,button_false,id,Variety of Spanish that is most familiar to you?,date,expName,psychopyVersion,OS,frameRate
+1,0,19.647,0,0,0,41,1,42,cadallo,0,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+0,0,0.58,0,1,1,89,1,90,clavel,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+1,1,0.613,0,2,2,64,1,65,bizcocho,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+0,0,0.262,0,3,3,76,1,77,tiburón,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+1,1,0.33,0,4,4,63,1,64,orgulloso,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+0,0,0.719,0,5,5,4,1,5,zapato,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+1,0,0.404,0,6,6,46,1,47,cartinar,0,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+0,0,0.182,0,7,7,35,1,36,loro,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
+0,0,29.675,0,8,8,40,1,41,rebuscar,1,REAL,FAKE,test,,2025-01-22_12h26.54.592,lextale_sp,2021.2.3,MacIntel,62.5
