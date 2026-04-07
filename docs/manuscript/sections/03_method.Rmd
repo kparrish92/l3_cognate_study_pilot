@@ -27,12 +27,13 @@ The task was programmed in PsychoPy [@peirce_2019] and delivered online via the 
 
 The stimuli of the LDT included a total of 192 items, of which 96 were Spanish pseudowords, 48 were Spanish noncognates, 24 were double cognates (English-Spanish), and 24 were triple cognates (German-English-Spanish). 
 The stimulus list can be found in Appendix A.
-All items were matched for orthographic length and lexical frequency, calculated using XXXXX. <!-- Mention what was used to calculate frequency and length -->
-Orthographic length in pseudowords (*M* = , *SD* = ), noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do a t-test-->
-Similarly, lexical frequency in noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do a t-test-->
+All items had between 4 and 6 letters.
+Pseudowords were created using UniPseudo [@new_etal_2024] and were phonologically and orthographically legal constructions in Spanish. 
+Real words were matched for lexical frequency, which was calculated using SUBTLEX-ESP [@cuetos_etal_2011].
+Lexical frequency in noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do a t-test-->
 
 Double and triple cognates were orthographically identical. 
-(Describe how orthographic and phonological overlap were handled and report descriptive if needed. Report other info on stimuli selection.)
+(Describe how orthographic and phonological overlap were calculated and report descriptives if needed. Report other info on stimuli selection.)
 
 ### Proficiency Tests
 
