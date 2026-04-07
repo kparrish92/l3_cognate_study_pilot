@@ -1,0 +1,47 @@
+---
+title: ""
+author: ""
+#date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  bookdown::word_document2:
+    reference_docx: ref_doc/apa_style.docx # refdoc copied from JV Casillas in LexTALE diagnostics repo
+    toc: false
+    number_sections: false
+fontsize: 12pt
+linestretch: 2
+bibliography: bib/references.bib
+csl: bib/apa.csl
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+  )
+```
+
+```{r, child='./sections/01_abstract.Rmd'}
+```
+
+\newpage
+
+```{r, child='./sections/02_intro.Rmd'}
+```
+
+```{r, child='./sections/03_method.Rmd'}
+```
+
+```{r, child='./sections/04_results.Rmd'}
+```
+
+```{r, child='./sections/05_discussion.Rmd'}
+```
+
+\newpage
+```{r, child='./sections/06_supplementary.Rmd'}
+```
+
+\newpage
+# References
+

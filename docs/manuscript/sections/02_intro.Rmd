@@ -1,0 +1,117 @@
+# Cool Title
+
+## Introduction
+
+Introduction goes here.
+
+## Cognate Facilitation Effects in Bilingual Populations
+
+A large body of research has examined how lexical representations are activated across languages, particularly in bilingual populations, where cognates have been shown to facilitate lexical processing. 
+However, comparatively less is known about how such cross-linguistic activation operates in L3 speakers, where multiple linguistic systems may simultaneously influence lexical activation and access. 
+The extensive research on L1-L2 cognate effects provides a valuable foundation for understanding cross-linguistic interactions in L3 contexts.
+
+Research on bilingual populations using a wide range of experimental tasks has consistently observed robust cognate facilitation effects in word recognition in the visual and aural modality as well as in language production. 
+For instance, available evidence shows that cognates are learned and retrieved faster than noncognates [e.g., @ellis_beaton_1993; @lotto_degroot_1998; @otwinowska_szewczyk_2019; @tonzar_etal_2009], and that cognates facilitate word naming [@costa_etal_2000], reading [@cop_etal_2015] and writing [@woumans_etal_2021] in bilinguals and L2 learners. 
+However, cognates have also been found to be a source of cross-linguistic interference [@amengual_2012] and in some cases produce inhibitory effects [e.g., @dijkstra_etal_2010; @frances_etal_2021; @frances_etal_2022], indicating that cognate processing is not uniformly facilitative but instead reflects complex, context-dependent interactions across languages.
+
+Cognate effects are influenced by a range of linguistic, task-related, and speaker-specific factors. 
+At the linguistic level, the degree of cross-linguistic form overlap plays a central role in the cognate facilitation effect [@carrasco-ortiz_etal_2021; @comesana_etal_2015; @dijkstra_etal_2010; @garrido-pozu_2024].
+Greater orthographic similarity [e.g., @aguinaga_echeverria_2017; @otwinowska_szewczyk_2019] and phonological similarity [@garrido-pozu_2024; @tiffin-richards_2024] generally facilitate lexical processing; though in certain contexts orthographic and phonological similarity may have different roles depending on the modality of the experimental task [@carrasco-ortiz_etal_2021; @comesana_etal_2015; @frances_etal_2021; @frances_etal_2022].
+In addition, lexical frequency also modulates the strength of cognate effects, with high-frequency cognates yielding faster and more accurate recognition than low-frequency cognates [@carrasco-ortiz_etal_2021; @peeters_etal_2013].
+Notably, cognate processing is affected by other linguistic factors such as sentence context [@van_hell_degroot_2008] and the position of lexical stress [@muntendam_etal_2022].
+
+Task-related factors further shape cognate effects, as such effects are sensitive to the composition of the stimulus list. 
+The strength of the cognate effect can decrease with the absence of identical cognates in the input [@arana_etal_2022; @comesana_etal_2015] or with the inclusion of more varied lexical items [@poort_rodd_2017]. 
+Similarly, variations in task demands influence cognate effects as different tasks tap into different levels of processing and may require different cognitive mechanisms. 
+For instance, cognates are recognized faster in the written modality than in the auditory modality [@cornut_etal_2022], and while facilitation effects are typically observed in lexical decision tasks, inhibitory effects tend to emerge in language decision tasks [@dijkstra_etal_2010]. 
+Moreover, speaker-specific factors like language proficiency and experience modulate the extent to which cognates facilitate or inhibit processing, with less proficient speakers often benefiting more from increased cross-linguistic similarity than more proficient speakers [e.g., @cornut_etal_2022; @garrido-pozu_2024]. 
+Other individual differences such as speaker accent [@frances_etal_2022] and language dominance [@carrasco-ortiz_etal_2021] also interact with the effects of increased cross-linguistic similarity. 
+Together, these findings suggest that cognate effects emerge from dynamic interactions among multiple sources of influence, rather than reflecting a stable or uniform processing advantage.
+
+## Cross-linguistic Similarity in L3 Lexical Processing
+
+While cognate processing is well documented in bilingual populations, cognate effects in L3 contexts remain less clear. 
+Unlike bilinguals, L3 learners must manage interactions among three linguistic systems, which amplifies the complexity of cognate effects in multilingual contexts and raises important questions about the source and direction of cross-linguistic influence. 
+Notably, two hypotheses have been put forward regarding the source of cross-linguistic influence in L3 acquisition. 
+@de_angelis_2007 distinguishes between one-to-one transfer and many-to-one transfer. 
+One-to-one transfer occurs when the primary source of cross-linguistic influence on the L3 is only one previously acquired language (L1 or L2), whereas many-to-one transfer involves the simultaneous influence of multiple previously acquired languages. 
+While empirical evidence supports both hypotheses, @puig-mayenco_etal_2020's systematic review showed that a vast majority of transfer studies in L3 acquisition provided supporting evidence for one-to-one transfer. 
+Though, most of the evidence addresses L3 morphosyntax, and research on L3 lexical acquisition remains scarce. 
+
+A similar distinction is described by @bartolotti_marian_2017. 
+Focusing on cross-linguistic lexical similarity, they proposed the Scaffolding model and the Accumulation model. 
+In the Scaffolding model, L3 lexical acquisition is driven by the ability to create a direct association between a newly encountered word and an existing word in the L1 or L2 lexicon. 
+Novel words with greater form overlap with an existing word are more likely to have strong lexical associations. 
+Importantly, novel words receive a benefit to learning if they overlap with at least one of the previously acquired languages, with no additional benefit for overlapping with both languages. 
+Therefore, lexical facilitation in this model is not cumulative across languages. 
+The Scaffolding model [@bartolotti_marian_2017] is compatible with the Parasitic Model [@ecke_2015], in which novel L3 words attach to a L1 or L2 host to facilitate learning. 
+In contrast, the Accumulation model of @bartolotti_marian_2017 proposes that L3 lexical acquisition depends on the frequency of sublexical features that a novel word shares with the L1 and L2. 
+In this model, lexical benefits are additive across languages, and novel words with greater similarity to L1 and L2 words are easier to learn and retrieve. 
+Overall, both models highlight the role of cross-linguistic similarity, but they differ on which source exorts the influence on L3.
+
+@bartolotti_marian_2017 tested both models by examining L3 lexical learning of double cognates (L1-L3 or L2-L3), triple cognates (L1-L2-L3), and noncognates in English-German bilinguals learning a novel language. 
+Results of a word recognition task and a word production task showed no additive benefit for L3 words overlapping with both previously acquired languages. 
+Triple cognates and double cognates improved lexical learning in a similar way compared to noncognates. 
+Their findings supported the Scaffolding model and suggested that both languages of a bilingual contribute to L3 acquisition. 
+
+Further evidence in L3 lexical processing has provided mixed findings regarding the source of cross-linguistic influence. 
+While some studies coincide with the findings of @bartolotti_marian_2017 and report no cumulative benefits [e.g., @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025], a growing body of research has observed that cross-linguistic similarity may enhance L3 processing in an additive manner [e.g., @forys-nogala_etal_2026; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
+@lijewska_2023 examined how sentence context modulates the processing of non-identical triple cognates in an English reading task that recorded eye movements of Polish-German-English trilinguals. 
+Results showed no facilitation effects of triple cognates. 
+Results also indicated that cognate processing was not affected by the sentence context, unlike noncognates. 
+Similarly, @lijewska_delouw_2025 investigated cognate effects in visual recognition of non-identical cognates in Polish-English-Dutch trilinguals. 
+The results of two lexical decision tasks in Dutch containing double cognates (Polish-Dutch and English-Dutch) and triple cognates revealed facilitation effects for triple cognates and for English-Dutch cognates but not for Polish-Dutch cognates. 
+Their findings showed a stronger influence of L2 than L1 in L3 processing, but evidence of an additive effect of cross-linguistic similarity was inconclusive because double and triple cognates were separated among the two tasks. 
+For L3 production, @engemann_rodetzky_2024 examined cognate effects in L1 and L3 word naming accuracy and latency in Italian-German-English trilingual children. 
+Both tasks included double cognates (German-English and Italian-English), triple cognates, and noncognates. 
+They found cognate facilitation effects only in the L3 task for all cognate types in word naming accuracy but not in naming speed. 
+The findings support one-to-one cross-linguistic influence as no additive benefits were observed.
+
+Contrasting evidence shows cumulative benefits of cross-linguistic similarity in L3 lexical processing. 
+@lemhoefer_etal_2004 investigated non-selective lexical access in Dutch-English-German trilinguals. 
+Participants completed a visual lexical decision task in German containing double cognates (Dutch-German), triple cognates, and noncognates. 
+Results showed robust cognate facilitation effects for double and triple cognates, but a stronger facilitation effect was observed for triple cognates compared to double cognates. 
+In a similar vein, @szubko-sitarek_2011 examined cross-linguistic influence in L1 and L3 visual word recognition in Polish-English-German trilinguals. 
+The results of two lexical decision tasks including double cognates (Polish-German), triple cognates, and noncognates revealed additive effects of cross-linguistic similarity in both L1 and L3 lexical processing. 
+In the L3 task, both types of cognates were recognized faster than noncognates, but triple cognates showed the largest effect. 
+In the L1 task, a processing advantage of triple cognates was also observed. 
+Their findings highlight that cross-linguistic influence in multilingual lexical processing is not limited to the non-native languages but can also modulate L1 processing. 
+More recently, @forys-nogala_etal_2026 investigated how individual differences modulate cross-linguistic influence in L3 lexical learning and visual word recognition. 
+Polish-English-Italian trilinguals completed a vocabulary knowledge test and a lexical decision task in Italian that included double cognates (English-Italian), triple cognates, and noncognates. 
+Results showed an advantage for triple cognates in both lexical knowledge and visual processing, suggesting that cumulative similarity across three languages facilitates learning and processing more than L2-L3 similarity. 
+Examining L3 production, @poarch_vanhell_2014 studied cross-linguistic activation during speech production in three groups of trilinguals: German-English-Dutch, Dutch-English-German, and Russian-English-German trilinguals. 
+They completed two naming tasks, one in L2 English and one in their respective L3 (Dutch or German), including double cognates, triple cognates, and noncognates. 
+Results revealed faster naming for triple cognates in both the L2 task and the L3 task, indicating that facilitation effects of increased cross-linguistic similarity accumulate across three languages in L2 and L3 word activation. 
+
+The findings of the studies described above mainly expand in two directions, providing supporting evidence for the Scaffolding model [@bartolotti_marian_2017] and one-to-one transfer [@de_angelis_2007] or supporting the Accumulation model [@bartolotti_marian_2017] and many-to-one transfer [@de_angelis_2007]. 
+In addition, available evidence is mixed with regards to the nature of cross-linguistic interactions in multilingual contexts, with some studies reporting stronger influence from the L2 than the L1, which aligns with the L2-status factor [@bardel_falk_2007; @bardel_falk_2012], and other studies showing more influence from the L1. 
+Notably, it remains to be explored how language proficiency modulates the strength and direction of cross-linguistic influence and the presence of cognate effects in L3 lexical processing. 
+Some studies suggest that “sufficient” proficiency is needed for cumulative cognate effects to emerge [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], though it is very complex to establish such a threshold in multilingual individuals. 
+The present study further explores the influence of cross-linguistic similarity in L3 lexical processing by examining cumulative cognate effects in L3 Spanish, a less represented language in the L3 literature. 
+In doing so, we aim to advance our understanding of the interactions and contributions of previously acquired languages in L3 processing.
+
+## The Present Study
+
+The present study investigates how cross-linguistic similarity modulates L3 lexical processing. 
+Specifically, it examines whether cognate facilitation effects arise during visual processing in L3 Spanish and whether such effects reflect cumulative facilitation across languages. 
+More precisely, the study tests whether visual processing of triple cognates (German-English-Spanish) and double cognates (English-Spanish) differ compared to noncognates in trilingual individuals.
+In addition, it assesses the role of L2 and L3 proficiency in modulating the magnitude and pattern of cognate facilitation.
+By comparing triple and double cognates, the study also contributes to broader theoretical debates on whether multilingual influence is cumulative or selectively constrained to a single previously acquired language. 
+Overall, the study adds to ongoing discussions regarding the mechanisms underlying cross-linguistic influence in multilingual lexical processing. 
+
+The present study addresses the following research questions:
+
+RQ1: Do German-English-Spanish trilinguals process triple cognates faster than double cognates?
+
+RQ2: Is L3 cognate processing modulated by L2 or L3 proficiency?
+
+For RQ1, we hypothesized that trilinguals would process triple cognates faster than double cognates. 
+A growing number of studies has provided supporting evidence for many-to-one transfer [@de_angelis_2007], indicating that both previously acquired languages of a trilingual actively influence L3 lexical processing and that such influence accumulates across languages [e.g., @forys-nogala_etal_2026; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
+This evidence supports the Accumulation model [@bartolotti_marian_2017], which suggests that greater cross-linguistic similarity has additive benefits for L3 lexical processing.
+In that line, triple cognates cause stronger co-activation across languages and facilitate L3 lexical access more than double cognates, resulting in faster recognition. 
+However, there is also substantial evidence for one-to-one transfer [@bartolotti_marian_2017] and the Scaffolding model [@bartolotti_marian_2017], suggesting that overlapping with more than one previously acquired language does not have additive benefits for L3 lexical processing [e.g., @bartolotti_marian_2017; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025]. 
+In the present study, this would predict no differences between triple and double cognates.
+
+For RQ2, our hypothesis was that higher L2 and L3 proficiency would facilitate L3 cognate processing. 
+While the role of proficiency remains to be further explored, available studies suggest that a sufficient level of proficiency is needed for cumulative cognate effects to emerge and that lower proficiency trilinguals do not have the necessary level of co-activation to produce cumulative effects across the three languages [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011]. 
+Following this evidence, in the present study, higher L2 and L3 proficiency may be associated with stronger co-activation of cognates, resulting in stronger cognate effects.

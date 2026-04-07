@@ -1,0 +1,62 @@
+# Methodology
+
+## Participants
+
+A total of 97 participants completed the study. 
+The experimental group consisted of 48 trilinguals (L1 German, L2 English, L3 Spanish), and the control group included 49 bilinguals (L1 English, L2 Spanish). 
+The trilinguals were recruited from a Spanish course in a public university in Frankfurt, Germany. 
+They received extra credit for their participation in the study.
+The bilinguals were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
+
+(Describe participants and descriptive stats from the questionnaire: nationality, place of residence, sex, age, AoA, etc.)
+
+Participant’s proficiency in English and Spanish was measured via vocabulary size using two lexical tests.
+The final groups included participants with a wide range of proficiency scores.
+
+## Materials and Procedure
+
+### Lexical Decision Task
+<!-- We need to check and correct the details based on how the task was programmed -->
+Participants completed a visual lexical decision task (LDT) in Spanish.
+They saw individual strings of letters on a computer screen and indicated whether these strings constituted real words in the Spanish language.
+At the beginning of each trial, participants saw the response options "REAL" and "FALSA" on the sides of the screen, then 500ms later, a letter string was displayed in the center of the screen.
+Participants responded by pressing the key "1" (REAL) or "0" (FALSA) on a computer keyboard.
+Instructions were presented in Spanish, and participants completed a familiarization section with 5 practice trials.
+The LDT measured accuracy and response times.
+The task was programmed in PsychoPy [@peirce_2019] and delivered online via the Pavlovia platform.
+
+The stimuli of the LDT included a total of 192 items, of which 96 were Spanish pseudowords, 48 were Spanish noncognates, 24 were double cognates (English-Spanish), and 24 were triple cognates (German-English-Spanish). 
+The stimulus list can be found in Appendix A.
+All items were matched for orthographic length and lexical frequency, calculated using XXXXX. <!-- Mention what was used to calculate frequency and length -->
+Orthographic length in pseudowords (*M* = , *SD* = ), noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do a t-test-->
+Similarly, lexical frequency in noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do a t-test-->
+
+Double and triple cognates were orthographically identical. 
+(Describe how orthographic and phonological overlap were handled and report descriptive if needed. Report other info on stimuli selection.)
+
+### Proficiency Tests
+
+Participants completed two tests which provided a proxy of language proficiency based on vocabulary size.
+English proficiency was measured using the Lexical Test for Advanced Learners of English [LexTALE, @lemhofer_broersma_2012].
+The LexTALE is a widely used test that measures vocabulary knowledge via a lexical decision task.
+The test includes 60 items, of which 40 are real words and 20 are pseudowords.
+The real words include 15 nouns, 12 adjectives, 1 verb, 2 verb participles, 2 adverbs, and 8 items whose form is shared between verbs and nouns (e.g.,
+*dispatch*). 
+The pseudowords follow the orthographic and phonological rules of English and were designed by changing letters and/or morphemes in real words.
+All the test items are between 4 and 12 letters long.
+Scoring is based only on accuracy, and scores range from 0 to 100. 
+Typically, the LexTALE is completed in no longer than four minutes.
+
+Spanish proficiency was assessed using the LexTALE-ESP [@izura_etal_2014], which follows closely the design of the LexTALE but differs in some aspects. 
+The LexTALE-ESP has 90 items, of which 60 are real words and 30 are pseudowords.
+The lexical frequency of the real words ranges from very high to very low.
+The pseudowords are orthographically and phonologically legal constructions with similar endings to Spanish words from different syntactic categories. 
+All items are about 6.6 letters long on average.
+Scoring is based on accuracy, and incorrect responses are penalized. 
+Scores range from -20 to 60.
+This test usually takes less than five minutes to complete.
+
+## Data Analysis
+
+Describe data analysis.
+
