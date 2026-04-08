@@ -1,3 +1,26 @@
 # Discussion
 
-Discussion goes here
+The present study investigated the role of cross-linguistic similarity in L3 lexical processing. 
+It examined whether cognate facilitation effects accumulate across three languages in multilingual individuals (L1 German, L2 English, L3 Spanish) by comparing the processing of double cognates (English-Spanish) and triple cognates (German-English-Spanish) in a visual lexical decision task in Spanish.
+In addition, the study analyzed how L2 and L3 proficiency modulate cognate effects in L3 lexical processing. 
+Results revealed an overall cognate facilitation effect, where double and triple cognates were recognized faster than noncognates. 
+However, the results showed no compelling evidence of a cumulative cognate facilitation effect as response times for double and triple cognates did not differ.
+Notably, while there was no clear evidence that L2 and L3 proficiency modulate L3 lexical processing, the cognate facilitation effect was slightly stronger in participants with higher Spanish proficiency. 
+Below, we discuss the results in light of previous empirical findings and existing theoretical models of cross-linguistic influence, particularly those addressing cumulative and selective transfer in multilingual lexical processing.
+
+## Cognate Effects in L3 Lexical Processing
+
+Our first research question asked whether German-English-Spanish trilinguals process triple cognates faster than double cognates. 
+Given the mixed findings in the literature, we formulated two working hypotheses.
+Based on the Accumulation model [@bartolotti_marian_2017] and evidence from previous studies [e.g., @de_angelis_2007; @forys-nogala_etal_2026; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], we hypothesized that trilinguals would process triple cognates faster than double cognates, indicating an additive advantage for lexical items that have increased cross-linguistic similarity. 
+On the other hand, following the Scaffolding model [@bartolotti_marian_2017] and supporting evidence [e.g., @bartolotti_marian_2017; @de_angelis_2007; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025], we also hypothesized that trilinguals would process triple and double cognates similarly, suggesting that overlapping with more than one previously acquired language does not have an additive advantage for L3 lexical processing.
+Our results supported our second hypothesis as there were no differences in response times for triple and double cognates.
+
+Continue...
+
+## The Role of L2 and L3 Proficiency
+
+The second research question asked whether L2 and L3 proficiency modulate L3 cognate processing.
+Following previous findings [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], we predicted that higher L2 and L3 proficiency would facilitate L3 cognate processing. 
+However, the data did not show a positive association between higher proficiency and cognate facilitation. 
+Continue...

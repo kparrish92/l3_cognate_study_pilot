@@ -82,7 +82,7 @@ Results showed an advantage for triple cognates in both lexical knowledge and vi
 Examining L3 production, @poarch_vanhell_2014 studied cross-linguistic activation during speech production in three groups of trilinguals: German-English-Dutch, Dutch-English-German, and Russian-English-German trilinguals. 
 They completed two naming tasks, one in L2 English and one in their respective L3 (Dutch or German), including double cognates, triple cognates, and noncognates. 
 Results revealed faster naming for triple cognates in both the L2 task and the L3 task, indicating that facilitation effects of increased cross-linguistic similarity accumulate across three languages in L2 and L3 word activation. 
-
+<!-- Should we add something brief about typology to the paragraph below? -->
 The findings of the studies described above mainly expand in two directions, providing supporting evidence for the Scaffolding model [@bartolotti_marian_2017] and one-to-one transfer [@de_angelis_2007] or supporting the Accumulation model [@bartolotti_marian_2017] and many-to-one transfer [@de_angelis_2007]. 
 In addition, available evidence is mixed with regards to the nature of cross-linguistic interactions in multilingual contexts, with some studies reporting stronger influence from the L2 than the L1, which aligns with the L2-status factor [@bardel_falk_2007; @bardel_falk_2012], and other studies showing more influence from the L1. 
 Notably, it remains to be explored how language proficiency modulates the strength and direction of cross-linguistic influence and the presence of cognate effects in L3 lexical processing. 
@@ -105,12 +105,14 @@ RQ1: Do German-English-Spanish trilinguals process triple cognates faster than d
 
 RQ2: Is L3 cognate processing modulated by L2 or L3 proficiency?
 
-For RQ1, we hypothesized that trilinguals would process triple cognates faster than double cognates. 
+For RQ1, we formulated two working hypotheses.
+On the one hand, we hypothesized that trilinguals would process triple cognates faster than double cognates. 
 A growing number of studies has provided supporting evidence for many-to-one transfer [@de_angelis_2007], indicating that both previously acquired languages of a trilingual actively influence L3 lexical processing and that such influence accumulates across languages [e.g., @forys-nogala_etal_2026; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
 This evidence supports the Accumulation model [@bartolotti_marian_2017], which suggests that greater cross-linguistic similarity has additive benefits for L3 lexical processing.
 In that line, triple cognates cause stronger co-activation across languages and facilitate L3 lexical access more than double cognates, resulting in faster recognition. 
-However, there is also substantial evidence for one-to-one transfer [@bartolotti_marian_2017] and the Scaffolding model [@bartolotti_marian_2017], suggesting that overlapping with more than one previously acquired language does not have additive benefits for L3 lexical processing [e.g., @bartolotti_marian_2017; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025]. 
-In the present study, this would predict no differences between triple and double cognates.
+On the other hand, we also hypothesized that trilinguals would process triple and double cognates similarly. 
+There is also substantial evidence for one-to-one transfer [@bartolotti_marian_2017] and the Scaffolding model [@bartolotti_marian_2017], suggesting that overlapping with more than one previously acquired language does not have an additive advantage for L3 lexical processing [e.g., @bartolotti_marian_2017; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025]. 
+In the present study, this predicts no processing differences between triple and double cognates.
 
 For RQ2, our hypothesis was that higher L2 and L3 proficiency would facilitate L3 cognate processing. 
 While the role of proficiency remains to be further explored, available studies suggest that a sufficient level of proficiency is needed for cumulative cognate effects to emerge and that lower proficiency trilinguals do not have the necessary level of co-activation to produce cumulative effects across the three languages [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011]. 
