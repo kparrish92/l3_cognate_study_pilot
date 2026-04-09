@@ -16,11 +16,48 @@ Based on the Accumulation model [@bartolotti_marian_2017] and evidence from prev
 On the other hand, following the Scaffolding model [@bartolotti_marian_2017] and supporting evidence [e.g., @bartolotti_marian_2017; @de_angelis_2007; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025], we also hypothesized that trilinguals would process triple and double cognates similarly, suggesting that overlapping with more than one previously acquired language does not have an additive advantage for L3 lexical processing.
 Our results supported our second hypothesis as there were no differences in response times for triple and double cognates.
 
-Continue...
+As both double and triple cognates yielded faster responses than noncognates, the findings provide clear evidence for a robust cognate facilitation effect in L3 lexical processing.
+The observed pattern is consistent with models of non-selective lexical access that posit that lexical representations from all previously acquired languages are co-activated during word recognition [@Dijkstra_etal_2018; @dijkstra_vanheuven_2002].
+Cross-linguistic form overlap facilitates processing by increasing activation within an interconnected lexical network regardless of whether the overlap occurs between two or three languages.
+Indeed, our results indicate that even partial cross-linguistic overlap is sufficient to trigger co-activation, which supports the Scaffolding model [@bartolotti_marian_2017], where lexical benefits happen when a L3 word overlaps with at least one of the previously acquired languages, and the Parasitic Model [@ecke_2015], where L3 learning is enhanced when a word attaches to a L1 or L2 host.
+
+Crucially, the results revealed no compelling evidence of a cumulative cognate facilitation effect.
+The findings are in line with previous studies that found no cumulative benefits [e.g., @bartolotti_marian_2017; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025] and challenge cumulative transfer accounts like the Accumulation model [@bartolotti_marian_2017], which predict additive facilitation when cross-linguistic overlap happens across multiple languages.
+The absence of a processing advantage for triple cognates suggests that lexical activation may reach a plateau once a certain threshold of cross-linguistic similarity is perceived.
+Beyond this threshold, overlap with an additional language does not produce further facilitation, suggesting that the contribution of multiple languages is not strictly additive but subject to processing efficiency, competition of activated representations, among other factors.
+
+One possible explanation for the present findings concerns the L2-status factor [@bardel_falk_2007; @bardel_falk_2012], which argues that the L2 is the primary source of transfer in L3 acquisition and may override the L1 in many cases.
+Due to similarities in the context of L2 and L3 learning, there is a higher degree of cognitive similarity between the L2 and the L3 than between the L1 and the L3, which may explain why additional overlap with the L1 did not cause a stronger facilitation effect than overlap with the L2.
+Moreover, we can also explain the results in terms of psychotypology [@Kellerman_1983] and typological proximity accounts [@Rothman_2011; @Rothman_2013; @Rothman_2015], which suggest that language proximity affects cross-linguistic influence, with more similar languages producing stronger influence.
+In the present study, given that English and Spanish share substantial orthographic and lexical similarity, it is plausible that L2 English serves as a primary source of influence in L3 word recognition, while the influence of L1 German may be less engaged.
+
+<!-- Anything else to add here? -->
+
+**Need a closing paragraph here.**
 
 ## The Role of L2 and L3 Proficiency
 
 The second research question asked whether L2 and L3 proficiency modulate L3 cognate processing.
 Following previous findings [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], we predicted that higher L2 and L3 proficiency would facilitate L3 cognate processing. 
 However, the data did not show a positive association between higher proficiency and cognate facilitation. 
-Continue...
+The observed cognate facilitation effect was robust and not strongly modulated by either L2 or L3 proficiency.
+There was a tendency for participants with higher Spanish proficiency to exhibit slightly stronger cognate facilitation, which may suggest that while cross-linguistic activation operates across proficiency levels, increased L3 proficiency may enhance the strength with which lexical representations are co-activated in L3 processing.
+L2 and L3 proficiency did not determine whether facilitation occurred, but L3 proficiency may affect the extent of this effect.
+After a certain level of proficiency, L3 lexical representations may consolidate and become more integrated into the broader multilingual system, enhancing the processing advantage for cognates [@lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
+
+In contrast, the lack of a clear effect of L2 proficiency may suggest that L2 English may have reached the necessary level of entrenchment to support cross-linguistic activation.
+Once a certain threshold is attained, additional increases may not substantially influence L3 lexical processing, indicating that the role of the L2 in L3 lexical processing may be categorical. 
+That is, L2 influence is either present or absent depending on whether it is sufficiently activated withtin the multilingual system.
+<!-- may need to develop this further-->
+
+Taken together, these findings have important implications for models of multilingual lexical processing. 
+On the one hand, the presence of cognate facilitation supports models that assume non-selective access and parallel activation across languages. 
+On the other hand, the absence of cumulative effects and the limited role of proficiency challenge models that predict additive contributions from multiple languages or strong modulation by proficiency alone. 
+Instead, the present results point toward a more nuanced view in which cross-linguistic activation is shaped by an interaction of factors, including language dominance, typological similarity, and task demands.
+Finally, it is worth noting that individual variability in multilingual experience may further modulate these effects. 
+Factors such as frequency of language use, context of acquisition, and patterns of language switching could influence the extent to which different languages are co-activated during processing. 
+Although such variables were not directly examined in the present study, they represent promising avenues for future research. 
+
+# Conclusion
+
+Conclusion goes here.
