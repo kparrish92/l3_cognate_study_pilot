@@ -30,7 +30,7 @@ The stimulus list can be found in Appendix A.
 All items had between 4 and 6 letters.
 Pseudowords were created using UniPseudo [@new_etal_2024] and were phonologically and orthographically legal constructions in Spanish. 
 Real words were matched for lexical frequency, which was calculated using SUBTLEX-ESP [@cuetos_etal_2011].
-Lexical frequency in noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do t-tests-->
+Lexical frequency in noncognates (*M* = , *SD* = ), double cognates (*M* = , *SD* = ), and triple cognates (*M* = , *SD* = ) was not statistically different: *t*( ) = , *p* = . <!--Report means and sd and do t-tests (cognate vs noncognate and double vs triple?)-->
 
 Double and triple cognates were orthographically identical. <!-- Was ortho and phon overlap calculated with PhorInOne? -->
 (Describe how orthographic and phonological overlap were calculated. Report ranges and means with Sd for each word type. Report t-tests for phonological overlap?)

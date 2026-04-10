@@ -1,4 +1,5 @@
-# Discussion
+# Discussion 
+<!-- written based on the results of the ISB poster -->
 
 The present study investigated the role of cross-linguistic similarity in L3 lexical processing. 
 It examined whether cognate facilitation effects accumulate across three languages in multilingual individuals (L1 German, L2 English, L3 Spanish) by comparing the processing of double cognates (English-Spanish) and triple cognates (German-English-Spanish) in a visual lexical decision task in Spanish.

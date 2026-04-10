@@ -1,3 +1,38 @@
-# Appendix A: Stimulus list of the lexical decision task
+# Appendix A: Stimulus List of the Lexical Decision Task
 
-Paste list here in a table.
+```{r, 'stim-table-appendix', echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(here)
+library(kableExtra)
+
+read_csv(here("docs", "manuscript", "tables", "stim_detailed.csv"),  
+  col_types = cols(.default = "c")) %>%
+    mutate(type = case_when(
+    type == "three_way_cognate" ~ "triple cognate",
+    type == "two_way_cognate" ~ "double cognate",
+    type == "non_cognates" ~ "noncognate",
+    TRUE ~ type
+  )) %>% 
+  rename("English" = AmE_wordform,
+         "German" = DE_wordform,
+         "Spanish" = ES_wordform,
+         "ONLD English-German"= NLD_orthg_AmE_DE,
+         "ONLD English-Spanish" = NLD_orthg_AmE_ES,
+         "ONLD German-Spanish" = NLD_orthg_DE_ES,
+         "PNLD English-German" = NLD_phonoL_AmE_DE,
+         "PNLD English-Spanish" = NLD_phonoL_AmE_ES,
+         "PNLD German-Spanish" = NLD_phonoL_DE_ES	,
+         "Frequency" = Subtlex_ES_log10.abs.1.,
+         "Word Type" = type) %>% 
+    select(English, German, Spanish, 'Word Type') %>% # We can include the detailed table with frequency and overlap in the supplementary materials online but not in the appendix bc table is too big. We can use the same code but change the select arguments
+  knitr::kable(format = "pipe", booktabs = T, longtable = T, 
+    linesep = "", escape = T, align = c("c", "c", "c", "c"),
+    caption = "Stimulus List ") 
+#%>% 
+#  kableExtra::add_footnote(
+#    label = c(
+#      "ONLD = Orthographic Normalized Levenshtein Distance. PNLD = Phonological Normalized Levenshtein Distance."
+#    ),
+#    notation = "none"
+#  )
+```
