@@ -1,35 +1,72 @@
 library(lmerTest)
-library(here)
 library(tidyverse)
-p_data = read.csv(here("data", "tidy", "tidy_ldt.csv"))
+library(here)
 
-mean_diff_ci = function(n1,xbar1,s1,n2,xbar2,s2)
-{
-  
-  sp = ((n1-1)*s1^2+(n2-1)*s2^2)/(n1+n2-2)
-  margin <- qt(0.975,df=n1+n2-1)*sqrt(sp/n1 + sp/n2)
-  
-  lowerinterval <- (xbar1-xbar2) - margin
-  upperinterval <- (xbar1-xbar2) + margin
-  
-  df=data.frame(mean_difference = xbar1-xbar2, lower = lowerinterval, upper = upperinterval)
-  return(df)
-}
-
-# Define the custom theme
 goodale_theme <- function() {
   theme(
     panel.background = element_rect(fill = "white"),
-    axis.text = element_text(colour = "black", family = "Times New Roman", size = 10),
-    axis.title = element_text(colour = "black", family = "Times New Roman", size = 12),
+    axis.text = element_text(colour = "black", family = "Times New Roman", size = 14),
+    axis.title = element_text(colour = "black", family = "Times New Roman", size = 14),
     legend.position = "bottom",
-    legend.title = element_text(colour = "black", family = "Times New Roman", size = 10),
-    legend.text = element_text(colour = "black", family = "Times New Roman", size = 10),
+    legend.title = element_text(colour = "black", family = "Times New Roman", size = 16),
+    legend.text = element_text(colour = "black", family = "Times New Roman", size = 14),
     plot.title = element_text(colour = "black", family = "Times New Roman", size = 14, hjust = 0.5)  # Center align the title
   )
 }
-# Summarize the data
+
+
+totals = inc_data %>% 
+  group_by(type, group) %>% 
+  summarise(total_n = n())
+
+
+p_data = read.csv(here("data", "tidy", "pilot_data.csv")) %>% 
+  filter(is_correct == 1) %>% 
+  filter(!is.na(participant))
+
+inc_data = read.csv(here("data", "tidy", "pilot_data.csv")) %>% 
+  filter(!is.na(participant))
+
+### Accuracy 
+
+inc_data %>% 
+  group_by(type, group, is_correct) %>% 
+  summarise(n = n()) %>% 
+  filter(is_correct == 1) %>% 
+  left_join(totals) %>% 
+  mutate(pct_correct = n/total_n) %>% 
+  ggplot(aes(x = type, y = pct_correct, fill = group)) + 
+  geom_col(position = "dodge", color = "black") + theme_minimal()
+
+### Accuracy model 
+
+### Lot rt plots (pooled and non-pooled)
+
+### Proficiency 
+
+
+### Check Bayesian model and plots and report those - consider a model with priors 
+
+
+
+
+
+
 summary_data <- p_data %>% 
+  group_by(type, group) %>% 
+  summarize(mean_rt = mean(key_resp_lextale_trial.rt),
+            sd_rt = sd(key_resp_lextale_trial.rt),
+            n = n()) %>% 
+  mutate(margin = qt(0.975,df=n-1)*sd_rt/sqrt(n)) %>% 
+  mutate(upper_95_ci = mean_rt + margin,
+         lower_95_ci = mean_rt - margin)
+
+summary_data_pooled <- p_data %>% 
+  mutate(type = case_when(
+         type == "three_way_cognate" ~ "cognate",
+         type == "two_way_cognate" ~ "cognate",
+         type == "pseudoword" ~ "pseudoword",
+         type == "non_cognate" ~ "non_cognate")) %>% 
   group_by(type) %>% 
   summarize(mean_rt = mean(key_resp_lextale_trial.rt),
             sd_rt = sd(key_resp_lextale_trial.rt),
@@ -38,173 +75,174 @@ summary_data <- p_data %>%
   mutate(upper_95_ci = mean_rt + margin,
          lower_95_ci = mean_rt - margin)
 
+summary_data_pooled %>%
+  ggplot(aes(y = type, x = mean_rt, color = type)) + 
+  geom_pointrange(aes(xmin = lower_95_ci, xmax = upper_95_ci)) + 
+  scale_color_manual(values = c("#f0ad4e", "#5cb85c", "#d9534f")) + 
+  xlab("Word Type") + 
+  ylab("Reaction Time (ms)") +
+  theme(legend.position = "none") + 
+  ggtitle("Reaction times by word type") +
+  goodale_theme() + theme(legend.position="none")
+
+ggsave(here("plots", "overall_cognates.png"), dpi = 600)
 
 
-# Plot the data
-ggplot(summary_data, aes(y = type, x = mean_rt, color = type)) + 
+summary_data %>%
+  ggplot(aes(y = type, x = mean_rt, color = type, shape = group)) + 
   geom_pointrange(aes(xmin = lower_95_ci, xmax = upper_95_ci)) + 
   scale_fill_manual(values = c("#f0ad4e", "#6c757d", "#5cb85c", "#d9534f")) + 
   xlab("Word Type") + 
   ylab("Reaction Time (ms)") +
   theme(legend.position = "none") + 
-  ggtitle("Reaction times of the L3 group by word type") +
-  goodale_theme()
+  ggtitle("Reaction times of the both groups") +
+  goodale_theme() + theme(legend.position="none") + facet_grid(~group)
 
-ggsave("desc_bar.png", path = here("slides", "img"))
+ggsave(here("plots", "groups_cfe.png"), dpi = 600)
 
-
-summary_data_p <- p_data %>% 
-  group_by(type, ppt) %>% 
-  summarize(mean_rt = mean(key_resp_lextale_trial.rt),
-            sd_rt = sd(key_resp_lextale_trial.rt),
-            n = n())
-
-nc = summary_data_p %>% filter(type == "non_cognate")
-three = summary_data_p %>% filter(type == "three_way_cognate")
-two = summary_data_p %>% filter(type == "two_way_cognate")
-
-nc_l2 = mean_diff_ci(two$n,two$mean_rt,two$sd_rt,
-                     nc$n,nc$mean_rt,nc$sd_rt) %>% 
-  mutate(ppt = nc$ppt,
-         effect = "L2_cfe")
-
-n3_l3 = mean_diff_ci(three$n,three$mean_rt,three$sd_rt,
-                     nc$n,nc$mean_rt,nc$sd_rt) %>% 
-  mutate(ppt = nc$ppt,
-         effect = "L3_cfe")
-
-
-ci_df = rbind(nc_l2, n3_l3)
-
-
-ci_df %>% 
-  filter(effect == "L2_cfe") %>% 
-  ggplot(aes(y = reorder(ppt, -mean_difference), x = mean_difference)) + 
-  geom_pointrange(aes(xmin = lower, xmax = upper), color = "seagreen") + 
+summary_data %>%
+  filter(group == "L2_group") %>% 
+  ggplot(aes(y = type, x = mean_rt, color = type)) + 
+  geom_pointrange(aes(xmin = lower_95_ci, xmax = upper_95_ci)) + 
+  scale_fill_manual(values = c("#f0ad4e", "#6c757d", "#5cb85c", "#d9534f")) + 
   xlab("Word Type") + 
   ylab("Reaction Time (ms)") +
   theme(legend.position = "none") + 
-  ggtitle("Two-way cognates effect sizes by individual") +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  goodale_theme()
+  ggtitle("Reaction times of the L2 group by word type") +
+  goodale_theme() + theme(legend.position="none")
 
-ci_df %>% 
-  filter(effect == "L2_cfe") %>% 
-  ggplot(aes(y = reorder(ppt, -mean_difference), x = mean_difference)) + 
-  geom_pointrange(aes(xmin = lower, xmax = upper), color = "darkorange") + 
-  xlab("Word Type") + 
-  ylab("Reaction Time (ms)") +
-  theme(legend.position = "none") + 
-  ggtitle("Three-way cognates effect sizes by individual") +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  goodale_theme()
+ggsave(here("plots", "l2_desc.png"), dpi = 600)
 
-ci_df %>% 
-  ggplot(aes(y = reorder(ppt, -mean_difference), x = mean_difference, color = effect)) + 
-  geom_pointrange(aes(xmin = lower, xmax = upper), position = position_dodge(width = .4)) + 
-  xlab("Word type") + 
-  ylab("Reaction time effect (ms)") +
-  theme(legend.position = "none") + 
-  ggtitle("Cognate effect sizes per individual") +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  goodale_theme() +
-  labs(color="Effect") + 
-  scale_color_discrete(breaks=c('Two-way cognate', 'Three-way cognate'))
-
-
-ggsave("ind_eff.png", path = here("slides", "img"))
-
-
-mean_difference
-
-library(bayesplot)
-## Run the model 
-model_b_prior = brms::brm(log_rt ~ type + (1 | word) + (type | ppt), data = p_data)
-
-# Extract posterior samples
-posterior_samples <- as.data.frame(model_b_prior)
-
-# Calculate the percentage of negative values for each parameter
-percent_negative <- function(parameter) {
-  mean(posterior_samples[[parameter]] < 0) * 100
-}
-
-parameters <- c("b_typepseudoword", "b_typethree_way_cognate", "b_typetwo_way_cognate")
-percentages <- sapply(parameters, percent_negative)
-names(percentages) <- parameters
-
-mcmc_areas_plot <- bayesplot::mcmc_areas(
-  model_b_prior,
-  pars = parameters,
-  prob = 0.8
-) + 
-  labs(
-    title = "Posterior distributions for the L3 within-subjects model",
-    subtitle = "with medians and 80% intervals"
-  )
-# Add percentage of negative values as text annotations
-for (i in seq_along(parameters)) {
-  mcmc_areas_plot <- mcmc_areas_plot + 
-    annotate(
-      "text", 
-      x = Inf, 
-      y = length(parameters) - i + 1, # Adjust y position to match the order
-      label = paste0(round(percentages[i], 2), "% < 0"), 
-      hjust = 1.1, 
-      vjust = -0.5, 
-      family = "Times New Roman", 
-      size = 4
-    )
-}
-
-mcmc_areas_plot
-
-ggsave("mcmc_l3_plot.png", path = here("slides", "img"))
-
-
-
-## Check degree of overlap between the posterior for three way and two way cogates 
-
-
-
-
-
-## Filter for participants who got more than 70 correct trials 
-cdf = p_data %>% 
-  group_by(ppt) %>% 
-  summarize(no_correct = sum(is_correct))
-
-e_df = p_data %>% 
-  group_by(ppt, type) %>% 
-  summarize(mean_rt = mean(key_resp_lextale_trial.rt)) %>% 
-  pivot_wider(names_from = type, values_from = mean_rt) %>% 
-  mutate(cfe_3 = non_cognate - three_way_cognate)
-
-prof_df = left_join(cdf, e_df, by = "ppt")
-
-## The proficiency effect is in the opposite direction 
-prof_df %>% 
-  ggplot(aes(x = no_correct, y = cfe_3)) + geom_point() + geom_smooth(method = "lm")
-
-
-
-# Plotting
-cdf %>% 
-  ggplot(aes(y = reorder(ppt, -no_correct), x = no_correct, fill = as.factor(ppt))) + 
-  geom_col() +
-  labs(x = "ppt", y = "Number Correct", fill = "ppt") +
-  theme_minimal() +
-  coord_flip() + ggtitle("No. total correct answers (192 possible) per participant")
 
 
 ## Model 
 library(lmerTest)
 
-#p_data$type = as.factor(p_data$type)
+p_data$type = as.factor(p_data$type)
+p_data$type = relevel(p_data$type, ref = "two_way_cognate")
+p_data$group = as.factor(p_data$group)
+p_data$group = relevel(p_data$group, ref = "L3_group")
 
-#p_data$type = relevel(p_data$type, ref = "three_way_cognate")
 
-model = lmerTest::lmer(log_rt ~ type + (1 | word) + (type | ppt), data = p_data)
+
+model = lmerTest::lmer(log_rt ~ group*type + (1 | word) + (type | participant), data = p_data)
+
 summary(model)
-# extract model coefficients
+
+b_model = brms::brm(log_rt ~ type*group + (1 | word) + (type | participant), iter = 4000, 
+                    data = p_data, file = here("data", "models", "l3_models.rds"))
+
+
+
+p_data %>% 
+  filter(group == "L3_group") %>% 
+  ggplot(aes(y = log_rt, x = type)) + geom_boxplot() + 
+  facet_wrap(~participant)
+
+summary(b_model)
+summ = bayestestR::describe_posterior(b_model) %>% 
+  as.data.frame() %>% 
+  janitor::clean_names() 
+
+conditional_effects(b_model)
+
+
+
+
+library(bayestestR)
+library(bayesplot)
+
+posterior_o<- as.matrix(b_model)
+summary(b_model)
+plot_title <- ggtitle("Posterior distributions of effect relative to two-way cognates",
+                      "with the probability of direction and ROPE")
+mcmc_areas(posterior_o,
+           pars = c("b_Intercept",
+                    "b_typenon_cognate", 
+                    "b_typethree_way_cognate",
+                    "b_groupL2_group",
+                    "b_typenon_cognate:groupL2_group",
+                    "b_typethree_way_cognate:groupL2_group",
+                    "b_typepseudoword",
+                    "b_typepseudoword:groupL2_group"),
+           prob = 0.8) + plot_title + theme_minimal() +
+  xlim(-.75,.75) + 
+  geom_text(data = mutate_if(summ, is.numeric, round, 2),
+            aes(label = paste("Pd = ",pd, " - In ROPE = ", rope_percentage), x = Inf), 
+            hjust = "inward", size = 3) +
+  scale_y_discrete(labels=c(
+    "b_typenon_cognate"="Two-way to non-cognates in L3 group",
+                            "b_typethree_way_cognate"="Two-way to three-way cognate L3 group",
+                            "b_groupL2_group"="L3 to L2 in two-way cognates",
+                            "b_typenon_cognate:groupL2_group"="L3 to L2 in non-cognates",
+                            "b_typethree_way_cognate:groupL2_group"="L3 to L2 in three-way cognates",
+                            "b_typepseudoword"="Two-way cognates to pseudowords L3 group",
+                            "b_typepseudoword:groupL2_group"="L3 to L2 in pseudowords",
+    "b_Intercept"="Baseline: Two-way cognates L3 group"))
+  
+
+ggsave()
+
+summary(model) # There is an effect for two-way cognates, but not 3 
+
+## Check random effects to see if any of the stimuli are causing issues (have high leverage)
+word_cats = read.csv(here("data", "stimuli", "word_list.csv"))
+
+res = (ranef(model)$word) %>% 
+  rownames_to_column("word") %>% 
+  left_join(word_cats, by = "word")
+
+
+res %>% 
+  filter(type == "three_way_cognate") %>% 
+    ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() + 
+  theme_minimal() + xlab("Random Effect in log rt") + ylab("Three-way cognates") 
+
+res %>% 
+  filter(type == "two_way_cognate") %>% 
+  ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() +
+  theme_minimal() + xlab("Random Effect in log rt") + ylab("Two-way cognates")
+
+
+res %>% 
+  filter(type == "non_cognate") %>% 
+  ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() +
+  theme_minimal() + xlab("Random Effect in log rt") + ylab("non cognates")
+
+
+
+
+eff_df = p_data %>% 
+  group_by(participant, type) %>% 
+  summarize(mean_rt_ppt = mean(key_resp_lextale_trial.rt)) %>% 
+  pivot_wider(names_from = type, values_from = mean_rt_ppt) %>% 
+  mutate(eff_two = two_way_cognate - non_cognate,
+         eff_three = three_way_cognate - non_cognate)
+
+no_correct = p_data %>% 
+  group_by(participant) %>%
+  summarize(n = n())
+
+eff_df %>% 
+  left_join(no_correct, by = "participant") %>% 
+  pivot_longer(cols = c(eff_two, eff_three), names_to = "eff", values_to = "size") %>% 
+  ggplot(aes(x = n, y = size, color = eff)) + geom_point() + geom_smooth(method = "lm") +
+  theme_classic() + xlab("Number of total correct answers") + ylab("Effect compared to non-cognates") 
+
+prof_mod_df = 
+  eff_df %>% 
+  left_join(no_correct, by = "ppt") %>% 
+  pivot_longer(cols = c(eff_two, eff_three), names_to = "eff", values_to = "size") 
+
+model_prof = lm(size ~ n, data = prof_mod_df)
+
+
+summary(model_prof) # There is an effect for two-way cognates, but not 3 
+
+
+eff_df %>% 
+  left_join(no_correct, by = "ppt") %>% 
+  ggplot(aes(x = n, y = eff_three)) + geom_point() + geom_smooth(method = "lm")
+
+
 

@@ -26,28 +26,29 @@ Similarly, variations in task demands influence cognate effects as different tas
 For instance, cognates are recognized faster in the written modality than in the auditory modality [@cornut_etal_2022], and while facilitation effects are typically observed in lexical decision tasks, inhibitory effects tend to emerge in language decision tasks [@dijkstra_etal_2010]. 
 Moreover, speaker-specific factors like language proficiency and experience modulate the extent to which cognates facilitate or inhibit processing, with less proficient speakers often benefiting more from increased cross-linguistic similarity than more proficient speakers [e.g., @cornut_etal_2022; @garrido-pozu_2024]. 
 Other individual differences such as speaker accent [@frances_etal_2022] and language dominance [@carrasco-ortiz_etal_2021] also interact with the effects of increased cross-linguistic similarity. 
-Together, these findings suggest that cognate effects emerge from dynamic interactions among multiple sources of influence, rather than reflecting a stable or uniform processing advantage.
+Together, these findings suggest that cognate effects emerge from dynamic interactions among multiple sources of influence, rather than reflecting a stable or uniform processing advantage. <!--- kp: This is a very well written intro!  ---->
 
 ## Cross-linguistic Similarity in L3 Lexical Processing
 
-While cognate processing is well documented in bilingual populations, cognate effects in L3 contexts remain less clear. 
+While cognate processing is well documented in bilingual populations, cognate effects in third language (L3) contexts remain less clear. <!-- kp: added "third language" -->
 Unlike bilinguals, L3 learners must manage interactions among three linguistic systems, which amplifies the complexity of cognate effects in multilingual contexts and raises important questions about the source and direction of cross-linguistic influence. 
 Notably, two hypotheses have been put forward regarding the source of cross-linguistic influence in L3 acquisition. 
 @de_angelis_2007 distinguishes between one-to-one transfer and many-to-one transfer. 
 One-to-one transfer occurs when the primary source of cross-linguistic influence on the L3 is only one previously acquired language (L1 or L2), whereas many-to-one transfer involves the simultaneous influence of multiple previously acquired languages. 
+<!---- kp: going to rework this - an issue here is 1) that most of the studies are offline  and 2) that evidence for what De angelis calls one-to-one may be based on a statistical fallacy (null results = equivalence) -->
 While empirical evidence supports both hypotheses, @puig-mayenco_etal_2020's systematic review showed that a vast majority of transfer studies in L3 acquisition provided supporting evidence for one-to-one transfer. 
-Though, most of the evidence addresses L3 morphosyntax, and research on L3 lexical acquisition remains scarce. 
+Though, most of the evidence addresses L3 morphosyntax, and research on L3 lexical acquisition remains scarce. <!---kp: cite Lago here ---> <!--- the newer morphosyntax models are relevant too, perhaps --->
 
 A similar distinction is described by @bartolotti_marian_2017. 
 Focusing on cross-linguistic lexical similarity, they proposed the Scaffolding model and the Accumulation model. 
-In the Scaffolding model, L3 lexical acquisition is driven by the ability to create a direct association between a newly encountered word and an existing word in the L1 or L2 lexicon. 
+In the Scaffolding model, L3 lexical acquisition is driven by the ability to create a direct association between a newly encountered word and an existing word in the L1 or L2 lexicon.  
 Novel words with greater form overlap with an existing word are more likely to have strong lexical associations. 
 Importantly, novel words receive a benefit to learning if they overlap with at least one of the previously acquired languages, with no additional benefit for overlapping with both languages. 
 Therefore, lexical facilitation in this model is not cumulative across languages. 
 The Scaffolding model [@bartolotti_marian_2017] is compatible with the Parasitic Model [@ecke_2015], in which novel L3 words attach to a L1 or L2 host to facilitate learning. 
 In contrast, the Accumulation model of @bartolotti_marian_2017 proposes that L3 lexical acquisition depends on the frequency of sublexical features that a novel word shares with the L1 and L2. 
 In this model, lexical benefits are additive across languages, and novel words with greater similarity to L1 and L2 words are easier to learn and retrieve. 
-Overall, both models highlight the role of cross-linguistic similarity, but they differ on which source exorts the influence on L3.
+Overall, both models highlight the role of cross-linguistic similarity, but they differ on which source exerts the influence on L3.
 
 @bartolotti_marian_2017 tested both models by examining L3 lexical learning of double cognates (L1-L3 or L2-L3), triple cognates (L1-L2-L3), and noncognates in English-German bilinguals learning a novel language. 
 Results of a word recognition task and a word production task showed no additive benefit for L3 words overlapping with both previously acquired languages. 
@@ -85,11 +86,16 @@ Results revealed faster naming for triple cognates in both the L2 task and the L
 
 <!-- Should we add something brief about typology to the paragraph below or a new paragraph here? -->
 The findings of the studies described above mainly expand in two directions, providing supporting evidence for the Scaffolding model [@bartolotti_marian_2017] and one-to-one transfer [@de_angelis_2007] or supporting the Accumulation model [@bartolotti_marian_2017] and many-to-one transfer [@de_angelis_2007]. 
-In addition, available evidence is mixed with regards to the nature of cross-linguistic interactions in multilingual contexts, with some studies reporting stronger influence from the L2 than the L1, which aligns with the L2-status factor [@bardel_falk_2007; @bardel_falk_2012], and other studies showing more influence from the L1. 
+In addition, available evidence is mixed with regards to the nature of cross-linguistic interactions in multilingual contexts, with some studies reporting stronger influence from the L2 than the L1, which aligns with the L2-status factor [@bardel_falk_2007; @bardel_falk_2012], and other studies showing more influence from the L1. <!--- can cite Hermas here --->
 Notably, it remains to be explored how language proficiency modulates the strength and direction of cross-linguistic influence and the presence of cognate effects in L3 lexical processing. 
-Some studies suggest that “sufficient” proficiency is needed for cumulative cognate effects to emerge [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], though it is very complex to establish such a threshold in multilingual individuals. 
+Some studies suggest that “sufficient” proficiency is needed for cumulative cognate effects to emerge [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], though it is very complex to establish such a threshold in multilingual individuals. <!---- TPM makes a similar claim --->
 The present study further explores the influence of cross-linguistic similarity in L3 lexical processing by examining cumulative cognate effects in L3 Spanish, a less represented language in the L3 literature. 
 In doing so, we aim to advance our understanding of the interactions and contributions of previously acquired languages in L3 processing.
+
+<!--- overall, this reads really well! The flow and pace are excellent and I like the style a lot. 
+
+Content-wise, I want to add more detail about the (proposed) link between processing, the lexicon, and grammatical transfer by mentioning both Rothman's TPM and Westergaard and colleagues' LPM
+--->
 
 ## The Present Study
 

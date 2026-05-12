@@ -4,7 +4,7 @@
 
 A total of 97 participants completed the study. 
 The experimental group consisted of 48 trilinguals (L1 German, L2 English, L3 Spanish), and the control group included 49 bilinguals (L1 English, L2 Spanish). 
-The trilinguals were recruited from a Spanish course in a public university in Frankfurt, Germany. 
+The trilinguals were recruited from Hispanic Linguistics courses in a public university in Frankfurt, Germany. <!-- edited -->
 They received extra credit for their participation in the study.
 The bilinguals were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
 

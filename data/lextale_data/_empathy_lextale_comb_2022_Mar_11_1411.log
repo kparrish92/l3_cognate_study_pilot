@@ -1,0 +1,37 @@
+0.7090 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+4.6314 	INFO 	Loaded monitor calibration from ['2021_05_25 17:40']
+5.2158 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7f87a6097a90>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7f87a5172208>, multiSample=False, name='window1', numSamples=2, pos=[360.0, 225.0], screen=0, size=array([2880, 1800]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.2161 	EXP 	window1: mouseVisible = True
+5.2161 	EXP 	window1: recordFrameIntervals = False
+5.3818 	EXP 	window1: recordFrameIntervals = True
+5.5649 	DEBUG 	Screen (0) actual frame rate measured at 60.37
+5.5650 	EXP 	window1: recordFrameIntervals = False
+6.1992 	INFO 	keyboard.Keyboard is using ptb backend.
+6.2058 	EXP 	Created text_lextale_instructions = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='text_lextale_instructions', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=0.8)
+6.3921 	INFO 	keyboard.Keyboard is using ptb backend.
+6.3934 	EXP 	Created text_lextale_trial_word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1.,  1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_trial_word', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+6.5755 	INFO 	keyboard.Keyboard is using ptb backend.
+6.5765 	EXP 	Created text_lextale_trial_real_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_trial_real_label', opacity=1, ori=0, pos=array([-0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+6.5773 	EXP 	Created text_lextale_trial_false_label = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lextale_trial_false_label', opacity=1, ori=0, pos=array([ 0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+6.6116 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+6.7944 	INFO 	keyboard.Keyboard is using ptb backend.
+6.8232 	EXP 	text_lextale_instructions: text = 'Great! Now for the Spanish test.\n\nYou will see a total of 90 words, once each.\n\nYou must decide if each word is a real word by pressing 1.\n\nIf the word is not a real word, press 0. \n\nPress space to begin.'
+6.8232 	EXP 	text_lextale_instructions: autoDraw = True
+7.5760 	DEBUG 	Read csv file with pandas: trials/lextale_trials.csv
+7.5790 	DEBUG 	Clearing unnamed columns from trials/lextale_trials.csv
+7.5828 	EXP 	Imported trials/lextale_trials.csv as conditions, 90 conditions, 5 params
+7.5837 	EXP 	Created sequence: random, trialTypes=90, nReps=1, seed=None
+7.5841 	EXP 	New trial (rep=0, index=0): OrderedDict([('stim', 47), ('word', 'cartinar'), ('correct_response', 0), ('button_real', 'REAL'), ('button_false', 'FAKE')])
+7.6007 	DATA 	Keypress: space
+7.6049 	EXP 	text_lextale_instructions: autoDraw = False
+7.6049 	EXP 	text_lextale_trial_word: text = 'cartinar'
+7.6049 	EXP 	text_lextale_trial_real_label: text = 'REAL'
+7.6049 	EXP 	text_lextale_trial_false_label: text = 'FAKE'
+7.8485 	EXP 	text_lextale_trial_real_label: autoDraw = True
+7.8485 	EXP 	text_lextale_trial_false_label: autoDraw = True
+8.0981 	EXP 	text_lextale_trial_word: autoDraw = True
+9.2180 	DATA 	Keypress: escape
+9.3285 	EXP 	window1: mouseVisible = True
+9.3286 	DEBUG 	Saving data for empathy_lextale_comb ExperimentHandler
+9.3303 	INFO 	saved data to /Users/kyleparrish/Documents/lextale/data/_empathy_lextale_comb_2022_Mar_11_1411.psydat
+9.3306 	INFO 	saved data to '/Users/kyleparrish/Documents/lextale/data/_empathy_lextale_comb_2022_Mar_11_1411.csv'
