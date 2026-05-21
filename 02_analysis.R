@@ -25,6 +25,8 @@ p_data %>%
 
 
 
+
+
 #### Frequentist model
 l3_data_p = p_data %>% filter(group == "L3_group") %>% 
   filter(is_correct == 1) %>%

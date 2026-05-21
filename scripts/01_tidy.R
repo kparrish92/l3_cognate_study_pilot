@@ -25,15 +25,13 @@ totals_per_person = tidy_data %>% # make sure each person has 96 pseudowords + 9
   group_by(participant, type) %>% 
   summarise(n = n())
 
-correct_per_person = tidy_data %>% # create proficiency scores to join to main df
+correct_per_person = tidy_data %>%
   group_by(participant, type, is_correct) %>% 
   summarise(n = n()) %>% 
   filter(is_correct == 1) %>% 
-  filter(type == "non_cognate" | type == "pseudoword") %>% 
   pivot_wider(names_from = type, values_from = n) %>% 
   mutate(ps_lextale_score = p_lexTALE_score(non_cognate, pseudoword)) %>% 
-  select(-is_correct) # removed 4 ppts who were too incorrect (less than)
-
+  select(-is_correct)
 ## Create Log RTS 
 tidy_data$key_resp_lextale_trial.rt = as.numeric(tidy_data$key_resp_lextale_trial.rt)
 tidy_data$log_rt = log(tidy_data$key_resp_lextale_trial.rt)

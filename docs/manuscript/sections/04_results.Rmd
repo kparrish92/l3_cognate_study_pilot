@@ -31,7 +31,7 @@ ind_data = p_data %>% # create df for indivudual accuracy
 
 ind_data[is.na(ind_data)] <- 0
 
-neat_ind_data =ind_data %>% 
+neat_ind_data = ind_data %>% 
   mutate(total = correct + incorrect) %>% 
   mutate(pct_correct = correct/total) %>% 
   select(participant, type, pct_correct) %>% 
@@ -41,17 +41,42 @@ neat_ind_data =ind_data %>%
 
 ```{r accuracy, echo = TRUE, eval = FALSE}
 totals_n %>% 
-  filter(type != "pseudoword") %>% 
+  filter(type != "pseudoword") %>%
+  mutate(pct_correct = 100*pct_correct) %>% 
   mutate(type = factor(
     type,
     levels = c("non_cognate", "two_way_cognate", "three_way_cognate"),
     labels = c("Non-cognate", "Two-way cognate", "Three-way cognate")
   )) %>% 
-  ggplot(aes(x = type, y = pct_correct)) + geom_col(color = "black", fill = "seagreen4") + ylim(0,1) + custom_theme() + xlab("") +
-  ylab("Correct Trials")
+  ggplot(aes(x = type, y = pct_correct)) + theme_minimal() + geom_col(color = "black", fill = "seagreen4") + ylim(0,100) + custom_theme() + xlab("") +
+  ylab("Overall percentage of correct Trials")
 
 ```
 
 
-Figure \@ref(fig:accuracy).
+Figure \@ref(fig:accuracy) shows the overall accuracy within the entire data set (`r nrow(p_data)` trials) excluding pseudowords (in which `r round2(totals_n$pct_correct[2])`% of trials were correct).
+Overall, three-way cognates were the most accurate (`r round2(totals_n$pct_correct[3])`%), followed by two-way cognates (`r round2(totals_n$pct_correct[4])`%), while non-cognates were the least accurate (`r round2(totals_n$pct_correct[1])`%).
 
+Indivual accuracy ranged from...
+
+```{r}
+neat_ind_data %>% 
+  pivot_longer(cols = `non_cognate`:`two_way_cognate`, names_to = "type", values_to = "accuracy") %>% 
+  ggplot(aes(x = accuracy)) + theme_minimal() + geom_histogram(binwidth = .2, color = "black", fill = "skyblue2") + facet_wrap(~type) + custom_theme()
+
+
+```
+
+
+```{r}
+
+rts = p_data %>% 
+  group_by(participant, type) %>% 
+  summarise(mean_rt = mean(key_resp_lextale_trial.rt), sd_rt = sd(key_resp_lextale_trial.rt), n = n())
+
+neat_ind_data %>% 
+  pivot_longer(cols = `non_cognate`:`two_way_cognate`, names_to = "type", values_to = "accuracy") %>%
+  left_join(rts, by = c("participant", "type")) %>% 
+  ggplot(aes(x = accuracy, y = mean_rt)) + geom_point() + theme_minimal() + geom_smooth(method = "lm") + custom_theme() + facet_wrap(~type)
+  
+```
