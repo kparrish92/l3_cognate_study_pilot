@@ -1,8 +1,10 @@
 
-
+library(here)
+library(tidyverse)
 
 l2_scores = read.csv(here("data", "l2_lex", "cognate_eng_lextale.csv"))
 l3_scores = read.csv(here("data", "tidy", "l3_span.csv"))
+
 
 
 df_w_prof = read.csv(here("data", "tidy", "pilot_data.csv")) %>% 
@@ -13,6 +15,8 @@ df_w_prof = read.csv(here("data", "tidy", "pilot_data.csv")) %>%
   left_join(l2_scores) %>% 
   left_join(l3_scores) %>% 
   filter(!is.na(lextale_avg))
+
+unique(df_w_prof$id)
 
 
 unique(df_w_prof$id)
@@ -39,7 +43,7 @@ summary_rts %>%
   filter(!is.na(lextale_avg)) %>%
   ggplot(aes(x = l3_effect, y = lextale_avg)) + geom_point(alpha = .6) + 
   geom_smooth(method = "lm", color = "seagreen3") + theme(legend.position="none") +
-  goodale_theme() + theme(legend.position="none") + ylab("Spanish LexTALE scores") +
+  theme(legend.position="none") + ylab("Spanish LexTALE scores") +
   xlab("Advantage") + ggtitle("Spanish Proficiency and cognate faciliation")
 
 ggsave(here("plots", "prof_cognates.png"), dpi = 600)

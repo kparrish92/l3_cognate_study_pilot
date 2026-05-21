@@ -2,42 +2,46 @@ library(lmerTest)
 library(tidyverse)
 library(here)
 
-goodale_theme <- function() {
-  theme(
-    panel.background = element_rect(fill = "white"),
-    axis.text = element_text(colour = "black", family = "Times New Roman", size = 14),
-    axis.title = element_text(colour = "black", family = "Times New Roman", size = 14),
-    legend.position = "bottom",
-    legend.title = element_text(colour = "black", family = "Times New Roman", size = 16),
-    legend.text = element_text(colour = "black", family = "Times New Roman", size = 14),
-    plot.title = element_text(colour = "black", family = "Times New Roman", size = 14, hjust = 0.5)  # Center align the title
-  )
-}
+
+#### Add lexical frequency as a predictor
+#### Get proficiency data for the L2 Spanish group + more for L3 group if possible
+#### Expand both data sets 
 
 
-totals = inc_data %>% 
-  group_by(type, group) %>% 
-  summarise(total_n = n())
+
+
 
 
 p_data = read.csv(here("data", "tidy", "pilot_data.csv")) %>% 
   filter(is_correct == 1) %>% 
   filter(!is.na(participant))
 
-inc_data = read.csv(here("data", "tidy", "pilot_data.csv")) %>% 
-  filter(!is.na(participant))
+
+
+inc_data %>% 
+  filter(type == "two_way_cognate" | type == "three_way_cognate")%>% 
+  group_by(word, type) %>% 
+  summarise(mean_rt = mean(key_resp_lextale_trial.rt)) %>% 
+  ggplot(aes(y = word, color = type, x = mean_rt)) + geom_point()
+
+
+
+totals = p_data %>% 
+  group_by(type, group) %>% 
+  summarise(total_n = n())
+
 
 ### Accuracy 
 
-inc_data %>% 
+p_data %>% 
   group_by(type, group, is_correct) %>% 
   summarise(n = n()) %>% 
-  filter(is_correct == 1) %>% 
   left_join(totals) %>% 
   mutate(pct_correct = n/total_n) %>% 
   ggplot(aes(x = type, y = pct_correct, fill = group)) + 
   geom_col(position = "dodge", color = "black") + theme_minimal()
 
+ggsave(here("plots", "manuscript", "accuracy_plot.png"), dpi = 600)
 ### Accuracy model 
 
 ### Lot rt plots (pooled and non-pooled)
@@ -114,23 +118,41 @@ summary_data %>%
 ggsave(here("plots", "l2_desc.png"), dpi = 600)
 
 
+#model = lmerTest::lmer(log_rt ~ group*type + (1 | word) + (type | participant), data = inc_data)
 
-## Model 
-library(lmerTest)
+#summary(model)
 
-p_data$type = as.factor(p_data$type)
-p_data$type = relevel(p_data$type, ref = "two_way_cognate")
-p_data$group = as.factor(p_data$group)
-p_data$group = relevel(p_data$group, ref = "L3_group")
+l2_data = p_data %>% filter(group == "L2_group") %>% 
+  mutate(new_type = case_when(
+    type == "two_way_cognate" ~ "cognate",
+    type == "three_way_cognate" ~ "cognate",
+    type == "non_cognate" ~ "non_cognate"
+  )) %>% 
+  filter(!is.na(new_type))
+  
+l2_model = lmerTest::lmer(log_rt ~ new_type + (1 | word) + (type | participant), data = l2_data)
+
+summary(l2_model)
 
 
 
-model = lmerTest::lmer(log_rt ~ group*type + (1 | word) + (type | participant), data = p_data)
+l3_data_p = p_data %>% filter(group == "L3_group") %>% 
+  filter(type != "pseudoword")
 
-summary(model)
+
+l3_data_p$type = as.factor(l3_data_p$type)
+l3_data_p$type = relevel(l3_data_p$type, ref = "two_way_cognate")
+
+
+l3_model_p = lmerTest::lmer(log_rt ~ type + (1 | word) + (type | participant), data = l3_data_p)
+
+
+summary(l3_model_p)
+summary(l3_model_a)
+summary(l2_model)
 
 b_model = brms::brm(log_rt ~ type*group + (1 | word) + (type | participant), iter = 4000, 
-                    data = p_data, file = here("data", "models", "l3_models.rds"))
+                    data = inc_data, file = here("data", "models", "l3_models_u.rds"))
 
 
 
@@ -193,6 +215,21 @@ res = (ranef(model)$word) %>%
   left_join(word_cats, by = "word")
 
 
+res_fe = (ranef(model)$participant) %>% 
+  rownames_to_column("participant")
+
+
+groups = inc_data %>% 
+  select(participant, group) %>% 
+  unique()
+
+res_fe %>% 
+  left_join(groups, by = "participant") %>% 
+  ggplot(aes(x = typenon_cognate, y = participant)) + geom_point() + facet_wrap(~group)
+
+
+
+
 res %>% 
   filter(type == "three_way_cognate") %>% 
     ggplot(aes(x = `(Intercept)`, y = word, label = word)) + geom_text() + 
@@ -244,5 +281,50 @@ eff_df %>%
   left_join(no_correct, by = "ppt") %>% 
   ggplot(aes(x = n, y = eff_three)) + geom_point() + geom_smooth(method = "lm")
 
+
+d = inc_data %>% 
+  group_by(participant, type, group) %>% 
+  summarize(mean_rt = mean(key_resp_lextale_trial.rt)) %>% 
+  filter(type != "pseudoword") %>% 
+  pivot_wider(names_from = type, values_from = mean_rt) %>% 
+  mutate(non_cognate_effect = non_cognate - two_way_cognate) %>% 
+  mutate(triple_cognate_effect = three_way_cognate - two_way_cognate)
+  ggplot(aes(y = mean_rt, x = type, fill = type)) + geom_col() + facet_wrap(~participant)
+  
+  
+  thisppt = inc_data %>% 
+    filter(participant == ppt_list[25])
+  
+  thisppt %>% 
+    group_by(type) %>% 
+    summarize(n = n())
+  
+  
+
+
+ppt_container = list()
+
+ppt_list = unique(inc_data$participant)
+
+for (i in 1:length(ppt_list)) {
+ 
+   thisppt = inc_data %>% 
+    filter(participant == ppt_list[i])
+  
+  thismodel = glm(log_rt ~ type, data = thisppt)
+  
+  d = summary(thismodel)[["coefficients"]]
+  
+  non_cognate_sig = ifelse(d[2,4] < .05, 1, 0)
+  three_way_cognate_sig = ifelse(d[4,4] < .05, 1, 0)
+  
+  non_cognate_is_slower = ifelse(d[2,1] > 0, 1, 0)
+  three_way_cognate_faster = ifelse(d[4,1] < 0, 1, 0)
+  
+  ppt_container[[i]] = data.frame(ppt_list[i], non_cognate_sig, three_way_cognate_sig, non_cognate_is_slower, three_way_cognate_faster)
+    
+}
+
+ind_models_df = do.call(rbind, ppt_container)
 
 

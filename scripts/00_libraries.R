@@ -51,6 +51,36 @@ library("stringr")
 library("flextable")
 #library("cmdstanr")
 
+
+## Functions 
+
+### rounding function
+
 round2 <- function(x) sprintf("%.2f", x)
+
+### proficiency scoring function
+
+p_lexTALE_score <- function(words_correct, nonwords_correct) {
+  ((words_correct / 48 * 100) +
+     (nonwords_correct / 96 * 100)) / 2
+}
+
+### plotting function
+
+custom_theme <- function() {
+  theme(
+  #  panel.background = element_rect(fill = "white"),
+    axis.text = element_text(colour = "black", size = 12),
+    axis.title = element_text(colour = "black", size = 12),
+    legend.position = "bottom",
+    legend.title = element_text(colour = "black", size = 14),
+    legend.text = element_text(colour = "black", size = 12),
+    plot.title = element_text(colour = "black", size = 12, hjust = 0.5)  # Center align the title
+  )
+}
+
+
+
+
 
 # ------------------------------------------
