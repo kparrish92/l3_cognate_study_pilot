@@ -17,8 +17,17 @@ csl: bib/apa.csl
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
   message = FALSE,
-  warning = FALSE
+  warning = FALSE,
+  fig.width = 6,
+  fig.height = 4,
+  dpi = 600,
+  dev = "png"
   )
+
+library(rempsyc)
+
+source(here::here('scripts', '00_libraries.R'))
+source(here::here('scripts', '04_manuscript_data.R'))
 ```
 
 ```{r, child='./sections/01_abstract.Rmd'}

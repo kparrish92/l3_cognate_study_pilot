@@ -1,82 +1,53 @@
 # Results
 
-
-```{r data, echo = TRUE, eval = FALSE}
-
-
-p_data = read.csv(here("data", "tidy", "tidy_data.csv")) %>% 
-  filter(!is.na(participant))
+## Accuracy
 
 
-#### Accuracy
-
-
-totals_n = p_data %>% # create df for overall accuracy
-  group_by(type, is_correct) %>% 
-  summarise(n = n()) %>% 
-  pivot_wider(names_from = is_correct, values_from = n) %>% 
-  rename("correct" = "1") %>% 
-  rename("incorrect" = "0") %>% 
-  mutate(total = correct + incorrect) %>% 
-  mutate(pct_correct = correct/total) %>% 
-  select(type, pct_correct)
-
-ind_data = p_data %>% # create df for indivudual accuracy
-  group_by(participant, type, is_correct) %>% 
-  summarize(n = n()) %>% 
-  pivot_wider(names_from = is_correct, values_from = n) %>% 
-  rename("correct" = "1") %>% 
-  rename("incorrect" = "0")
-
-
-ind_data[is.na(ind_data)] <- 0
-
-neat_ind_data = ind_data %>% 
-  mutate(total = correct + incorrect) %>% 
-  mutate(pct_correct = correct/total) %>% 
-  select(participant, type, pct_correct) %>% 
-  pivot_wider(names_from = type, values_from = pct_correct)
-  
+```{r accuracy, fig.cap="Logistic response curve across the VOT continuum."}
+knitr::include_graphics(here("docs", "plots", "overall_acc.png"))
 ```
-
-```{r accuracy, echo = TRUE, eval = FALSE}
-totals_n %>% 
-  filter(type != "pseudoword") %>%
-  mutate(pct_correct = 100*pct_correct) %>% 
-  mutate(type = factor(
-    type,
-    levels = c("non_cognate", "two_way_cognate", "three_way_cognate"),
-    labels = c("Non-cognate", "Two-way cognate", "Three-way cognate")
-  )) %>% 
-  ggplot(aes(x = type, y = pct_correct)) + theme_minimal() + geom_col(color = "black", fill = "seagreen4") + ylim(0,100) + custom_theme() + xlab("") +
-  ylab("Overall percentage of correct Trials")
-
-```
-
 
 Figure \@ref(fig:accuracy) shows the overall accuracy within the entire data set (`r nrow(p_data)` trials) excluding pseudowords (in which `r round2(totals_n$pct_correct[2])`% of trials were correct).
 Overall, three-way cognates were the most accurate (`r round2(totals_n$pct_correct[3])`%), followed by two-way cognates (`r round2(totals_n$pct_correct[4])`%), while non-cognates were the least accurate (`r round2(totals_n$pct_correct[1])`%).
 
-Indivual accuracy ranged from...
+Figure \@ref(fig:accuracyind) shows histograms of individuals' percentage of correct trials in each word-type. 
+Individual accuracy in non-cognates ranged from `r round2(range(neat_ind_data$non_cognate)[1])` % of trials correct to `r round2(range(neat_ind_data$non_cognate)[2])` (median `r round2(median(neat_ind_data$non_cognate))`%)
+Like the data set as a whole, the medial of individual percentages correct for the three-way cognates was the highest `r round2(median(neat_ind_data$three_way_cognate))`% (range `r round2(range(neat_ind_data$three_way_cognate)[1])`% - `r round2(range(neat_ind_data$three_way_cognate)[2])`), followed by two-way cognates (median percentage correct = `r round2(median(neat_ind_data$two_way_cognate))`%; range = `r round2(range(neat_ind_data$two_way_cognate)[1])`% - `r round2(range(neat_ind_data$two_way_cognate)[2])`).
+Taken together, these descriptive results suggest that, while most participants benefit from cognates in accuracy, a minority also experience steep drops in accuracy.
+Indeed, two participants showed the opposite of expected and were most accurate in non-cognates (60.4% and 68.7%) and much less accurate in two-way (25% and 16.7%) and three-way cognates (20.8% and 8.3%).
 
-```{r}
-neat_ind_data %>% 
-  pivot_longer(cols = `non_cognate`:`two_way_cognate`, names_to = "type", values_to = "accuracy") %>% 
-  ggplot(aes(x = accuracy)) + theme_minimal() + geom_histogram(binwidth = .2, color = "black", fill = "skyblue2") + facet_wrap(~type) + custom_theme()
-
-
+```{r accuracyind, fig.cap="Chickens"}
+knitr::include_graphics(here("docs", "plots", "ind_acc.png"))
 ```
 
 
 ```{r}
+acc_table = describe_posterior(accuracy_mod_b) %>% 
+  mutate(across(where(is.numeric), ~ round(.x, 2))) %>% 
+  mutate(CI = paste0("[", CI_low, ", ", CI_high, "]")) %>% 
+  mutate(ROPE = paste0("[", ROPE_low, ", ", ROPE_high, "]")) %>% 
+  select(Parameter, Median, CI, pd, ROPE, ROPE_Percentage, Rhat, ESS)
 
-rts = p_data %>% 
-  group_by(participant, type) %>% 
-  summarise(mean_rt = mean(key_resp_lextale_trial.rt), sd_rt = sd(key_resp_lextale_trial.rt), n = n())
 
-neat_ind_data %>% 
-  pivot_longer(cols = `non_cognate`:`two_way_cognate`, names_to = "type", values_to = "accuracy") %>%
-  left_join(rts, by = c("participant", "type")) %>% 
-  ggplot(aes(x = accuracy, y = mean_rt)) + geom_point() + theme_minimal() + geom_smooth(method = "lm") + custom_theme() + facet_wrap(~type)
+
+acc_t <- flextable(acc_table, use_labels = FALSE) %>% 
+  set_caption(caption = "Accuracy Model") %>% 
+  font(fontname = "Times New Roman", part = "all") %>% 
+  theme_booktabs() %>% 
+  align(align = "center", part = "all") %>% 
+  align(j = 1, align = "left", part = "body") %>% 
+  set_header_labels(
+  CI = "95% CI",
+  ROPE_Percentage = "% in ROPE"
+) %>% 
+  autofit()
   
+acc_t
 ```
+
+
+```{r accmod, fig.cap="Chickens"}
+knitr::include_graphics(here("docs", "plots", "acc_mod.png"))
+
+```
+

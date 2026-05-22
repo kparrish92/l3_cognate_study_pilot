@@ -1,7 +1,22 @@
 
 
+ppts_remove = c("6789000b08f2703ba0b959b1")
+
 p_data = read.csv(here("data", "tidy", "tidy_data.csv")) %>% 
-  filter(!is.na(participant))
+  filter(!is.na(participant)) %>% 
+  filter(key_resp_lextale_trial.rt < 2) %>% 
+  filter(key_resp_lextale_trial.rt > .5) %>% 
+  filter(!participant %in% ppts_remove)
+
+outlier_ppt = read.csv(here("data", "tidy", "tidy_data.csv")) %>% 
+  filter(participant %in% ppts_remove)
+
+outlier_ppt %>% ## outlier info if we want to talk about this person - 33
+  group_by(type, is_correct) %>% 
+  summarise(n = n()) %>% 
+  filter(is_correct == 1)
+
+
 
 
 #### Accuracy

@@ -7,7 +7,6 @@ tidy_data <- fs::dir_ls(here("data", "main_exp"),
   map_dfr(read_csv, .id = "source", 
           col_types = cols(.default = "c")) %>% 
   mutate(source = str_remove(source, "/Users/kyleparrish/Documents/GitHub/l3_cognate_study_pilot/data/main_exp/")) %>% 
-  mutate(group = "L3_group") %>% 
   filter(!is.na(participant)) %>% 
   select(participant, word, type, correct_reponse, key_resp_lextale_trial.keys, 
          key_resp_lextale_trial.rt, group) %>% 
@@ -39,8 +38,6 @@ tidy_data$log_rt = log(tidy_data$key_resp_lextale_trial.rt)
 # combine and save data 
 tidy_data %>% 
   filter(participant %in% correct_per_person$participant) %>%
-  filter(key_resp_lextale_trial.rt < 2) %>% 
-  filter(key_resp_lextale_trial.rt > .5) %>% 
   left_join(correct_per_person, by = "participant") %>% 
   write.csv(here("data", "tidy", "tidy_data.csv"))
 
