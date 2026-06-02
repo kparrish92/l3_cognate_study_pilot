@@ -9,7 +9,7 @@ tidy_data <- fs::dir_ls(here("data", "main_exp"),
   mutate(source = str_remove(source, "/Users/kyleparrish/Documents/GitHub/l3_cognate_study_pilot/data/main_exp/")) %>% 
   filter(!is.na(participant)) %>% 
   select(participant, word, type, correct_reponse, key_resp_lextale_trial.keys, 
-         key_resp_lextale_trial.rt, group) %>% 
+         key_resp_lextale_trial.rt) %>% 
   filter(!is.na(key_resp_lextale_trial.rt)) %>% 
   mutate(is_correct =
            ifelse(
@@ -24,6 +24,12 @@ totals_per_person = tidy_data %>% # make sure each person has 96 pseudowords + 9
   group_by(participant, type) %>% 
   summarise(n = n())
 
+frequency = read.csv(here("data", "stimuli", "stim_detailed.csv")) %>% 
+  janitor::clean_names() %>% 
+  select(es_wordform, subtlex_es_log10_abs_1) %>% 
+  rename(word = es_wordform) %>% 
+  rename(frequency = subtlex_es_log10_abs_1)
+
 correct_per_person = tidy_data %>%
   group_by(participant, type, is_correct) %>% 
   summarise(n = n()) %>% 
@@ -36,11 +42,11 @@ tidy_data$key_resp_lextale_trial.rt = as.numeric(tidy_data$key_resp_lextale_tria
 tidy_data$log_rt = log(tidy_data$key_resp_lextale_trial.rt)
 
 # combine and save data 
-tidy_data %>% 
+df = tidy_data %>% 
   filter(participant %in% correct_per_person$participant) %>%
   left_join(correct_per_person, by = "participant") %>% 
+  left_join(frequency, by = "word") %>% 
   write.csv(here("data", "tidy", "tidy_data.csv"))
 
 
 
-  

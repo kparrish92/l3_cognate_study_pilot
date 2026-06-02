@@ -130,5 +130,19 @@ This test usually takes less than five minutes to complete.
 
 ## Data Analysis
 
-Describe data analysis.
+In order to determine whether word type and proficiency impacted both accuracy and reaction time, two main Bayesian models were fit to the data using the brms [@burkner2017brms] package in R. Both models were estimated with Markov chain Monte Carlo sampling using 4 chains, each with 4000 iterations, including 2000 warm-up. Model convergence was evaluated using standard MCMC diagnostics, including trace plots, effective sample sizes, and R-hat values. 
+
+
+Informative but weakly regularizing priors were specified for the accuracy model to encode theoretically motivated expectations regarding overall accuracy effects by word type. Two-way cognates served as the baseline condition (the intercept) and were centered on an expected baseline accuracy of approximately 80%, whereas condition effects were centered on expected deviations of approximately ±10 percentage points, such that three-way cognates were expected to be more accurate (~90% correct) and non-cognates less accurate (~70% correct) than baseline. Priors remained sufficiently broad to permit substantial updating from the observed data. Random-effects variance parameters were regularized using exponential priors,and participant-level random-effect correlations were assigned an LKJ prior (η=2).
+
+Like the accuracy model, informative priors for log reaction time also used but in this case were based on previously reported data [@szubko-sitarek_2011].
+Again, two-way cognates served as the baseline (intercept) for the model and were predicted to be 765ms (sd = .15 in log units). The prior for three-way cognates was a faster reaction time for three-way cognates 743ms) and a slower reaction time for noncognates (819ms), with both standard deviations also set to .15 log units. 
+
+
+Prior sensitivity analyses were conducted to assess the extent to which our specified priors impacted the reported parameter estimates.
+That is, we also report models without prior assumptions akin to a frequentist analysis to determine how much influence the use of priors has on the parameter estimates and thus the narrative conclusions of the paper. 
+For each model, an otherwise identical model using default brms priors was fit and compared to the model using theoretically informed priors. Posterior summaries and distributions of focal parameters were compared directly, including posterior means, medians, and 95% credible intervals, alongside condition-level predictions on interpretable scales. Similarity of posterior estimates across models wpuld be interpreted as evidence that inference was driven primarily by the observed data rather than prior assumptions.
+
+
+
 

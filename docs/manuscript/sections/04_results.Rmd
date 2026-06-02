@@ -3,7 +3,7 @@
 ## Accuracy
 
 
-```{r accuracy, fig.cap="Logistic response curve across the VOT continuum."}
+```{r accuracy, fig.cap="Percentage of correct responses by word type"}
 knitr::include_graphics(here("docs", "plots", "overall_acc.png"))
 ```
 
@@ -16,7 +16,7 @@ Like the data set as a whole, the medial of individual percentages correct for t
 Taken together, these descriptive results suggest that, while most participants benefit from cognates in accuracy, a minority also experience steep drops in accuracy.
 Indeed, two participants showed the opposite of expected and were most accurate in non-cognates (60.4% and 68.7%) and much less accurate in two-way (25% and 16.7%) and three-way cognates (20.8% and 8.3%).
 
-```{r accuracyind, fig.cap="Chickens"}
+```{r accuracyind, fig.cap="Histograms of individual percentages corrects by word type"}
 knitr::include_graphics(here("docs", "plots", "ind_acc.png"))
 ```
 
@@ -46,7 +46,7 @@ acc_t
 ```
 
 
-```{r accmod, fig.cap="Chickens"}
+```{r accmod, fig.cap="Posterior Distributions of the accuracy model"}
 knitr::include_graphics(here("docs", "plots", "acc_mod.png"))
 
 ```
