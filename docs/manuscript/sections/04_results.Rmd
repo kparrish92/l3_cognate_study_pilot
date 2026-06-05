@@ -1,5 +1,11 @@
 # Results
 
+## Data trimming
+
+The data set for accuracy included 35 participants contained a total of 6720 data points (192 trials x 35 participants) and maintained all correct and incorrect trials. 
+Due to an error, three stimulus items were duplicated in the data (two non-cognates and one double cognate) and were subsequently omitted from further analysis, resulting in a total of 6510 data points (186 per participant).
+For reaction time the analyzed data frame contained 2180 data points after removing pseudoword trials (n = `r ps_removed`), incorrect trials (n = `r incorrect`), trials that were too fast (n = `r too_fast`) or too slow (n = `r too_slow`). Some trials fit multiple criteria for removal, and a trial was considered too fast or too slow when the reaction time was under 500ms or over 2 seconds.
+
 ## Accuracy
 
 
@@ -12,7 +18,7 @@ Overall, three-way cognates were the most accurate (`r round2(totals_n$pct_corre
 
 Figure \@ref(fig:accuracyind) shows histograms of individuals' percentage of correct trials in each word-type. 
 Individual accuracy in non-cognates ranged from `r round2(range(neat_ind_data$non_cognate)[1])` % of trials correct to `r round2(range(neat_ind_data$non_cognate)[2])` (median `r round2(median(neat_ind_data$non_cognate))`%)
-Like the data set as a whole, the medial of individual percentages correct for the three-way cognates was the highest `r round2(median(neat_ind_data$three_way_cognate))`% (range `r round2(range(neat_ind_data$three_way_cognate)[1])`% - `r round2(range(neat_ind_data$three_way_cognate)[2])`), followed by two-way cognates (median percentage correct = `r round2(median(neat_ind_data$two_way_cognate))`%; range = `r round2(range(neat_ind_data$two_way_cognate)[1])`% - `r round2(range(neat_ind_data$two_way_cognate)[2])`).
+Like the data set as a whole, the median of individual percentages correct for the three-way cognates was the highest `r round2(median(neat_ind_data$three_way_cognate))`% (range `r round2(range(neat_ind_data$three_way_cognate)[1])`% - `r round2(range(neat_ind_data$three_way_cognate)[2])`), followed by two-way cognates (median percentage correct = `r round2(median(neat_ind_data$two_way_cognate))`%; range = `r round2(range(neat_ind_data$two_way_cognate)[1])`% - `r round2(range(neat_ind_data$two_way_cognate)[2])`).
 Taken together, these descriptive results suggest that, while most participants benefit from cognates in accuracy, a minority also experience steep drops in accuracy.
 Indeed, two participants showed the opposite of expected and were most accurate in non-cognates (60.4% and 68.7%) and much less accurate in two-way (25% and 16.7%) and three-way cognates (20.8% and 8.3%).
 

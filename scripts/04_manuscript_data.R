@@ -2,6 +2,66 @@
 source(here::here("scripts", "00_libraries.R"))
 source(here::here("scripts", "02_load_data.R"))
 
+#### Bio data 
+
+gender_pct = survey_data %>% 
+  group_by(gender) %>% 
+  summarise(n = n())
+
+pct_female = round(gender_pct$n[1]/sum(gender_pct$n)*100)
+pct_male = round(gender_pct$n[2]/sum(gender_pct$n)*100)
+
+
+lowage = round(range(survey_data$age), digits = 1)[1]
+oldage = round(range(survey_data$age), digits = 1)[2]
+
+
+eng_aoo = round(mean(survey_data$english_aoo), digits = 1)
+eng_aoo_sd = round(sd(survey_data$english_aoo), digits = 1)
+
+eng_aoa = round(mean(survey_data$english_aoa), digits = 1)
+eng_aoa_sd = round(sd(survey_data$english_aoa), digits = 1)
+
+sp_aoo = round(mean(as.numeric(survey_data$spanish_aoo)), digits = 1)
+sp_aoo_sd = round(sd(as.numeric(survey_data$spanish_aoo)), digits = 1)
+
+
+sp_aoa = round(mean(c(15,18,20,22,24,26,30)), digits = 1)
+sp_aoa_sd = round(sd(c(15,18,20,22,24,26,30)), digits = 1)
+
+de_prof_c = round(mean(as.numeric(survey_data$german_perception_level)), digits = 2)
+de_prof_c_sd = round(sd(as.numeric(survey_data$german_perception_level)), digits = 2)
+
+de_prof_s = round(mean(as.numeric(survey_data$german_speaking_level)), digits = 2)
+de_prof_s_sd = round(sd(as.numeric(survey_data$german_speaking_level)), digits = 2)
+
+en_prof_c = round(mean(as.numeric(survey_data$english_comprehension)), digits = 2)
+en_prof_c_sd = round(sd(as.numeric(survey_data$english_comprehension)), digits = 2)
+
+en_prof_s = round(mean(as.numeric(survey_data$english_speaking_level)), digits = 2)
+en_prof_s_sd = round(sd(as.numeric(survey_data$english_speaking_level)), digits = 2)
+
+sp_prof_c = round(mean(as.numeric(survey_data$spanish_comprehension_level)), digits = 2)
+sp_prof_c_sd = round(sd(as.numeric(survey_data$spanish_comprehension_level)), digits = 2)
+
+sp_prof_s = round(mean(as.numeric(survey_data$spanish_speaking_level)), digits = 2)
+sp_prof_s_sd = round(sd(as.numeric(survey_data$spanish_speaking_level)), digits = 2)
+
+
+
+prof_mean = round(mean(rt_trials$ps_lextale_score), digits = 1)
+prof_sd = round(sd(rt_trials$ps_lextale_score), digits = 1)
+prof_lo = round(range(rt_trials$ps_lextale_score), digits = 1)[1]
+prof_hi = round(range(rt_trials$ps_lextale_score), digits = 1)[2]
+
+rt_trials %>% 
+  group_by(participant) %>% 
+  summarise(mean_lextale = mean(ps_lextale_score)) %>% 
+  ggplot(aes(x = mean_lextale)) + 
+  geom_histogram(binwidth = 8, color = "black", fill = "orange3") + custom_theme() +
+  xlab("Mean adapted LexTALE")
+
+ggsave(here("docs", "plots", "apapted_lextale_hist.png"), dpi = 600)
 
 #### Accuracy
 
@@ -66,6 +126,7 @@ accuracy_mod_b = brms::brm(is_correct ~ type + frequency_z + proficiency_z + (ty
                            iter = 4000, data = p_data, file = here("data", "models", "accuracy_mod_z.rds"))
 
 
+
 # Figure 3
 posterior <- as.matrix(accuracy_mod_b)
 
@@ -91,7 +152,7 @@ mcmc_areas(l3_model_rt,
            prob = 0.8) + ggtitle("Posterior distributions",
                                  "with medians and 80% intervals")
 
-describe_posterior(l3_model_rt, rope_range = c(-0.04, 0.04))
+describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065))
 
 
 conditional_effects(l3_model_rt)

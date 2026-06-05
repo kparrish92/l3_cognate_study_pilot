@@ -2,21 +2,36 @@
 
 ## Participants
 
-A total of 97 participants completed the study. 
-The experimental group consisted of 48 trilinguals (L1 German, L2 English, L3 Spanish), and the control group included 49 bilinguals (L1 English, L2 Spanish). 
-The trilinguals were recruited from Hispanic Linguistics courses in a public university in Frankfurt, Germany. <!-- edited -->
+A total of `r length(unique(rt_trials$participant)) + length(ppts_remove)` participants completed the study. 
+A total of nine participants were recruited from Hispanic Linguistics courses in a public university in Frankfurt, Germany.
 They received extra credit for their participation in the study.
-The bilinguals were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
+The remaining 36 participants were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
+The data of `r length(ppts_remove)` participants were removed from the final data set due to low accuracy rates in at least one condition (less than 10 out of 24 correct in the cognate conditions).
+As a result, the final data set contained `r length(unique(rt_trials$participant))` participants (64% female; 36% male). 
 
-(Describe participants and descriptive stats from the questionnaire: nationality, place of residence, sex, age, AoA, etc.)
+All participants completed an adapted version of the LEAP-Q questionnaire [@marianlanguage].
+The questionnaire was administered in Qualtrics and asked about language background and dominance.
+The survey contained 23 total questions, including general information (age, gender, birth place and place of residence), language dominance and order of acquisition, and self-rated proficiency in both speaking and perception. 
 
-Participant’s proficiency in English and Spanish was measured via vocabulary size using two lexical tests.
-The final groups included participants with a wide range of proficiency scores.
+
+All participants were born and lived in Germany.
+The participants' ages ranged from `r lowage` to `r oldage` (mean age `r round(mean(survey_data$age), digits = 1)`, sd = `r round(sd(survey_data$age), digits = 1)`).
+All participants reported that their first language was German, that English was their second language and that Spanish was their third language, both in terms of order of acquisition and dominance.
+The mean age of onset of English was `r eng_aoo` (sd = `r eng_aoo_sd`) and the age of acquisition (when participants first felt fluent) was `r eng_aoa` (sd = `r eng_aoa_sd`).
+The mean age of onset for Spanish was `r sp_aoa` (sd = `r sp_aoa_sd`), and the mean age of acquisition was `r sp_aoa` (sd = `r sp_aoa_sd`), although many participants did not enter a value in the survey for age of acquisition of Spanish.
+
+The participants self-ratings in spoken and perceptual proficiency ranged on a scale from 1 to 10, in which 10 was the most proficient and 1 was the least proficient. 
+The average self-rated German proficiency was, as expected, near ceiling in both spoken (mean rating = `r de_prof_s`; sd = `r de_prof_s_sd`) and perceptual proficiency (mean rating = `r de_prof_c`; sd = `r de_prof_c_sd`).
+English self-rated proficiency was second best, and the participants rated themselves slightly higher in perceptual proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`than spoken proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`. 
+The self-rated proficiency levels in Spanish was the lowest and showed the most variation.
+Specifically, the mean rating for spoken proficiency was `r sp_prof_s` (sd = `r sp_prof_s_sd`), while perceptual proficiency was `r sp_prof_c` (sd = `r sp_prof_c_sd`).
+
 
 ## Materials and Procedure
 
 ### Lexical Decision Task
-<!-- We need to check and correct the details based on how the task was programmed -->
+<!-- We need to check and correct the details based on how the task was programmed
+kp: I will double check but I am 99% sure this is accurate - leaving the comment for a reminder -->
 Participants completed a visual lexical decision task (LDT) in Spanish.
 They saw individual strings of letters on a computer screen and indicated whether these strings constituted real words in the Spanish language.
 At the beginning of each trial, participants saw the response options "REAL" and "FALSA" on the sides of the screen, then 500ms later, a letter string was displayed in the center of the screen.
@@ -32,7 +47,7 @@ Pseudowords were created using UniPseudo [@new_etal_2024] and were phonologicall
 Real words were matched for lexical frequency, which was calculated using SUBTLEX-ESP [@cuetos_etal_2011].
 Double and triple cognates were orthographically identical.
 Orthographic and phonological overlap were calculated using PHOR-In-One [@costa_etal_2023].
-Table 1 summarizes the lexical properties of the stimuli items.
+Table 1 summarizes the lexical properties of the stimulus items.
 
 ```{r, 'stim-properties', echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -106,43 +121,45 @@ ft <- autofit(ft)
 ft
 ```
 
-### Proficiency Tests
+### Proficiency Measure: adapted LexTALE
 
-Participants completed two tests which provided a proxy of language proficiency based on vocabulary size.
-English proficiency was measured using the Lexical Test for Advanced Learners of English [LexTALE, @lemhofer_broersma_2012].
-The LexTALE is a widely used test that measures vocabulary knowledge via a lexical decision task.
-The test includes 60 items, of which 40 are real words and 20 are pseudowords.
-The real words include 15 nouns, 12 adjectives, 1 verb, 2 verb participles, 2 adverbs, and 8 items whose form is shared between verbs and nouns (e.g.,
-*dispatch*). 
-The pseudowords follow the orthographic and phonological rules of English and were designed by changing letters and/or morphemes in real words.
-All the test items are between 4 and 12 letters long.
-Scoring is based only on accuracy, and scores range from 0 to 100. 
-Typically, the LexTALE is completed in no longer than four minutes.
+In addition to self-rated proficiency, participants' accuracy on the experimental lexical decision task was used as an additional proficiency measure. 
+Specifically, we considered the psuedoword and non-cognates trials as an adapted version of the LexTALE [@lemhofer_broersma_2012; @izura_etal_2014].
+The item set was constructed to include real words with a broad range of frequencies in order to capture lexical knowledge across proficiency levels. 
+Cognates were excluded from the item pool to minimize the possibility that participants could rely on cross-linguistic form overlap rather than target-language lexical knowledge.
+As a result of these design choices, the trials from the experimental task used to calculate a proficiency score contained 48 real words and 96 pseudowords.
+Scores were calculated using a similar scoring system to the original LexTALE to avoid a yes/no bias and to account for the unequal proportion of real words and pseudowords in the included data. 
+Specifically, following formula was used: (number of real words correct/48 x 100 + number of pseudowords correct/98 x 100)/2.
+The results returned a score from 0 to 100, in which a score of 50 would represent saying either "yes" or "no" to all trials.
+Figure \@ref(fig:profplot) shows the distribution of adapted LexTALE scores.
+The scores ranged from `r prof_lo` to `r prof_hi` with a mean of `r prof_mean` (sd = `r prof_sd`).
 
-Spanish proficiency was assessed using the LexTALE-ESP [@izura_etal_2014], which follows closely the design of the LexTALE but differs in some aspects. 
-The LexTALE-ESP has 90 items, of which 60 are real words and 30 are pseudowords.
-The lexical frequency of the real words ranges from very high to very low.
-The pseudowords are orthographically and phonologically legal constructions with similar endings to Spanish words from different syntactic categories. 
-All items are about 6.6 letters long on average.
-Scoring is based on accuracy, and incorrect responses are penalized. 
-Scores range from -20 to 60.
-This test usually takes less than five minutes to complete.
+```{r profplot, fig.cap="Histogram of the adapted LexTALE scores"}
+knitr::include_graphics(here("docs", "plots", "apapted_lextale_hist.png"))
+```
 
 ## Data Analysis
 
-In order to determine whether word type and proficiency impacted both accuracy and reaction time, two main Bayesian models were fit to the data using the brms [@burkner2017brms] package in R. Both models were estimated with Markov chain Monte Carlo sampling using 4 chains, each with 4000 iterations, including 2000 warm-up. Model convergence was evaluated using standard MCMC diagnostics, including trace plots, effective sample sizes, and R-hat values. 
+The data were analyzed using two Bayesian multilevel regression models for accuracy and reaction time.
+A Bayesian approach was chosen for two primary reasons. 
+First, Bayesian models allow for a more gradient analysis than the often used frequentist p-value (which is typically discarded if it is greater than .05). 
+Additionally, frequentist models test against the null hypothesis, but are unable to provide evidence that the null hypothesis is true.
+Taken together, the Bayesian Framework offers both flexibility and for more gradient interpretations of both the null and alternative hypotheses.
 
+In the Bayesian framework, several metrics are reported. 
+First, the 95% Highest Density Interval (95% HDI) refers to the range of the most credible 95% of the posterior distribution.
+The probability of direction (pd) refers to the probability that a parameter is positive or negative and ranges from 50% to 100%. 
+It is mathematically defined as the proportion of the posterior distribution that is the same sign its median estimate [@makowski2019indices].
+Next, the Region of Practical Equivalence (ROPE) is used to determine what proportion of the 95% HDI  falls within a researcher-specified upper and lower bound and can be used to provide evidence for the null hypothesis.
+In general, a difference is considered credible if the entire 95% HDI falls outside the ROPE [@kruschke2018rejecting].
+Alternatively, the null hypothesis is supported when the 95% HDI falls completely within the ROPE.
 
-Informative but weakly regularizing priors were specified for the accuracy model to encode theoretically motivated expectations regarding overall accuracy effects by word type. Two-way cognates served as the baseline condition (the intercept) and were centered on an expected baseline accuracy of approximately 80%, whereas condition effects were centered on expected deviations of approximately ±10 percentage points, such that three-way cognates were expected to be more accurate (~90% correct) and non-cognates less accurate (~70% correct) than baseline. Priors remained sufficiently broad to permit substantial updating from the observed data. Random-effects variance parameters were regularized using exponential priors,and participant-level random-effect correlations were assigned an LKJ prior (η=2).
-
-Like the accuracy model, informative priors for log reaction time also used but in this case were based on previously reported data [@szubko-sitarek_2011].
-Again, two-way cognates served as the baseline (intercept) for the model and were predicted to be 765ms (sd = .15 in log units). The prior for three-way cognates was a faster reaction time for three-way cognates 743ms) and a slower reaction time for noncognates (819ms), with both standard deviations also set to .15 log units. 
-
-
-Prior sensitivity analyses were conducted to assess the extent to which our specified priors impacted the reported parameter estimates.
-That is, we also report models without prior assumptions akin to a frequentist analysis to determine how much influence the use of priors has on the parameter estimates and thus the narrative conclusions of the paper. 
-For each model, an otherwise identical model using default brms priors was fit and compared to the model using theoretically informed priors. Posterior summaries and distributions of focal parameters were compared directly, including posterior means, medians, and 95% credible intervals, alongside condition-level predictions on interpretable scales. Similarity of posterior estimates across models wpuld be interpreted as evidence that inference was driven primarily by the observed data rather than prior assumptions.
-
-
-
+Both models were fit to the data using the brms [@burkner2017brms] package in R and were estimated with Markov chain Monte Carlo sampling using 4 chains, each with 4000 iterations, including 2000 warm-up. 
+Model convergence was evaluated using effective sample sizes and R-hat values. 
+All regression coefficients were assigned Student's t(3, 0, 2.5) priors, while the residual standard deviation was assigned a half-Student's t(3, 0, 2.5) prior.
+The accuracy model was a multilevel Bayesian logistic regression model that predicted the log-odds of a correct trial (coded as 1 or 0) as a function of the fixed effect predictors word type (4 levels: non-cognate, two-way cognate, three-way cognate and psuedoword; reference level two-way cognates), lexical frequency (z-scored and centered log frequency), and proficiency (z-scored and centered adapted LexTALE score).
+The random effects structure include a random slope for each participant and a random intercept for word (stimulus).
+The ROPE was set to +/-0.18 in log-odds, proportional to a negligible effect size of Cohen's d = .1 [@plonsky2014big].
+The reaction time model predicted the log reaction time of correct responses as a function of the same predictors and random effect structure.
+In this case, the ROPE was set to +/-0.0065 log reaction time, or +/- approximately 5ms.
 
