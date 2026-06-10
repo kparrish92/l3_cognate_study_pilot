@@ -37,7 +37,7 @@ acc_table = describe_posterior(accuracy_mod_b) %>%
 
 
 acc_t <- flextable(acc_table, use_labels = FALSE) %>% 
-  set_caption(caption = "Accuracy Model") %>% 
+  set_caption(caption = "Posterior Distribution of the Accuracy Model") %>% 
   font(fontname = "Times New Roman", part = "all") %>% 
   theme_booktabs() %>% 
   align(align = "center", part = "all") %>% 
@@ -50,6 +50,27 @@ acc_t <- flextable(acc_table, use_labels = FALSE) %>%
   
 acc_t
 ```
+
+Overall, there was strong evidence for a cognate effect in accuracy, and somewhat weaker evidence for a cumulative effect in accuracy.
+Figure \@ref(fig:accmod) visualizes the posterior distribution for the accuracy model and Table 2 includes specific estimates of each model term. 
+In this model, the intercept was `r acc_table$Median[1]` and represents the log-odds of an accurate response in the reference condition (two-way cognates) when the adapted LexTALE scores (proficiency_z) and lexical frequency (frequency_z) are average.
+In practice, this corresponds to a participant with average proficiency would be accurate about `r round(plogis(acc_table$Median[1]), digits = 3)*100`% of the time for words of average lexical frequency. 
+The effect for non-cognates was `r acc_table$Median[2]``r acc_table$CI[2]`. `r acc_table$pd[2]`, which corresponds to a lower predicted probability of a correct response (`r round(plogis(acc_table$Median[1] + acc_table$Median[2]), digits = 3)*100`%).
+The probability of direction was 1.00, signaling that virtually the entire posterior distribution is below zero, providing extremely strong evidence for a negative effect.
+Additionally, 0% of the posterior distribution fell within the ROPE, suggesting that none of the credible parameter values were practically equivalent to zero.
+For three-way cognates, the median effect was `r acc_table$Median[3]` `r acc_table$CI[3]`, indicating that the most credible values of the effect were positive. 
+The effect was associated with a pd of `r acc_table$pd[3]`, indicating that approximately 98% of the posterior distribution supported a positive effect. 
+Additionally, only `r acc_table$ROPE_Percentage[3]*100`% of the posterior distribution fell within the ROPE, suggesting that most credible parameter values were not practically equivalent to zero. 
+Taken together, these results provide evidence that three-way cognates were identified more accurately than two-way cognates, although the evidence was somewhat weaker than that observed for the non-cognate effect.
+
+Higher numbers for both the continuous predictors lexical frequency and proficiency were associated with higher accuracy.
+For lexical frequency, the median estimate was `r acc_table$Median[4]`  `r acc_table$CI[4]`, indicating that a one standard deviation increase in lexical frequency was associated with an increase of `r acc_table$Median[4]` increase in the log-odds of a correct response. 
+Holding all other predictors constant, predicted accuracy increases to around `r round(plogis(acc_table$Median[1] + acc_table$Median[4]), digits = 3)*100`% words that were 1 standard deviation more frequent than average, while it dropped to `r round(plogis(acc_table$Median[1] - acc_table$Median[4]), digits = 3)*100`% for words that were one standard deviation less frequent than average. 
+Again, the pd (`r acc_table$pd[4]`) and ROPE percentage `r acc_table$ROPE_Percentage[4]`% provide strong evidence for the existence of a positive association between lexical frequency and accuracy. 
+Proficiency was also shown the be positively associated with accuracy; the estimate `r acc_table$Median[4]` `r acc_table$CI[4]`] suggests that 
+For proficiency, the median estimate was `r acc_table$Median[5]` `r acc_table$CI[5]`, once again indicating that a one standard deviation increase in lexical frequency was associated with an increase of `r acc_table$Median[5]` increase in the log-odds of a correct response. 
+Predicted accuracy increases to around `r round(plogis(acc_table$Median[1] + acc_table$Median[4]), digits = 3)*100`% by participants that were 1 standard deviation more proficient than average, while it dropped to `r round(plogis(acc_table$Median[1] - acc_table$Median[5]), digits = 3)*100`% for participants that were one standard deviation less proficient than average. 
+Like frequency, the pd (`r acc_table$pd[5]`) and ROPE percentage (`r acc_table$ROPE_Percentage[5]`) provide compelling evidence of that the effect is positive and not negligible. 
 
 
 ```{r accmod, fig.cap="Posterior Distributions of the accuracy model"}

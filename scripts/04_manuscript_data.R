@@ -2,8 +2,8 @@
 source(here::here("scripts", "00_libraries.R"))
 source(here::here("scripts", "02_load_data.R"))
 
-#### Bio data 
 
+# gender demographics 
 gender_pct = survey_data %>% 
   group_by(gender) %>% 
   summarise(n = n())
@@ -11,36 +11,39 @@ gender_pct = survey_data %>%
 pct_female = round(gender_pct$n[1]/sum(gender_pct$n)*100)
 pct_male = round(gender_pct$n[2]/sum(gender_pct$n)*100)
 
-
+# age range
 lowage = round(range(survey_data$age), digits = 1)[1]
 oldage = round(range(survey_data$age), digits = 1)[2]
 
-
+# English age of onset + acquisition
 eng_aoo = round(mean(survey_data$english_aoo), digits = 1)
 eng_aoo_sd = round(sd(survey_data$english_aoo), digits = 1)
 
 eng_aoa = round(mean(survey_data$english_aoa), digits = 1)
 eng_aoa_sd = round(sd(survey_data$english_aoa), digits = 1)
 
+# Spanish age of onset + acquisition
 sp_aoo = round(mean(as.numeric(survey_data$spanish_aoo)), digits = 1)
 sp_aoo_sd = round(sd(as.numeric(survey_data$spanish_aoo)), digits = 1)
-
 
 sp_aoa = round(mean(c(15,18,20,22,24,26,30)), digits = 1)
 sp_aoa_sd = round(sd(c(15,18,20,22,24,26,30)), digits = 1)
 
+# Self-rated proficiency in German (L1)
 de_prof_c = round(mean(as.numeric(survey_data$german_perception_level)), digits = 2)
 de_prof_c_sd = round(sd(as.numeric(survey_data$german_perception_level)), digits = 2)
 
 de_prof_s = round(mean(as.numeric(survey_data$german_speaking_level)), digits = 2)
 de_prof_s_sd = round(sd(as.numeric(survey_data$german_speaking_level)), digits = 2)
 
+# Self-rated proficiency in English (L2)
 en_prof_c = round(mean(as.numeric(survey_data$english_comprehension)), digits = 2)
 en_prof_c_sd = round(sd(as.numeric(survey_data$english_comprehension)), digits = 2)
 
 en_prof_s = round(mean(as.numeric(survey_data$english_speaking_level)), digits = 2)
 en_prof_s_sd = round(sd(as.numeric(survey_data$english_speaking_level)), digits = 2)
 
+# Self-rated proficiency in Spanish (L3)
 sp_prof_c = round(mean(as.numeric(survey_data$spanish_comprehension_level)), digits = 2)
 sp_prof_c_sd = round(sd(as.numeric(survey_data$spanish_comprehension_level)), digits = 2)
 
@@ -48,12 +51,14 @@ sp_prof_s = round(mean(as.numeric(survey_data$spanish_speaking_level)), digits =
 sp_prof_s_sd = round(sd(as.numeric(survey_data$spanish_speaking_level)), digits = 2)
 
 
-
+# Range of the adapted Lextale scores 
 prof_mean = round(mean(rt_trials$ps_lextale_score), digits = 1)
 prof_sd = round(sd(rt_trials$ps_lextale_score), digits = 1)
 prof_lo = round(range(rt_trials$ps_lextale_score), digits = 1)[1]
 prof_hi = round(range(rt_trials$ps_lextale_score), digits = 1)[2]
 
+
+# Figure 1: Histogram of adapted lextale scores
 rt_trials %>% 
   group_by(participant) %>% 
   summarise(mean_lextale = mean(ps_lextale_score)) %>% 
@@ -63,7 +68,7 @@ rt_trials %>%
 
 ggsave(here("docs", "plots", "apapted_lextale_hist.png"), dpi = 600)
 
-#### Accuracy
+# Figure 2: Overall accuracy by word type
 
 totals_n = p_data %>% # create df for overall accuracy
   group_by(type, is_correct) %>% 
@@ -75,24 +80,6 @@ totals_n = p_data %>% # create df for overall accuracy
   mutate(pct_correct = correct/total) %>% 
   select(type, pct_correct)
 
-ind_data = p_data %>% # create df for individual accuracy
-  group_by(participant, type, is_correct) %>% 
-  summarize(n = n()) %>% 
-  pivot_wider(names_from = is_correct, values_from = n) %>% 
-  rename("correct" = "1") %>% 
-  rename("incorrect" = "0")
-
-
-ind_data[is.na(ind_data)] <- 0 # replace NAs with 0s 
-
-neat_ind_data = ind_data %>% # plotting df 
-  mutate(total = correct + incorrect) %>% 
-  mutate(pct_correct = (correct/total)*100) %>% 
-  select(participant, type, pct_correct) %>% 
-  pivot_wider(names_from = type, values_from = pct_correct)
-
-
-# Figure 1
 totals_n %>% 
   filter(type != "pseudoword") %>%
   mutate(pct_correct = 100*pct_correct) %>% 
@@ -107,8 +94,23 @@ totals_n %>%
 
 ggsave(here("docs", "plots", "overall_acc.png"), dpi = 600)
 
+# Figure 3: Individual accuracy by word type
 
-# Figure 2
+ind_data = p_data %>% # create df for individual accuracy
+  group_by(participant, type, is_correct) %>% 
+  summarize(n = n()) %>% 
+  pivot_wider(names_from = is_correct, values_from = n) %>% 
+  rename("correct" = "1") %>% 
+  rename("incorrect" = "0")
+
+ind_data[is.na(ind_data)] <- 0 # replace NAs with 0s 
+
+neat_ind_data = ind_data %>% # plotting df 
+  mutate(total = correct + incorrect) %>% 
+  mutate(pct_correct = (correct/total)*100) %>% 
+  select(participant, type, pct_correct) %>% 
+  pivot_wider(names_from = type, values_from = pct_correct)
+
 neat_ind_data %>% 
   pivot_longer(cols = `non_cognate`:`two_way_cognate`, names_to = "type", values_to = "accuracy") %>% 
   ggplot(aes(x = accuracy)) + theme_minimal() + geom_histogram(binwidth = 10, color = "black", fill = "skyblue2") + 
@@ -117,20 +119,19 @@ neat_ind_data %>%
 ggsave(here("docs", "plots", "ind_acc.png"), dpi = 600)
 
 
-# Accuracy Model 
+# Fit accuracy model 
 p_data$type = as.factor(p_data$type)
-p_data$type = relevel(p_data$type, ref = "two_way_cognate")
+p_data$type = relevel(p_data$type, ref = "two_way_cognate") # change reference level to two-way cognates
 
 accuracy_mod_b = brms::brm(is_correct ~ type + frequency_z + proficiency_z + (type | participant) + (1 | word), family =
                              bernoulli(),
                            iter = 4000, data = p_data, file = here("data", "models", "accuracy_mod_z.rds"))
 
 
-
-# Figure 3
+# Figure 4: Posterior distribution of the accuracy model
 posterior <- as.matrix(accuracy_mod_b)
 
-plot_title <- ggtitle("Posterior distributions",
+plot_title <- ggtitle("Posterior distributions of the accuracy model",
                       "with medians and 80% intervals")
 mcmc_areas(accuracy_mod_b, 
            pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
@@ -140,22 +141,22 @@ describe_posterior(accuracy_mod_b)
 
 ggsave(here("docs", "plots", "acc_mod.png"), dpi = 600)
 
-# RT Model 
-
-
+# Fit reaction time model
 l3_model_rt = brms::brm(log_rt ~ type + frequency_z + proficiency_z + (type | participant) + (1 | word),
                            iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z.rds"))
 
 
+# Figure 5: Posterior distribution of the RT model
 mcmc_areas(l3_model_rt, 
            pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
            prob = 0.8) + ggtitle("Posterior distributions",
                                  "with medians and 80% intervals")
 
-describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065))
+describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) # ~ +/- 10ms
+
+ggsave(here("docs", "plots", "rt_mod.png"), dpi = 600)
 
 
-conditional_effects(l3_model_rt)
 
 
 

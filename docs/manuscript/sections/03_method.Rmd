@@ -9,7 +9,7 @@ The remaining 36 participants were recruited using Prolific (www.prolific.com) a
 The data of `r length(ppts_remove)` participants were removed from the final data set due to low accuracy rates in at least one condition (less than 10 out of 24 correct in the cognate conditions).
 As a result, the final data set contained `r length(unique(rt_trials$participant))` participants (64% female; 36% male). 
 
-All participants completed an adapted version of the LEAP-Q questionnaire [@marianlanguage].
+All participants completed an adapted version of the LEAP-Q questionnaire [@marian2007language].
 The questionnaire was administered in Qualtrics and asked about language background and dominance.
 The survey contained 23 total questions, including general information (age, gender, birth place and place of residence), language dominance and order of acquisition, and self-rated proficiency in both speaking and perception. 
 
@@ -140,24 +140,28 @@ knitr::include_graphics(here("docs", "plots", "apapted_lextale_hist.png"))
 
 ## Data Analysis
 
-The data were analyzed using two Bayesian multilevel regression models for accuracy and reaction time.
+### Analysis justification
 A Bayesian approach was chosen for two primary reasons. 
-First, Bayesian models allow for a more gradient analysis than the often used frequentist p-value (which is typically discarded if it is greater than .05). 
-Additionally, frequentist models test against the null hypothesis, but are unable to provide evidence that the null hypothesis is true.
+First, Bayesian models allow for a more gradient analysis than the often used frequentist p-value, in which is is more typical to take a binary, all-or-nothing approach (e.g. there either is or is not evidence for a difference between conditions).
+Additionally, frequentist models test against the null hypothesis, but are unable to provide direct evidence that the null hypothesis is true.
 Taken together, the Bayesian Framework offers both flexibility and for more gradient interpretations of both the null and alternative hypotheses.
 
 In the Bayesian framework, several metrics are reported. 
-First, the 95% Highest Density Interval (95% HDI) refers to the range of the most credible 95% of the posterior distribution.
-The probability of direction (pd) refers to the probability that a parameter is positive or negative and ranges from 50% to 100%. 
+First, the 95% Highest Density Interval (95% HDI) refers to the range of the most credible 95% of the posterior distribution as determined by a probability density function.
+Next, the probability of direction (pd) refers to the probability that a parameter is positive or negative and ranges from 50% to 100%. 
 It is mathematically defined as the proportion of the posterior distribution that is the same sign its median estimate [@makowski2019indices].
-Next, the Region of Practical Equivalence (ROPE) is used to determine what proportion of the 95% HDI  falls within a researcher-specified upper and lower bound and can be used to provide evidence for the null hypothesis.
-In general, a difference is considered credible if the entire 95% HDI falls outside the ROPE [@kruschke2018rejecting].
-Alternatively, the null hypothesis is supported when the 95% HDI falls completely within the ROPE.
+Finally, the Region of Practical Equivalence (ROPE) is used to determine what proportion of the entire posterior distribution falls within researcher-specified upper and lower bounds and can be used to provide evidence for the null hypothesis.
 
+Although the HDI and ROPE can be combined to create decision rules (e.g., concluding that a difference is credible when the entire 95% HDI falls outside the ROPE [@kruschke2018rejecting]), such binary decisions are not required in Bayesian inference. 
+Rather, Bayesian analyses permit a more graded evaluation of evidence by examining the location and spread of the posterior distribution, the probability of direction, and the proportion of the posterior falling within the ROPE.
+Consequently, evidence can be interpreted as varying continuously in strength rather than being reduced to a dichotomous significant/non-significant outcome.
+
+### Model speficications
+The data were analyzed using two Bayesian multilevel regression models for accuracy and reaction time.
 Both models were fit to the data using the brms [@burkner2017brms] package in R and were estimated with Markov chain Monte Carlo sampling using 4 chains, each with 4000 iterations, including 2000 warm-up. 
 Model convergence was evaluated using effective sample sizes and R-hat values. 
 All regression coefficients were assigned Student's t(3, 0, 2.5) priors, while the residual standard deviation was assigned a half-Student's t(3, 0, 2.5) prior.
-The accuracy model was a multilevel Bayesian logistic regression model that predicted the log-odds of a correct trial (coded as 1 or 0) as a function of the fixed effect predictors word type (4 levels: non-cognate, two-way cognate, three-way cognate and psuedoword; reference level two-way cognates), lexical frequency (z-scored and centered log frequency), and proficiency (z-scored and centered adapted LexTALE score).
+The accuracy model was a multilevel Bayesian logistic regression model that predicted the log-odds of a correct trial (coded as 1 or 0) as a function of the fixed effect predictors word type (3 levels: non-cognate, two-way cognate, three-way cognate; reference level two-way cognates), lexical frequency (z-scored log frequency), and proficiency (z-scored adapted LexTALE score).
 The random effects structure include a random slope for each participant and a random intercept for word (stimulus).
 The ROPE was set to +/-0.18 in log-odds, proportional to a negligible effect size of Cohen's d = .1 [@plonsky2014big].
 The reaction time model predicted the log reaction time of correct responses as a function of the same predictors and random effect structure.
