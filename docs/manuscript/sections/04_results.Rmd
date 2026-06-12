@@ -78,3 +78,25 @@ knitr::include_graphics(here("docs", "plots", "acc_mod.png"))
 
 ```
 
+## Reaction time
+
+Overall, there was evidence of a general cognate effect in reaction times, but not a cumulative one. 
+
+
+```{r overt, fig.cap="Mean reaction time of each word type"}
+knitr::include_graphics(here("docs", "plots", "over_rt.png"))
+
+```
+
+
+```{r indrt, fig.cap="Individual effects in reaction times"}
+knitr::include_graphics(here("docs", "plots", "ind_rt.png"))
+
+```
+
+
+```{r retmod, fig.cap="Posterior Distributions of the reaction time model"}
+knitr::include_graphics(here("docs", "plots", "rt_mod.png"))
+
+```
+

@@ -88,7 +88,7 @@ totals_n %>%
     levels = c("non_cognate", "two_way_cognate", "three_way_cognate"),
     labels = c("Non-cognate", "Two-way cognate", "Three-way cognate")
   )) %>% 
-  ggplot(aes(x = type, y = pct_correct)) + theme_minimal() + geom_col(color = "black", fill = "seagreen4") + ylim(0,100) + custom_theme() + xlab("") +
+  ggplot(aes(x = type, y = pct_correct)) + geom_col(color = "black", fill = "seagreen4") + ylim(0,100) + custom_theme() + xlab("") +
   ylab("Overall percentage of correct trials")
 
 
@@ -131,11 +131,9 @@ accuracy_mod_b = brms::brm(is_correct ~ type + frequency_z + proficiency_z + (ty
 # Figure 4: Posterior distribution of the accuracy model
 posterior <- as.matrix(accuracy_mod_b)
 
-plot_title <- ggtitle("Posterior distributions of the accuracy model",
-                      "with medians and 80% intervals")
 mcmc_areas(accuracy_mod_b, 
            pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
-           prob = 0.8) + plot_title
+           prob = 0.8) + custom_theme()
 
 describe_posterior(accuracy_mod_b)
 
@@ -146,13 +144,81 @@ l3_model_rt = brms::brm(log_rt ~ type + frequency_z + proficiency_z + (type | pa
                            iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z.rds"))
 
 
-# Figure 5: Posterior distribution of the RT model
+
+rt_trials %>% 
+  group_by(type) %>% 
+  summarise(mean_rt = mean(key_resp_lextale_trial.rt), 
+            sd_log_rt = sd(key_resp_lextale_trial.rt),
+            n = n()) %>% 
+  mutate(me = 1.96*sd_log_rt/sqrt(n)) %>% 
+  mutate(type = factor(
+    type,
+    levels = c("non_cognate", "two_way_cognate", "three_way_cognate"),
+    labels = c("Non-cognate", "Two-way cognate", "Three-way cognate")
+  )) %>% 
+  ggplot(aes(x = type, y = mean_rt, ymax = mean_rt + me, ymin = mean_rt - me)) +
+  geom_col(color = "black", fill = "steelblue2") +
+  geom_pointrange() + custom_theme() + ylim(0,1)
+
+ggsave(here("docs", "plots", "over_rt.png"), dpi = 600)
+
+
+# Calculate individual desc effects 
+library(effsize)
+
+ppts = unique(rt_trials$participant)
+df_c = list()
+
+for (i in 1:length(ppts)) {
+this_df = rt_trials %>% 
+  filter(participant == ppts[i]) %>% 
+  select(participant, type, key_resp_lextale_trial.rt)
+  
+  ncdf = this_df %>% filter(type == "non_cognate")
+  dobuledf = this_df %>% filter(type == "two_way_cognate")
+  tripledf =  this_df %>% filter(type == "three_way_cognate")
+  
+  nc_to_dub = as.numeric(cohen.d(dobuledf$key_resp_lextale_trial.rt, ncdf$key_resp_lextale_trial.rt)[["estimate"]]) # going from nc to double  
+  nc_to_trip = as.numeric(cohen.d(tripledf$key_resp_lextale_trial.rt, ncdf$key_resp_lextale_trial.rt)[["estimate"]]) # going from nc to triple
+  cumulative_d = as.numeric(cohen.d(tripledf$key_resp_lextale_trial.rt, dobuledf$key_resp_lextale_trial.rt)[["estimate"]]) # going from double to triple
+  
+  df_c[[i]] = data.frame(nc_to_dub = nc_to_dub, nc_to_trip = nc_to_trip, cumulative_d = cumulative_d, ppt = ppts[i])
+  
+}
+
+df_comb = do.call(rbind, df_c) %>% 
+  pivot_longer(cols = c(1:3), names_to = "comparison", values_to = "d") %>% 
+  mutate(is_pos = ifelse(d > 0, "ps","ng"))
+
+
+df_comb %>% 
+  ggplot(aes(x = d, fill = is_pos, group = is_pos)) + geom_histogram(binwidth = 0.1, breaks = seq(from = -1, to = 1, by = 0.1),
+                                                                     color = "black", center = 0) +
+  facet_wrap(
+    ~comparison,
+    ncol = 1,
+    labeller = labeller(
+      comparison = c(
+        "cumulative_d" = "Double cognates to triple cognates",
+        "nc_to_dub" = "Non-cognate to double cognates",
+        "nc_to_trip" = "Non-cognate to triple cognates"
+      )
+    )
+  ) +
+  scale_fill_discrete(palette  = c("seagreen3", "purple4")) +
+  scale_x_continuous(breaks = seq(from = -1, to = 1, by = 0.1)) +
+  custom_theme()+ theme(legend.position = "none") + theme(axis.text.x = element_text(colour = "black", size = 8))
+
+ggsave(here("docs", "plots", "ind_rt.png"), dpi = 600)
+
+# Figure 6: Posterior distribution of the RT model
 mcmc_areas(l3_model_rt, 
            pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
-           prob = 0.8) + ggtitle("Posterior distributions",
-                                 "with medians and 80% intervals")
+           prob = 0.8) + custom_theme()
 
-describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) # ~ +/- 10ms
+describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) # ~ +/- 5ms
+
+describe_posterior(l3_model_rt, rope_range = c(-0.013, 0.013)) # ~ +/- 10ms
 
 ggsave(here("docs", "plots", "rt_mod.png"), dpi = 600)
 

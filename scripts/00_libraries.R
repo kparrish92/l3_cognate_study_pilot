@@ -69,12 +69,22 @@ p_lexTALE_score <- function(words_correct, nonwords_correct) {
 
 custom_theme <- function() {
   theme(
-  #  panel.background = element_rect(fill = "white"),
-    axis.text = element_text(colour = "black", size = 12),
-    axis.title = element_text(colour = "black", size = 12),
+    panel.background = element_rect(fill = "white"),
+    axis.text = element_text(colour = "black", size = 10),
+    axis.title = element_text(colour = "black", size = 10),
+    strip.text.x = element_text(size = 16),
+    strip.text.y = element_text(size = 16),
+    strip.background = element_rect(fill = "white", color = "black"),
     legend.position = "bottom",
-    legend.title = element_text(colour = "black", size = 14),
-    legend.text = element_text(colour = "black", size = 12),
+    legend.title = element_text(colour = "black", size = 12),
+    legend.text = element_text(colour = "black", size = 10),
+    panel.grid.major = element_line(
+      colour = "grey85",
+      linewidth = 0.4
+    ),
+    panel.grid.minor = element_line(
+      colour = "grey92",
+      linewidth = 0.2),
     plot.title = element_text(colour = "black", size = 12, hjust = 0.5)  # Center align the title
   )
 }
