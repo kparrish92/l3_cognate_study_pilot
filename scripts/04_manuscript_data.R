@@ -144,6 +144,7 @@ l3_model_rt = brms::brm(log_rt ~ type + frequency_z + proficiency_z + (type | pa
                            iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z.rds"))
 
 
+# Figure 5: Overall reaction times
 
 rt_trials %>% 
   group_by(type) %>% 
@@ -158,9 +159,16 @@ rt_trials %>%
   )) %>% 
   ggplot(aes(x = type, y = mean_rt, ymax = mean_rt + me, ymin = mean_rt - me)) +
   geom_col(color = "black", fill = "steelblue2") +
+  ylab("Mean Reaction time (ms)") +
   geom_pointrange() + custom_theme() + ylim(0,1)
 
 ggsave(here("docs", "plots", "over_rt.png"), dpi = 600)
+
+report_rt = rt_trials %>% 
+  group_by(type) %>% 
+  summarise(mean_rt = mean(key_resp_lextale_trial.rt), 
+            sd_log_rt = sd(key_resp_lextale_trial.rt),
+            n = n())
 
 
 # Calculate individual desc effects 
@@ -190,6 +198,7 @@ df_comb = do.call(rbind, df_c) %>%
   pivot_longer(cols = c(1:3), names_to = "comparison", values_to = "d") %>% 
   mutate(is_pos = ifelse(d > 0, "ps","ng"))
 
+# Figure 6: Individual effects in RT
 
 df_comb %>% 
   ggplot(aes(x = d, fill = is_pos, group = is_pos)) + geom_histogram(binwidth = 0.1, breaks = seq(from = -1, to = 1, by = 0.1),
@@ -211,18 +220,31 @@ df_comb %>%
 
 ggsave(here("docs", "plots", "ind_rt.png"), dpi = 600)
 
-# Figure 6: Posterior distribution of the RT model
+pos_neg_cumu = df_comb %>% 
+  filter(comparison == "cumulative_d") %>% 
+  group_by(is_pos) %>% 
+  summarise(n = n())
+
+pos_neg_dub = df_comb %>% 
+  filter(comparison == "nc_to_dub") %>% 
+  group_by(is_pos) %>% 
+  summarise(n = n())
+
+
+pos_neg_trip = df_comb %>% 
+  filter(comparison == "nc_to_trip") %>% 
+  group_by(is_pos) %>% 
+  summarise(n = n())
+
+
+# Figure 7: Posterior distribution of the RT model
 mcmc_areas(l3_model_rt, 
            pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
            prob = 0.8) + custom_theme()
 
 describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) # ~ +/- 5ms
 
-describe_posterior(l3_model_rt, rope_range = c(-0.013, 0.013)) # ~ +/- 10ms
-
 ggsave(here("docs", "plots", "rt_mod.png"), dpi = 600)
-
-
 
 
 

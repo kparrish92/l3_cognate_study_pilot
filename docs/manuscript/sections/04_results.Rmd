@@ -13,12 +13,12 @@ For reaction time the analyzed data frame contained 2180 data points after remov
 knitr::include_graphics(here("docs", "plots", "overall_acc.png"))
 ```
 
-Figure \@ref(fig:accuracy) shows the overall accuracy within the entire data set (`r nrow(p_data)` trials) excluding pseudowords (in which `r round2(totals_n$pct_correct[2])`% of trials were correct).
-Overall, three-way cognates were the most accurate (`r round2(totals_n$pct_correct[3])`%), followed by two-way cognates (`r round2(totals_n$pct_correct[4])`%), while non-cognates were the least accurate (`r round2(totals_n$pct_correct[1])`%).
+Figure \@ref(fig:accuracy) shows the overall accuracy within the entire data set (`r nrow(p_data)` trials) excluding pseudowords (in which `r round2(totals_n$pct_correct[2]*100)`% of trials were correct).
+Overall, three-way cognates were the most accurate (`r round2(totals_n$pct_correct[3]*100)`%), followed by two-way cognates (`r round2(totals_n$pct_correct[4]*100)`%), while non-cognates were the least accurate (`r round2(totals_n$pct_correct[1]*100)`%).
 
 Figure \@ref(fig:accuracyind) shows histograms of individuals' percentage of correct trials in each word-type. 
-Individual accuracy in non-cognates ranged from `r round2(range(neat_ind_data$non_cognate)[1])` % of trials correct to `r round2(range(neat_ind_data$non_cognate)[2])` (median `r round2(median(neat_ind_data$non_cognate))`%)
-Like the data set as a whole, the median of individual percentages correct for the three-way cognates was the highest `r round2(median(neat_ind_data$three_way_cognate))`% (range `r round2(range(neat_ind_data$three_way_cognate)[1])`% - `r round2(range(neat_ind_data$three_way_cognate)[2])`), followed by two-way cognates (median percentage correct = `r round2(median(neat_ind_data$two_way_cognate))`%; range = `r round2(range(neat_ind_data$two_way_cognate)[1])`% - `r round2(range(neat_ind_data$two_way_cognate)[2])`).
+Individual accuracy in non-cognates ranged from `r round2(range(neat_ind_data$non_cognate)[1])` % of trials correct to `r round2(range(neat_ind_data$non_cognate)[2])`% (median `r round2(median(neat_ind_data$non_cognate))`%).
+Like the data set as a whole, the median of individual percentages correct for the three-way cognates was the highest: `r round2(median(neat_ind_data$three_way_cognate))`% (range `r round2(range(neat_ind_data$three_way_cognate)[1])`% - `r round2(range(neat_ind_data$three_way_cognate)[2])`%), followed by two-way cognates (median percentage correct = `r round2(median(neat_ind_data$two_way_cognate))`%; range = `r round2(range(neat_ind_data$two_way_cognate)[1])`% - `r round2(range(neat_ind_data$two_way_cognate)[2])`).
 Taken together, these descriptive results suggest that, while most participants benefit from cognates in accuracy, a minority also experience steep drops in accuracy.
 Indeed, two participants showed the opposite of expected and were most accurate in non-cognates (60.4% and 68.7%) and much less accurate in two-way (25% and 16.7%) and three-way cognates (20.8% and 8.3%).
 
@@ -51,24 +51,23 @@ acc_t <- flextable(acc_table, use_labels = FALSE) %>%
 acc_t
 ```
 
-Overall, there was strong evidence for a cognate effect in accuracy, and somewhat weaker evidence for a cumulative effect in accuracy.
+Overall, there was strong evidence for a general cognate effect in accuracy, and somewhat weaker evidence for a cumulative effect.
 Figure \@ref(fig:accmod) visualizes the posterior distribution for the accuracy model and Table 2 includes specific estimates of each model term. 
 In this model, the intercept was `r acc_table$Median[1]` and represents the log-odds of an accurate response in the reference condition (two-way cognates) when the adapted LexTALE scores (proficiency_z) and lexical frequency (frequency_z) are average.
-In practice, this corresponds to a participant with average proficiency would be accurate about `r round(plogis(acc_table$Median[1]), digits = 3)*100`% of the time for words of average lexical frequency. 
-The effect for non-cognates was `r acc_table$Median[2]``r acc_table$CI[2]`. `r acc_table$pd[2]`, which corresponds to a lower predicted probability of a correct response (`r round(plogis(acc_table$Median[1] + acc_table$Median[2]), digits = 3)*100`%).
+In practice, this corresponds to a participant with average proficiency would be accurate `r round(plogis(acc_table$Median[1]), digits = 3)*100`% of the time for words of average lexical frequency. 
+The effect for non-cognates was `r acc_table$Median[2]`, 95% HDI = `r acc_table$CI[2]`, pd = `r acc_table$pd[2]`, which corresponds to a lower predicted probability of a correct response (`r round(plogis(acc_table$Median[1] + acc_table$Median[2]), digits = 3)*100`%).
 The probability of direction was 1.00, signaling that virtually the entire posterior distribution is below zero, providing extremely strong evidence for a negative effect.
 Additionally, 0% of the posterior distribution fell within the ROPE, suggesting that none of the credible parameter values were practically equivalent to zero.
-For three-way cognates, the median effect was `r acc_table$Median[3]` `r acc_table$CI[3]`, indicating that the most credible values of the effect were positive. 
+For three-way cognates, the median effect was `r acc_table$Median[3]` 95% HDI = `r acc_table$CI[3]`, indicating that the most credible values of the effect were positive. 
 The effect was associated with a pd of `r acc_table$pd[3]`, indicating that approximately 98% of the posterior distribution supported a positive effect. 
 Additionally, only `r acc_table$ROPE_Percentage[3]*100`% of the posterior distribution fell within the ROPE, suggesting that most credible parameter values were not practically equivalent to zero. 
 Taken together, these results provide evidence that three-way cognates were identified more accurately than two-way cognates, although the evidence was somewhat weaker than that observed for the non-cognate effect.
 
 Higher numbers for both the continuous predictors lexical frequency and proficiency were associated with higher accuracy.
-For lexical frequency, the median estimate was `r acc_table$Median[4]`  `r acc_table$CI[4]`, indicating that a one standard deviation increase in lexical frequency was associated with an increase of `r acc_table$Median[4]` increase in the log-odds of a correct response. 
-Holding all other predictors constant, predicted accuracy increases to around `r round(plogis(acc_table$Median[1] + acc_table$Median[4]), digits = 3)*100`% words that were 1 standard deviation more frequent than average, while it dropped to `r round(plogis(acc_table$Median[1] - acc_table$Median[4]), digits = 3)*100`% for words that were one standard deviation less frequent than average. 
-Again, the pd (`r acc_table$pd[4]`) and ROPE percentage `r acc_table$ROPE_Percentage[4]`% provide strong evidence for the existence of a positive association between lexical frequency and accuracy. 
-Proficiency was also shown the be positively associated with accuracy; the estimate `r acc_table$Median[4]` `r acc_table$CI[4]`] suggests that 
-For proficiency, the median estimate was `r acc_table$Median[5]` `r acc_table$CI[5]`, once again indicating that a one standard deviation increase in lexical frequency was associated with an increase of `r acc_table$Median[5]` increase in the log-odds of a correct response. 
+For lexical frequency, the median estimate was `r acc_table$Median[4]`  `r acc_table$CI[4]`, indicating that a one standard deviation increase in lexical frequency was associated with an increase of `r acc_table$Median[4]` in the log-odds of a correct response. 
+Holding all other predictors constant, predicted accuracy increases to around `r round(plogis(acc_table$Median[1] + acc_table$Median[4]), digits = 3)*100`% in words that were 1 standard deviation more frequent than average, while it dropped to `r round(plogis(acc_table$Median[1] - acc_table$Median[4]), digits = 3)*100`% for words that were one standard deviation less frequent than average. 
+Again, the pd (`r acc_table$pd[4]`) and ROPE percentage (`r acc_table$ROPE_Percentage[4]`%) provide strong evidence for the existence of a positive association between lexical frequency and accuracy. 
+Proficiency was also shown the be positively associated with accuracy; the estimate `r acc_table$Median[5]` `r acc_table$CI[5]` suggests that a one standard deviation increase in the adapted LexTALE score was associated with an increase of `r acc_table$Median[5]` increase in the log-odds of a correct response. 
 Predicted accuracy increases to around `r round(plogis(acc_table$Median[1] + acc_table$Median[4]), digits = 3)*100`% by participants that were 1 standard deviation more proficient than average, while it dropped to `r round(plogis(acc_table$Median[1] - acc_table$Median[5]), digits = 3)*100`% for participants that were one standard deviation less proficient than average. 
 Like frequency, the pd (`r acc_table$pd[5]`) and ROPE percentage (`r acc_table$ROPE_Percentage[5]`) provide compelling evidence of that the effect is positive and not negligible. 
 
@@ -80,8 +79,19 @@ knitr::include_graphics(here("docs", "plots", "acc_mod.png"))
 
 ## Reaction time
 
-Overall, there was evidence of a general cognate effect in reaction times, but not a cumulative one. 
+Like accuracy, the analysis of the reaction time data showed evidence of a general cognate facilitation effect. 
+Figure \@ref(fig:overt) shows the overall mean reaction times in milliseconds in for each word type. 
+Non-cognate words were recognized as real words slowest (mean reaction time `r round2(report_rt$mean_rt[2]*1000)`ms, sd = `r round2(report_rt$sd_log_rt[2]*1000)`), while both two-way (`r round2(report_rt$mean_rt[1]*1000)`ms, sd = `r round2(report_rt$sd_log_rt[1]*1000)`) and three-way cognates were recognized faster `r round2(report_rt$mean_rt[3]*1000)`ms, sd = `r round2(report_rt$sd_log_rt[3]*1000)`.
+The difference in reaction time between two-way and three-way cognates was quite small (d = .03).
 
+In the case of reaction time, there were even more pronounced differences regarding individual differences. 
+Figure \@ref(fig:indrt) shows individual effect sizes in three situations: going from double to triple cognates, non-cognates to double cognates, and non-cognates to triple cognates. 
+It was predicted that, if there was a cumulative effect of cognate facilitation, that double to triple cognates would yield negative effects. 
+However, many participants were faster (`r pos_neg_cumu$n[2]` of 35) in double cognates than triple cognates, while the remaining `r pos_neg_cumu$n[1]` participants showed the opposite pattern and processed triple cognates fastest.  
+The second facet shows the individual effects for non-cognates relative to double cognates.  
+In this instance, as expected, most participants (`r pos_neg_dub$n[1]`) were faster for double cognates than non-cognates, although `r pos_neg_dub$n[1]` individuals were not. 
+Similar proportions of participants were also faster at deciding that triple cognates were real words (`r pos_neg_trip$n[1]`).
+Taken together, these results suggest that while most individuals showed descriptive evidence general cognate effects in reaction time, there was not strong evidence for a cumulative effect in which triple cognates were processed faster than double cognates. 
 
 ```{r overt, fig.cap="Mean reaction time of each word type"}
 knitr::include_graphics(here("docs", "plots", "over_rt.png"))
@@ -99,4 +109,40 @@ knitr::include_graphics(here("docs", "plots", "ind_rt.png"))
 knitr::include_graphics(here("docs", "plots", "rt_mod.png"))
 
 ```
+
+```{r}
+rt_table = describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) %>% 
+  mutate(across(where(is.numeric), ~ round(.x, 2))) %>% 
+  mutate(CI = paste0("[", CI_low, ", ", CI_high, "]")) %>% 
+  mutate(ROPE = paste0("[", ROPE_low, ", ", ROPE_high, "]")) %>% 
+  select(Parameter, Median, CI, pd, ROPE, ROPE_Percentage, Rhat, ESS)
+
+
+
+rt_t <- flextable(rt_table, use_labels = FALSE) %>% 
+  set_caption(caption = "Posterior Distribution of the Reaction Time Model") %>% 
+  font(fontname = "Times New Roman", part = "all") %>% 
+  theme_booktabs() %>% 
+  align(align = "center", part = "all") %>% 
+  align(j = 1, align = "left", part = "body") %>% 
+  set_header_labels(
+  CI = "95% CI",
+  ROPE_Percentage = "% in ROPE"
+) %>% 
+  autofit()
+  
+rt_t
+```
+
+The Bayesian model largely corroborated the descriptive results for reaction time.
+Figure \@ref(fig:retmod) visualized the posterior distribution of the Bayesian model while Table 3 provides additional details regarding the posterior shape and fit.
+The intercept term of this model (`r rt_table$Median[1]`) corresponds to the log reaction time of a two-way cognate of average frequency by a participant with average proficiency. 
+This value corresponds to `r round2(exp(rt_table$Median[1])*1000)` milliseconds. 
+The non-cognate model term is `r rt_table$Median[2]` `r rt_table$CI[2]` and indicates a slow down relative to two-way cognates of about `r round2(abs(exp(rt_table$Median[1])*1000 - exp(rt_table$Median[2])*1000))` milliseconds. 
+Three-way cognates were predicted to be processed slightly faster that two-way cognates (`r rt_table$Median[3]` `r rt_table$CI[3]`), but had both positive and negative plausible estimates in the posterior distribution, as well as a relatively low pd (`r rt_table$pd[3]`) and `r rt_table$ROPE_percentage[3]*100`% in the ROPE. 
+Lexical frequency was a strong predictor of reaction time.
+Like with accuracy, the model term represents the change in reaction time for a one standard deviation increase in frequency and in this case predicts faster reactions (`r rt_table$Median[4]` `r rt_table$CI[4]`) in more frequent words corresponding to `round2(abs(exp(rt_table$Median[1])*1000 - exp(rt_table$Median[4])*1000))` milliseconds.
+Finally, the adapted LexTALE score (proficiency) was associated with a slight speedup in processing, but this difference did not fall completely outside the ROPE (`r rt_table$Median[5]` `r rt_table$CI[5]`), rendering the effect inconclusive. 
+Taken together, the results of the model point to a general cognate effect that is not explained by proficiency and with lexical frequency held constant. 
+Importantly, the model does not support a cumulative effect in lexical decisions.
 
