@@ -119,6 +119,37 @@ neat_ind_data %>%
 ggsave(here("docs", "plots", "ind_acc.png"), dpi = 600)
 
 
+# Figure X: increase in pct accuracy by cognate type
+
+## Positive is an increase in accuracy, negative is decrease in accuracy for cognates
+## negative slope shows lower effect of accuracy on correct answers as prof. increases
+
+acc_prof_df = p_data %>% # create df for individual accuracy
+  group_by(participant, type, is_correct, proficiency_z) %>% 
+  summarize(n = n()) %>% 
+  pivot_wider(names_from = is_correct, values_from = n) %>% 
+  rename("correct" = "1") %>% 
+  rename("incorrect" = "0")
+
+acc_prof_df[is.na(acc_prof_df)] <- 0 # replace NAs with 0s 
+
+
+acc_prof_df %>%   
+  mutate(total = correct + incorrect) %>% 
+  mutate(pct_correct = (correct/total)*100) %>% 
+  select(participant, type, pct_correct, proficiency_z) %>% 
+  pivot_wider(names_from = type, values_from = pct_correct) %>% 
+  mutate(double = two_way_cognate - non_cognate) %>% 
+  mutate(triple = three_way_cognate - non_cognate) %>% 
+  select(participant, proficiency_z, double, triple) %>% 
+  pivot_longer(cols = `double`:`triple`, names_to = "comparison", values_to = "cfe") %>% 
+  ggplot(aes(x = proficiency_z, y = cfe, color = comparison, label = participant)) + geom_point(size = 2) + 
+  geom_smooth(method = "lm") + custom_theme() + ylab("Change in accuracy") + xlab("Proficiecny (z)") 
+  
+
+ggsave(here("docs", "plots", "ind_acc_prof.png"), dpi = 600)
+
+
 # Fit accuracy model 
 p_data$type = as.factor(p_data$type)
 p_data$type = relevel(p_data$type, ref = "two_way_cognate") # change reference level to two-way cognates

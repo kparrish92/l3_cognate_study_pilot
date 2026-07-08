@@ -5,7 +5,7 @@
 A total of `r length(unique(rt_trials$participant)) + length(ppts_remove)` participants completed the study. 
 A total of nine participants were recruited from Hispanic Linguistics courses in a public university in Frankfurt, Germany.
 They received extra credit for their participation in the study.
-The remaining 36 participants were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
+The remaining 35 participants were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
 The data of `r length(ppts_remove)` participants were removed from the final data set due to low accuracy rates in at least one condition (less than 10 out of 24 correct in the cognate conditions).
 As a result, the final data set contained `r length(unique(rt_trials$participant))` participants (64% female; 36% male). 
 
