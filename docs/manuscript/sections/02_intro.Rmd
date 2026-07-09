@@ -3,36 +3,36 @@
 ## Introduction
 
 It is estimated that between one-half and two-thirds of the world's population uses two or more languages in daily life [@UNESCO2025MultilingualEducation].
-Consequently, a substantial proportion of the world's population engages in cognitive processes that differ from those of monolingual speakers. 
+Consequently, a substantial proportion of individuals engage in cognitive processes for communication that differ from those of monolingual speakers. 
 During language use, bilinguals and multilinguals must continuously regulate the activation of multiple linguistic systems, inhibiting irrelevant linguistic representations to produce and comprehend the intended language.
 
-Bilingualism being the norm suggests that it is also the more common initial state for subsequent language learning than monolingualism. 
+Bilingualism being the norm suggests that it is also the more common initial state for subsequent language learning relative to monolingualism. 
 In other words, learning a third or additional language (L3/Ln) is not the exception but the rule. 
 Yet, despite the prevalence of multilingual language learning, we know remarkably little about how third (L3) and additional (Ln) languages are acquired and processed relative to true second language (L2) learning. 
 As a result, understanding how bilingual speakers acquire additional languages is essential for developing theories of language acquisition that reflect the linguistic experiences of most learners rather than a monolingual minority.
 
-Whether or not L3 and L2 learning are indeed distinct has (though somewhat indirectly) been a point of contention in L3 models via the wholesale transfer/property-by-property transfer debate. 
-In the former, articulated by Rothman and colleagues [@rothman2019third; @Rothman_2015], and more recently @model2023l3, either the L1 or L2 transfers to the L3 early in development, suggesting that when L3 learners transfer the L1, L3 and L2 learning would be in principle the same process in that both learner types (L2 or L3) would only have single language access. 
-Evidence for this view has primarily come from the testing of mirror image groups [@foote2009transfer; @bardel_falk_2007; @puig2020systematic; @Rothman_2011; @parrish2024statistical], which test the acquisition of the same L3 by two groups whose L1 and L2 order are reversed. 
+Whether or not L3 and L2 learning are indeed distinct has, though somewhat indirectly, been a point of contention in L3 models via the wholesale transfer/property-by-property transfer debate. 
+In the former, articulated by Rothman and colleagues [@rothman2019third; @Rothman_2015], and more recently @model2023l3, either the L1 or L2 transfers to the L3 early in development, suggesting that when L3 learners transfer the L1, L3 and L2 learning would be in principle the same process in that both learner types (L2 or L3) would be guided by their L1. 
+Evidence for this view has primarily come from the testing of mirror image groups in studies of L3 morphosyntax [@foote2009transfer; @bardel_falk_2007; @puig2020systematic; @Rothman_2011; @parrish2024statistical], which test the acquisition of the same L3 by two groups whose L1 and L2 order are reversed. 
 For example, in a study on the acquisition of future probability in L3 Spanish, @borg2013acquisition tested both L1 English-L2 French and L1 French-L2 English groups and found that both groups benefited from their knowledge of French in L3 Spanish. 
 Additional studies using mirror image groups have reported similar findings on the influence of Spanish in L3 Brazilian Portuguese [@giancaspro2015transfer; @cabrelli2015relationship; @ionin2015interpretation; @MontrulDiasSantos2011; @parma2017cross; @ionin2015interpretation], while further studies found evidence for typological transfer in other language combinations [@de2014subject; @garcia2015object; @puig2018language]
 
-Property-by-property views of L3 acquisition, on the other hand, have argued that transfer is not wholesale, and L3 speakers retain access to both L1 and L2 linguistic representations [westergaard studies + slabakova]. 
+Property-by-property views of L3 acquisition, on the other hand, have argued that transfer is not wholesale, and L3 speakers retain access to both L1 and L2 linguistic representations [@westergaard2017crosslinguistic; @slabakova2017scalpel]. 
 Evidence for this view comes from comparing L2 and L3 learners of the same language, referred to as a subtractive design. 
-For example, in a study of one L3 and two L2 groups of English speakers, @westergaard2017crosslinguistic found that the L3 group's grammaticality judgments of two word order conditions fell between the two L1 groups. 
+For example, in a study of one L3 and two L2 groups of English speakers, @westergaard2017crosslinguistic found that the L3 group's grammaticality judgments of two word order conditions fell between two L1 comparison groups. 
 This finding suggested that the L3 group was influenced by both the L1 and L2 simultaneously. 
 Similar findings have been reported in L3 phonology, where initial imitations of French by L1 Spanish-L2 English bilinguals differ from L1 Spanish monolinguals [@parrish2024production]. 
 Additional studies also reported differences in crosslinguistic influence between L3 and L2 learners in L3 English [@jensen2023crosslinguistic] and an artificial language [@mitrofanova2023crosslinguistic].
 Overall, while there is evidence that typological effects seem to impact L3 acquisition, the studies supporting this overarching view cannot support the idea that L2 and L3 learning are, or at least can be, the same on their own. 
-Studies in property-by-property influence, on the other hand, provide evidence that although L3 learners may be primarily influence by their L1, L2 influence seems to persist when L3 learners are compared to L2 learners. 
+Studies in property-by-property influence, on the other hand, provide evidence that although L3 learners can be primarily influence by their L1, they also experience relative degrees of additional L2 influence that meaningfully differentiates them from L2 learners.
 
-Taken together, in order to tease apart whether speakers have access to a specific language and its relative degree of influence, it becomes necessary to conduct either studies in a subtractive design or careful within-subject studies. 
-The present work take the latter approach and investigates L3 lexical processing of cognates in L3 Spanish by German-English bilingual speakers.
-Vitally, the within-subjects design allow for the testing of a cumulative effect, which would imply that L2 and L3 learning are distinct processes. 
+As a result, in order to inform how and whether L2 and L3 learning follow distinct trajectories, it becomes necessary not to simply show that speakers have access to the L1 or L2, but rather to what degree both are active at a given time.
+One way to do so is by examining language processing in multilinguals using a within-subject design.
+The present work takes this approach by investigating lexical processing of double and triple cognates in L3 Spanish by German-English bilingual speakers.
+Vitally, the within-subjects design allows for the testing of a cumulative effect by comparing the processing of double cognates (words present in the L2 and L3) to triple cognates (words present in all three languages), which, if present, would imply that L2 and L3 learning are distinct processes. 
 Specifically, if L1 German-L2 English-L3 Spanish speakers process triple cognates faster than double cognates (L2 English-L3 Spanish), it would suggest they retain access to both their L1 German and L2 English.
 On the other hand, if both double and triple cognates are processed at a similar speed (and are faster than non-cognates), this would suggest that these speakers inhibit their L1 lexical knowledge in L3 Spanish. 
-Finally, if non-cognates and double cognates are processed at similar speed, but triple cognates are processed faster, this would suggest that L2 knowledge is inhibited (supporting similar lexical processing in general in L2 and L3 learners).[^1]
-[^1]: While it would have been ideal to create two double cognate conditions (L1-L3 + L2-L3), the potential stimulus set was too small to do so.
+Finally, if non-cognates and double cognates are processed at similar speed, but triple cognates are processed faster, this would suggest that L2 knowledge is inhibited (supporting similar lexical processing in general in L2 and L3 learners).
 
 
 ## Cognate Facilitation Effects in Bilingual Populations

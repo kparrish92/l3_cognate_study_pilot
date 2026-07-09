@@ -86,7 +86,7 @@ totals_n %>%
   mutate(type = factor(
     type,
     levels = c("non_cognate", "two_way_cognate", "three_way_cognate"),
-    labels = c("Non-cognate", "Two-way cognate", "Three-way cognate")
+    labels = c("Non-cognate", "Double cognate", "Triple cognate")
   )) %>% 
   ggplot(aes(x = type, y = pct_correct)) + geom_col(color = "black", fill = "seagreen4") + ylim(0,100) + custom_theme() + xlab("") +
   ylab("Overall percentage of correct trials")
@@ -119,7 +119,7 @@ neat_ind_data %>%
 ggsave(here("docs", "plots", "ind_acc.png"), dpi = 600)
 
 
-# Figure X: increase in pct accuracy by cognate type
+# Figure 4: increase in pct accuracy by cognate type
 
 ## Positive is an increase in accuracy, negative is decrease in accuracy for cognates
 ## negative slope shows lower effect of accuracy on correct answers as prof. increases
@@ -144,7 +144,7 @@ acc_prof_df %>%
   select(participant, proficiency_z, double, triple) %>% 
   pivot_longer(cols = `double`:`triple`, names_to = "comparison", values_to = "cfe") %>% 
   ggplot(aes(x = proficiency_z, y = cfe, color = comparison, label = participant)) + geom_point(size = 2) + 
-  geom_smooth(method = "lm") + custom_theme() + ylab("Change in accuracy") + xlab("Proficiecny (z)") 
+  geom_smooth(method = "lm") + custom_theme() + ylab("Change in accuracy") + xlab("Proficiency (z)") 
   
 
 ggsave(here("docs", "plots", "ind_acc_prof.png"), dpi = 600)
@@ -159,12 +159,29 @@ accuracy_mod_b = brms::brm(is_correct ~ type + frequency_z + proficiency_z + (ty
                            iter = 4000, data = p_data, file = here("data", "models", "accuracy_mod_z.rds"))
 
 
-# Figure 4: Posterior distribution of the accuracy model
+# Figure 5: Posterior distribution of the accuracy model
 posterior <- as.matrix(accuracy_mod_b)
 
 mcmc_areas(accuracy_mod_b, 
-           pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
-           prob = 0.8) + custom_theme()
+           pars = c("b_frequency_z", "b_proficiency_z", "b_typenon_cognate", "b_typethree_way_cognate", "Intercept"), 
+           prob = 0.8) + 
+  custom_theme() +
+  scale_y_discrete(labels = c(
+    "Intercept" = "Intercept",
+    "b_typethree_way_cognate" = "Triple Cognates",
+    "b_typenon_cognate" = "Non-cognates",
+    "b_frequency_z" = "Lexical Frequency (z)",
+    "b_proficiency_z" = "Proficiency (z)"
+  )) + 
+  annotate(
+    "rect",
+    xmin = -0.18,
+    xmax = 0.18,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.15,
+    fill = "grey70"
+  )
 
 describe_posterior(accuracy_mod_b)
 
@@ -175,7 +192,7 @@ l3_model_rt = brms::brm(log_rt ~ type + frequency_z + proficiency_z + (type | pa
                            iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z.rds"))
 
 
-# Figure 5: Overall reaction times
+# Figure 6: Overall reaction times
 
 rt_trials %>% 
   group_by(type) %>% 
@@ -186,7 +203,7 @@ rt_trials %>%
   mutate(type = factor(
     type,
     levels = c("non_cognate", "two_way_cognate", "three_way_cognate"),
-    labels = c("Non-cognate", "Two-way cognate", "Three-way cognate")
+    labels = c("Non-cognate", "Double cognate", "Triple cognate")
   )) %>% 
   ggplot(aes(x = type, y = mean_rt, ymax = mean_rt + me, ymin = mean_rt - me)) +
   geom_col(color = "black", fill = "steelblue2") +
@@ -213,6 +230,9 @@ this_df = rt_trials %>%
   filter(participant == ppts[i]) %>% 
   select(participant, type, key_resp_lextale_trial.rt)
   
+this_prof = rt_trials %>% 
+  filter(participant == ppts[i])
+
   ncdf = this_df %>% filter(type == "non_cognate")
   dobuledf = this_df %>% filter(type == "two_way_cognate")
   tripledf =  this_df %>% filter(type == "three_way_cognate")
@@ -221,7 +241,7 @@ this_df = rt_trials %>%
   nc_to_trip = as.numeric(cohen.d(tripledf$key_resp_lextale_trial.rt, ncdf$key_resp_lextale_trial.rt)[["estimate"]]) # going from nc to triple
   cumulative_d = as.numeric(cohen.d(tripledf$key_resp_lextale_trial.rt, dobuledf$key_resp_lextale_trial.rt)[["estimate"]]) # going from double to triple
   
-  df_c[[i]] = data.frame(nc_to_dub = nc_to_dub, nc_to_trip = nc_to_trip, cumulative_d = cumulative_d, ppt = ppts[i])
+  df_c[[i]] = data.frame(nc_to_dub = nc_to_dub, nc_to_trip = nc_to_trip, cumulative_d = cumulative_d, ppt = ppts[i], prof = this_prof$proficiency_z[1])
   
 }
 
@@ -229,8 +249,7 @@ df_comb = do.call(rbind, df_c) %>%
   pivot_longer(cols = c(1:3), names_to = "comparison", values_to = "d") %>% 
   mutate(is_pos = ifelse(d > 0, "ps","ng"))
 
-# Figure 6: Individual effects in RT
-
+# Figure 7: Individual effects in RT
 df_comb %>% 
   ggplot(aes(x = d, fill = is_pos, group = is_pos)) + geom_histogram(binwidth = 0.1, breaks = seq(from = -1, to = 1, by = 0.1),
                                                                      color = "black", center = 0) +
@@ -268,10 +287,50 @@ pos_neg_trip = df_comb %>%
   summarise(n = n())
 
 
-# Figure 7: Posterior distribution of the RT model
-mcmc_areas(l3_model_rt, 
-           pars = c("b_typethree_way_cognate", "b_typenon_cognate", "Intercept", "b_frequency_z", "b_proficiency_z"), 
-           prob = 0.8) + custom_theme()
+# Figure 8: CFE in RTs by proficiency 
+
+df_comb %>%   
+  mutate(comparison = factor(
+    comparison,
+    levels = c("cumulative_d", "nc_to_dub", "nc_to_trip"),
+    labels = c("Double cognates to triple cognates", "Non-cognate to double cognates", "Non-cognate to triple cognates"))) %>% 
+  select(ppt, prof, comparison, d) %>% 
+  ggplot(aes(x = prof, y = d, color = comparison)) + geom_point(size = 2) + 
+  geom_smooth(method = "lm") + custom_theme() + ylab("Change in RT (d)") + xlab("Proficiency (z)") +
+  guides(color = guide_legend(nrow = 3, byrow = TRUE))
+
+ggsave(here("docs", "plots", "rt_prof.png"), dpi = 600)
+
+
+# Figure 9: Posterior distribution of the RT model
+mcmc_areas(
+  l3_model_rt,
+  pars = c(
+    "b_frequency_z",
+    "b_proficiency_z",
+    "b_typenon_cognate",
+    "b_typethree_way_cognate",
+    "Intercept"
+  ),
+  prob = 0.8
+) +
+  custom_theme() +
+  scale_y_discrete(labels = c(
+    "Intercept" = "Intercept",
+    "b_typethree_way_cognate" = "Triple Cognates",
+    "b_typenon_cognate" = "Non-cognates",
+    "b_frequency_z" = "Lexical Frequency (z)",
+    "b_proficiency_z" = "Proficiency (z)"
+  )) + 
+  annotate(
+    "rect",
+    xmin = -0.0065,
+    xmax = 0.0065,
+    ymin = -Inf,
+    ymax = Inf,
+    alpha = 0.15,
+    fill = "grey70"
+  )
 
 describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) # ~ +/- 5ms
 

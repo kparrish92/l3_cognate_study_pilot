@@ -18,11 +18,11 @@ All participants were born and lived in Germany.
 The participants' ages ranged from `r lowage` to `r oldage` (mean age `r round(mean(survey_data$age), digits = 1)`, sd = `r round(sd(survey_data$age), digits = 1)`).
 All participants reported that their first language was German, that English was their second language and that Spanish was their third language, both in terms of order of acquisition and dominance.
 The mean age of onset of English was `r eng_aoo` (sd = `r eng_aoo_sd`) and the age of acquisition (when participants first felt fluent) was `r eng_aoa` (sd = `r eng_aoa_sd`).
-The mean age of onset for Spanish was `r sp_aoa` (sd = `r sp_aoa_sd`), and the mean age of acquisition was `r sp_aoa` (sd = `r sp_aoa_sd`), although many participants did not enter a value in the survey for age of acquisition of Spanish.
+The mean age of onset for Spanish was `r sp_aoo` (sd = `r sp_aoo_sd`), and the mean age of acquisition was `r sp_aoa` (sd = `r sp_aoa_sd`), although many participants did not enter a value in the survey for age of acquisition of Spanish.
 
 The participants self-ratings in spoken and perceptual proficiency ranged on a scale from 1 to 10, in which 10 was the most proficient and 1 was the least proficient. 
 The average self-rated German proficiency was, as expected, near ceiling in both spoken (mean rating = `r de_prof_s`; sd = `r de_prof_s_sd`) and perceptual proficiency (mean rating = `r de_prof_c`; sd = `r de_prof_c_sd`).
-English self-rated proficiency was second best, and the participants rated themselves slightly higher in perceptual proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`than spoken proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`. 
+English self-rated proficiency was second best, and the participants rated themselves slightly higher in perceptual proficiency (mean rating = `r en_prof_c`; sd = `r en_prof_c_sd`) than spoken proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`). 
 The self-rated proficiency levels in Spanish was the lowest and showed the most variation.
 Specifically, the mean rating for spoken proficiency was `r sp_prof_s` (sd = `r sp_prof_s_sd`), while perceptual proficiency was `r sp_prof_c` (sd = `r sp_prof_c_sd`).
 
@@ -30,8 +30,6 @@ Specifically, the mean rating for spoken proficiency was `r sp_prof_s` (sd = `r 
 ## Materials and Procedure
 
 ### Lexical Decision Task
-<!-- We need to check and correct the details based on how the task was programmed
-kp: I will double check but I am 99% sure this is accurate - leaving the comment for a reminder -->
 Participants completed a visual lexical decision task (LDT) in Spanish.
 They saw individual strings of letters on a computer screen and indicated whether these strings constituted real words in the Spanish language.
 At the beginning of each trial, participants saw the response options "REAL" and "FALSA" on the sides of the screen, then 500ms later, a letter string was displayed in the center of the screen.
