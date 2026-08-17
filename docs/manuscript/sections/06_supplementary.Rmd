@@ -36,3 +36,23 @@ read_csv(here("docs", "manuscript", "tables", "stim_detailed.csv"),
 #    notation = "none"
 #  )
 ```
+
+```{r profplot, fig.cap="Histogram of the adapted LexTALE scores"}
+knitr::include_graphics(here("docs", "plots", "apapted_lextale_hist.png"))
+```
+
+```{r accmod, fig.cap="Posterior Distributions of the accuracy model"}
+knitr::include_graphics(here("docs", "plots", "acc_mod.png"))
+
+```
+
+```{r retmod, fig.cap="Posterior Distributions of the reaction time model"}
+knitr::include_graphics(here("docs", "plots", "rt_mod.png"))
+
+```
+
+```{r indrtprof, fig.cap="Individual effects in reaction times as a function of L3 proficiency"}
+knitr::include_graphics(here("docs", "plots", "rt_prof.png"))
+
+```
+

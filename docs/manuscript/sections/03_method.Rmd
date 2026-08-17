@@ -129,12 +129,8 @@ As a result of these design choices, the trials from the experimental task used 
 Scores were calculated using a similar scoring system to the original LexTALE to avoid a yes/no bias and to account for the unequal proportion of real words and pseudowords in the included data. 
 Specifically, following formula was used: (number of real words correct/48 x 100 + number of pseudowords correct/98 x 100)/2.
 The results returned a score from 0 to 100, in which a score of 50 would represent saying either "yes" or "no" to all trials.
-Figure \@ref(fig:profplot) shows the distribution of adapted LexTALE scores.
+Figure \@ref(fig:profplot) in the appendix shows the distribution of adapted LexTALE scores.
 The scores ranged from `r prof_lo` to `r prof_hi` with a mean of `r prof_mean` (sd = `r prof_sd`).
-
-```{r profplot, fig.cap="Histogram of the adapted LexTALE scores"}
-knitr::include_graphics(here("docs", "plots", "apapted_lextale_hist.png"))
-```
 
 ## Data Analysis
 

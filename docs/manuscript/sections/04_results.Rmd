@@ -85,11 +85,6 @@ Proficiency was also shown the be positively associated with accuracy; the estim
 Predicted accuracy increases to around `r round(plogis(acc_table$Median[1] + acc_table$Median[4]), digits = 3)*100`% by participants that were 1 standard deviation more proficient than average, while it dropped to `r round(plogis(acc_table$Median[1] - acc_table$Median[5]), digits = 3)*100`% for participants that were one standard deviation less proficient than average. 
 Like frequency, the pd (`r acc_table$pd[5]`) and ROPE percentage (`r acc_table$ROPE_Percentage[5]`) provide compelling evidence of that the effect is positive and not negligible. 
 
-```{r accmod, fig.cap="Posterior Distributions of the accuracy model"}
-knitr::include_graphics(here("docs", "plots", "acc_mod.png"))
-
-```
-
 ## Reaction time
 
 Like accuracy, the analysis of the reaction time data showed evidence of a general cognate facilitation effect. 
@@ -122,17 +117,7 @@ knitr::include_graphics(here("docs", "plots", "ind_rt.png"))
 
 ```
 
-```{r indrtprof, fig.cap="Individual effects in reaction times as a function of L3 proficiency"}
-knitr::include_graphics(here("docs", "plots", "rt_prof.png"))
 
-```
-
-
-
-```{r retmod, fig.cap="Posterior Distributions of the reaction time model"}
-knitr::include_graphics(here("docs", "plots", "rt_mod.png"))
-
-```
 
 ```{r}
 rt_table = describe_posterior(l3_model_rt, rope_range = c(-0.0065, 0.0065)) %>% 
