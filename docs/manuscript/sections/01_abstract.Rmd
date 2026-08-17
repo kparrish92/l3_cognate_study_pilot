@@ -1,3 +1,8 @@
 # Abstract
 
-Abstract goes here. Length depends on journal.
+There is ample evidence that bilinguals benefit from cognates in word recognition, but less is known about whether this advantage increases when words are shared across three languages. The present study examined cognate facilitation in advanced L3 Spanish speakers (L1 German–L2 English) using a lexical decision task.
+Accuracy and reaction times were compared across non-cognates, double cognates (English–Spanish), and triple cognates (German–English–Spanish).
+Accuracy revealed a cumulative cognate effect: triple cognates were recognized more accurately than double cognates, which were in turn recognized more accurately than non-cognates.
+Reaction times, however, showed a general cognate effect: both double and triple cognates were recognized faster than non-cognates, with no evidence of a difference between the two cognate types.
+These findings suggest that lexical overlap across three languages provides an additional accuracy advantage, while processing speed benefits from cognate status more generally, with implications for models of multilingual lexical representation and L3 acquisition.
+
