@@ -1,55 +1,101 @@
 # Discussion 
 
-The present study investigated whether cognate facilitation effects accumulate across three languages in multilingual individuals (L1 German, L2 English, L3 Spanish) by comparing the processing of double cognates (English-Spanish) and triple cognates (German-English-Spanish) in a visual lexical decision task in Spanish.
-In addition, the study analyzed how L3 proficiency modulated cognate effects in L3 lexical processing. 
-In reaction time, results revealed an overall cognate facilitation effect, where double and triple cognates were recognized faster than noncognates. 
-However, the results showed no compelling evidence of a cumulative cognate facilitation effect as response times for double and triple cognates did not differ.
-Below, we discuss the results in light of previous empirical findings and existing theoretical models of cross-linguistic influence, particularly those addressing cumulative and selective transfer in multilingual lexical processing.
+The present study investigated whether cognate facilitation effects accumulate across three languages in multilingual individuals (L1 German, L2 English, L3 Spanish) by comparing the processing of double cognates (English-Spanish), triple cognates (German-English-Spanish), and noncognates in a visual lexical decision task in Spanish.
+In addition, the study examined the role of L3 proficiency in lexical processing. 
+Overall, the findings provided strong evidence for a cognate facilitation effect in L3 Spanish, but the evidence for a cumulative facilitation effect differed across dependent measures.
+In accuracy, participants performed best with triple cognates, followed by double cognates and noncognates.
+In response time, both double and triple cognates were processed faster than noncognates, but there was no compelling evidence that triple cognates were processed faster than double cognates. 
+Thus, the results reveal an asymmetry between accuracy and speed of lexical processing for a cumulative facilitation effect.
 
 ## Cognate Effects in L3 Lexical Processing
 
-Our first research question asked whether German-English-Spanish trilinguals process triple cognates faster than double cognates. 
-Given the mixed findings in the literature, we formulated two working hypotheses.
-Based on the Accumulation model [@bartolotti_marian_2017] and evidence from previous studies [e.g., @de_angelis_2007; @forys-nogala_etal_2026; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], we hypothesized that trilinguals would process triple cognates faster than double cognates, indicating an additive advantage for lexical items that have increased cross-linguistic similarity. 
-On the other hand, following the Scaffolding model [@bartolotti_marian_2017] and supporting evidence [e.g., @bartolotti_marian_2017; @de_angelis_2007; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025], an alternative hypothesis was that trilinguals would process triple and double cognates similarly, suggesting that overlapping with more than one previously acquired language does not have an additive advantage for L3 lexical processing.
-Our results supported the alternative hypothesis as there was not strong evidence of differences in response times for triple and double cognates.
+Our first research question asked whether German-English-Spanish trilinguals process triple cognates more efficiently than double cognates. 
+Given the mixed findings in previous research, we considered two primary possibilities.
+Following the Accumulation model [@bartolotti_marian_2017] and previous evidence of cumulative cognate effects [e.g., @de_angelis_2007; @forys-nogala_etal_2026; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], triple cognates might receive an additional processing benefit because they activate overlapping representations in both previously acquired languages.
+Alternatively, following the Scaffolding model [@bartolotti_marian_2017] and previous evidence of non-cumulative facilitation [e.g., @bartolotti_marian_2017; @de_angelis_2007; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025], lexical overlap with one previously acquired language may be sufficient to facilitate processing, such that additional overlap with a second language provides little or no further benefit.
 
-As both double and triple cognates yielded faster responses than noncognates, the findings provide clear evidence for a robust cognate facilitation effect in L3 lexical processing.
-The observed pattern is consistent with models of non-selective lexical access that posit that lexical representations from all previously acquired languages are co-activated during word recognition [@Dijkstra_etal_2018; @dijkstra_vanheuven_2002]. <!--- This confuses be slightly if we are arguing below that L2 status/typology drive English influence - would this not imply potential loss of access to English?  --->
-Cross-linguistic form overlap facilitates processing by increasing activation within an interconnected lexical network regardless of whether the overlap occurs between two or three languages.
-Indeed, our results indicate that even partial cross-linguistic overlap is sufficient to trigger co-activation, which supports the Scaffolding model [@bartolotti_marian_2017], where lexical benefits happen when a L3 word overlaps with at least one of the previously acquired languages, and the Parasitic Model [@ecke_2015], where L3 learning is enhanced when a word attaches to a L1 or L2 host.
+Our results provided strong evidence of a general cognate facilitation effect.
+In both accuracy and response time, cognates were processed more successfully than noncognates. 
+Double and triple cognates yielded substantially higher accuracy than noncognates, and both cognate types were also recognized more quickly than noncognates. 
+This pattern is consistent with models of non-selective lexical access, according to which lexical representations from non-target languages remain activated during target-language processing [@Dijkstra_etal_2018; @dijkstra_vanheuven_2002]. 
+It is also consistent with extensive evidence from multilingual research showing that knowledge of previously acquired languages facilitates the recognition or production of cognates in an L3 [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
 
-Crucially, the results revealed no compelling evidence of a cumulative cognate facilitation effect.
-The findings are in line with previous studies that found no cumulative benefits [e.g., @bartolotti_marian_2017; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025] and challenge cumulative transfer accounts like the Accumulation model [@bartolotti_marian_2017], which predict additive facilitation when cross-linguistic overlap happens across multiple languages.
-The absence of a processing advantage for triple cognates suggests that lexical activation may reach a plateau once a certain threshold of cross-linguistic similarity is perceived.
-Beyond this threshold, overlap with an additional language does not produce further facilitation, suggesting that the contribution of multiple languages is not strictly additive but subject to processing efficiency, competition of activated representations, among other factors.
+Crucially, however, the evidence regarding cumulative facilitation differed between accuracy and response time. 
+The accuracy results showed a graded pattern in which triple cognates were identified most accurately, followed by double cognates and then noncognates.
+This finding is compatible with the Accumulation model [@bartolotti_marian_2017], according to which overlap across multiple previously acquired languages can produce additive lexical benefits. 
+It also converges with studies reporting stronger facilitation for triple than double cognates. 
+@lemhoefer_etal_2004, for example, found cumulative cognate effects in L3 lexical decision, and @szubko-sitarek_2011 likewise reported stronger facilitation for triple than double cognates in L3 word recognition. 
+Previous research has therefore demonstrated that lexical overlap across three languages can, under some conditions, provide an additional advantage beyond overlap across two languages. 
 
-One possible explanation for the present findings concerns the L2-status factor [@bardel_falk_2007; @bardel_falk_2012], which argues that the L2 is the primary source of transfer in L3 acquisition and may override the L1 in many cases.
-Due to similarities in the context of L2 and L3 learning, there is a higher degree of cognitive similarity between the L2 and the L3 than between the L1 and the L3, which may explain why additional overlap with the L1 did not cause a stronger facilitation effect than overlap with the L2.
-Moreover, we can also explain the results in terms of psychotypology [@Kellerman_1983] and typological proximity accounts [@Rothman_2011; @Rothman_2013; @Rothman_2015], which suggest that language proximity affects cross-linguistic influence, with more similar languages producing stronger influence.
-In the present study, given that English and Spanish share substantial orthographic and lexical similarity, it is plausible that L2 English serves as a primary source of influence in L3 word recognition, while the influence of L1 German may be less engaged.
+However, the response time results produced a different pattern. 
+Although both cognate conditions were faster than noncognates, triple cognates were only approximately 10 ms faster than double cognates. 
+Thus, the response time data provided no compelling evidence that additional overlap with German produced a further benefit in the speed with which L3 Spanish words were recognized. 
+In this respect, the response time results are more consistent with the Scaffolding model [@bartolotti_marian_2017] and previous studies that found no cumulative benefits [e.g., @bartolotti_marian_2017; @engemann_rodetzky_2024; @lijewska_2023; @lijewska_delouw_2025].
+Overlap with English may have been sufficient to facilitate L3 lexical access, with additional overlap with German producing little additional reduction in processing speed.
 
-**Need a closing paragraph here.**
+The discrepancy between accuracy and response time is not unprecedented in cognate processing research.
+Previous studies have reported cognate facilitation in accuracy in the absence of corresponding effects in processing speed [@engemann_rodetzky_2024; @koutamanis_etal_2024], suggesting that accuracy and latency may capture partially distinct consequences of cross-linguistic activation.
+Importantly, @covey_mikheeva_2023 reported a dissociation between accuracy and latency in the processing of double and triple cognates. 
+They examined Russian-English-German trilinguals in picture naming and found a particularly similar pattern. 
+Their participants were most accurate with triple cognates, followed by double cognates and noncognates. 
+In contrast, word type did not significantly affect naming latency. 
+Their findings showed that cumulative cross-linguistic overlap can appear clearly in accuracy without producing a corresponding cumulative advantage in response speed, closely paralleling the dissociation observed in the present study.
+Greater overlap across three languages may increase the strength or reliability with which the target lexical representation is activated, increasing the probability that a word is correctly recognized, without necessarily accelerating lexical access beyond the advantage already provided by overlap between the L2 and L3. 
+In other words, activation from an additional language may improve the likelihood of successful lexical identification more readily than it improves the speed of an already successful response. 
+
+The difference between the two measures may also partly reflect the structure of the response time analysis itself. 
+Following previous studies [e.g., @covey_mikheeva_2023; @engemann_rodetzky_2024; @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], reaction times were analyzed only for correct responses, meaning that the trials in which cross-linguistic overlap may have been especially beneficial for achieving successful recognition are not represented in the latency analysis. 
+This could reduce differences between double and triple cognates among the subset of items that participants were already able to identify correctly. 
+
+Consequently, the present findings do not support a categorical conclusion that multilingual lexical influence is either cumulative or non-cumulative. 
+Instead, they suggest that the consequences of cumulative cross-linguistic overlap may depend on the particular dimension of processing being measured. 
+The additional German-English-Spanish overlap associated with triple cognates increased recognition accuracy, but it did not yield compelling evidence of an additional speed advantage beyond that already provided by English-Spanish overlap.
+This measure-dependent pattern may help explain some of the mixed findings in previous trilingual cognate research, where cumulative effects have varied across tasks, participant populations, and dependent measures.
 
 ## The Role L3 Proficiency
 
-The second research question asked whether L3 proficiency modulate L3 cognate processing.
-Following previous findings [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011], we predicted that higher L3 proficiency would facilitate L3 cognate processing. 
-However, the data did not show a positive association between higher proficiency and cognate facilitation. 
-The observed cognate facilitation effect was robust and not strongly modulated by L3 proficiency.
-There was a tendency for participants with higher Spanish proficiency to exhibit slightly stronger cognate facilitation, which may suggest that while cross-linguistic activation operates across proficiency levels, increased L3 proficiency may enhance the strength with which lexical representations are co-activated in L3 processing.
-L3 proficiency did not determine whether facilitation occurred, but L3 proficiency may affect the extent of this effect.
-After a certain level of proficiency, L3 lexical representations may consolidate and become more integrated into the broader multilingual system, enhancing the processing advantage for cognates [@lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
+Our second research question concerned the role of L3 proficiency in cognate processing. 
+We predicted that higher Spanish proficiency would be associated with stronger cognate facilitation, following previous work suggesting that sufficient proficiency may be necessary for weaker language representations to become strongly integrated into the multilingual lexical system [e.g., @lemhoefer_etal_2004; @poarch_vanhell_2014; @szubko-sitarek_2011].
+The results did not support a straightforward interpretation in which higher proficiency produces stronger cognate facilitation. 
+Instead, proficiency was clearly associated with greater overall accuracy, as participants with higher proficiency scores were more likely to identify Spanish words correctly across conditions. 
 
+Importantly, however, the descriptive data suggested that the relative accuracy advantage for cognates over noncognates became smaller as proficiency increased.
+Lower-proficiency participants appeared to rely more heavily on cross-linguistic overlap, whereas higher-proficiency participants performed increasingly well on noncognates as their Spanish lexical knowledge improved.
+This pattern is consistent with @covey_mikheeva_2023, who found that greater L2 and L3 proficiency was associated with smaller cognate effects. 
+In their study, cognate status was particularly beneficial to less proficient multilingual speakers, suggesting that cross-linguistic overlap provides more benefits when representations of the target language are relatively weak.
+As proficiency increases, successful lexical processing may depend less on support from related words in previously acquired languages.
+The response time findings, however, provided no evidence that higher proficiency strengthened cognate facilitation. 
+Notably, whereas the results provided evidence of an overall proficiency effect, with more proficient participants performing more accurately overall, the findings did not support proficiency-related modulation of cognate facilitation.
 
-These findings have important implications for models of multilingual lexical processing. 
-On the one hand, the presence of cognate facilitation supports models that assume non-selective access and parallel activation across languages. 
-On the other hand, the absence of cumulative effects and the limited role of proficiency challenge models that predict additive contributions from multiple languages or strong modulation by proficiency alone. 
-Instead, the present results point toward a more nuanced view in which cross-linguistic activation is shaped by an interaction of factors, including language dominance, typological similarity, and task demands.
-Finally, it is worth noting that individual variability in multilingual experience may further modulate these effects. 
-Factors such as frequency of language use, context of acquisition, and patterns of language switching could influence the extent to which different languages are co-activated during processing. 
-Although such variables were not directly examined in the present study, they represent promising avenues for future research. 
+## Lexical Frequency and Individual Variation
+
+Lexical frequency also made a substantial contribution to performance. 
+More frequent words were both more accurately recognized and processed more quickly than less frequent words. 
+Although frequency was included primarily as a control variable rather than as a central theoretical predictor, its robust effects confirm that lexical accessibility contributed independently to performance beyond cognate status.
+Importantly, the cognate effects remained after lexical frequency was statistically controlled, indicating that the advantage for cognates cannot simply be attributed to differences in Spanish word frequency.
+
+The descriptive results also revealed considerable individual variability. 
+Although the majority of participants showed the expected cognate advantage, the magnitude of facilitation differed substantially across individuals, and some participants even showed the reverse pattern. 
+Individual variability was particularly evident when contrasting the response times for triple and double cognates.
+21 participants were faster with triple cognates, whereas 14 were faster with double cognates. 
+Such variability is consistent with the broader multilingual literature showing that cross-linguistic activation can depend on proficiency, immersion, language experience, and the relative status of the languages involved. 
+@poarch_vanhell_2014, for example, found that multilingual cognate effects varied with proficiency and immersion experience, and @covey_mikheeva_2023 documented substantial proficiency-related variation in cognate effects. 
+Therefore, future research could examine whether other factors such as frequency of language use, language-switching experience, or immersion history may help explain why some individuals show stronger cumulative facilitation than others.
+
+Taken together, the present findings support a view of multilingual lexical processing characterized by robust cross-linguistic activation but not necessarily uniform additive facilitation across all processing measures.
+Cross-linguistic overlap strongly facilitates lexical processing, but the cumulative contribution of multiple languages appears more evident in the accuracy of lexical identification than in the speed of successful recognition. 
+The results caution against drawing conclusions about additive benefits in multilingual lexical processing from a single dependent measure.
+Studies reporting only latency or only accuracy may reach different conclusions about whether triple cognates receive an additional processing benefit.
 
 # Conclusion
 
-Conclusion goes here.
+The present study investigated how cross-linguistic similarity shapes lexical processing in L3 Spanish among German-English-Spanish trilinguals. 
+Specifically, it examined whether cognate facilitation accumulates across previously acquired languages by comparing double cognates, triple cognates, and noncognates.
+Additionally, the study assessed the role of proficiency in L3 lexical processing. 
+The findings provided evidence that cross-linguistic similarity facilitates L3 lexical processing.
+Importantly, cumulative benefits of overlap across multiple languages were not observed similarly across measures. 
+Double and triple cognates were processed more accurately and more quickly than noncognates, revealing robust cross-linguistic activation during L3 Spanish word recognition. 
+However, the additional cross-linguistic benefit associated with triple cognates emerged clearly in accuracy but not in response time, which highlights the importance of considering multiple dependent measures when evaluating cumulative cognate effects. 
+L3 proficiency was associated with greater overall accuracy but did not modulate cognate facilitation, while lexical frequency independently facilitated performance. 
+Together, these findings suggest that multilingual lexical processing reflects dynamic interactions among cross-linguistic similarity, lexical knowledge, and individual experience, and that additive effects across languages may be more apparent in the reliability of lexical identification than in the speed of successful access.
+
