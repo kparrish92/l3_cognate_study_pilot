@@ -3,7 +3,7 @@
 ## Participants
 
 A total of `r length(unique(rt_trials$participant)) + length(ppts_remove)` participants completed the study. 
-A total of nine participants were recruited from Hispanic Linguistics courses in a public university in Frankfurt, Germany.
+A total of nine participants were recruited from Hispanic Linguistics courses at a public university in Frankfurt, Germany.
 They received extra credit for their participation in the study.
 The remaining 35 participants were recruited using Prolific (www.prolific.com) and received monetary compensation for their participation.
 The data of `r length(ppts_remove)` participants were removed from the final data set due to low accuracy rates in at least one condition (less than 10 out of 24 correct in the cognate conditions).
@@ -11,20 +11,21 @@ As a result, the final data set contained `r length(unique(rt_trials$participant
 
 All participants completed an adapted version of the LEAP-Q questionnaire [@marian2007language].
 The questionnaire was administered in Qualtrics and asked about language background and dominance.
-The survey contained 23 total questions, including general information (age, gender, birth place and place of residence), language dominance and order of acquisition, and self-rated proficiency in both speaking and perception. 
-
+The survey contained 23 total questions including general information (age, gender, birthplace, and place of residence), language dominance, order of acquisition, and self-rated proficiency for both productive and receptive skills. 
 
 All participants were born and lived in Germany.
 The participants' ages ranged from `r lowage` to `r oldage` (mean age `r round(mean(survey_data$age), digits = 1)`, sd = `r round(sd(survey_data$age), digits = 1)`).
-All participants reported that their first language was German, that English was their second language and that Spanish was their third language, both in terms of order of acquisition and dominance.
-The mean age of onset of English was `r eng_aoo` (sd = `r eng_aoo_sd`) and the age of acquisition (when participants first felt fluent) was `r eng_aoa` (sd = `r eng_aoa_sd`).
-The mean age of onset for Spanish was `r sp_aoo` (sd = `r sp_aoo_sd`), and the mean age of acquisition was `r sp_aoa` (sd = `r sp_aoa_sd`), although many participants did not enter a value in the survey for age of acquisition of Spanish.
+All participants reported German as their first language, English as their second language, and Spanish as their third language.
+This order applied both to acquisition and language dominance.
+The mean age of onset of English was `r eng_aoo` (sd = `r eng_aoo_sd`) and the mean age of acquisition (when participants first felt fluent) was `r eng_aoa` (sd = `r eng_aoa_sd`).
+The mean age of onset for Spanish was `r sp_aoo` (sd = `r sp_aoo_sd`), and the mean age of acquisition was `r sp_aoa` (sd = `r sp_aoa_sd`).
+However, many participants did not enter a value in the survey for age of acquisition of Spanish.
 
-The participants self-ratings in spoken and perceptual proficiency ranged on a scale from 1 to 10, in which 10 was the most proficient and 1 was the least proficient. 
-The average self-rated German proficiency was, as expected, near ceiling in both spoken (mean rating = `r de_prof_s`; sd = `r de_prof_s_sd`) and perceptual proficiency (mean rating = `r de_prof_c`; sd = `r de_prof_c_sd`).
-English self-rated proficiency was second best, and the participants rated themselves slightly higher in perceptual proficiency (mean rating = `r en_prof_c`; sd = `r en_prof_c_sd`) than spoken proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`). 
-The self-rated proficiency levels in Spanish was the lowest and showed the most variation.
-Specifically, the mean rating for spoken proficiency was `r sp_prof_s` (sd = `r sp_prof_s_sd`), while perceptual proficiency was `r sp_prof_c` (sd = `r sp_prof_c_sd`).
+Participants rated their productive and receptive proficiency on a scale from 1 to 10, in which 10 was the most proficient and 1 was the least proficient. 
+The average self-rated German proficiency was, as expected, near ceiling in both productive (mean rating = `r de_prof_s`; sd = `r de_prof_s_sd`) and receptive proficiency (mean rating = `r de_prof_c`; sd = `r de_prof_c_sd`).
+Self-rated English proficiency was the second highest, and the participants rated themselves slightly higher in receptive proficiency (mean rating = `r en_prof_c`; sd = `r en_prof_c_sd`) than productive proficiency (mean rating = `r en_prof_s`; sd = `r en_prof_s_sd`). 
+The self-rated proficiency levels in Spanish were the lowest and showed the most variation.
+Specifically, the mean rating for productive proficiency was `r sp_prof_s` (sd = `r sp_prof_s_sd`), while receptive proficiency was `r sp_prof_c` (sd = `r sp_prof_c_sd`).
 
 
 ## Materials and Procedure
@@ -32,15 +33,15 @@ Specifically, the mean rating for spoken proficiency was `r sp_prof_s` (sd = `r 
 ### Lexical Decision Task
 Participants completed a visual lexical decision task (LDT) in Spanish.
 They saw individual strings of letters on a computer screen and indicated whether these strings constituted real words in the Spanish language.
-At the beginning of each trial, participants saw the response options "REAL" and "FALSA" on the sides of the screen, then 500ms later, a letter string was displayed in the center of the screen.
+At the beginning of each trial, participants saw the response options "REAL" and "FALSA" on the sides of the screen, then 500 ms later, a letter string was displayed in the center of the screen.
 Participants responded by pressing the key "1" (REAL) or "0" (FALSA) on a computer keyboard.
-Instructions were presented in Spanish, and participants completed a familiarization section with 5 practice trials.
-The LDT measured accuracy and response times.
+Instructions were presented in Spanish, and participants completed a practice section with 5 trials.
+The LDT measured accuracy and response time.
 The task was programmed in PsychoPy [@peirce_2019] and delivered online via the Pavlovia platform.
 
-The stimuli of the LDT included a total of 192 items, of which 96 were Spanish pseudowords, 48 were Spanish noncognates, 24 were double cognates (English-Spanish), and 24 were triple cognates (German-English-Spanish). 
+The LDT included a total of 192 stimuli: 96 Spanish pseudowords, 48 Spanish noncognates, 24 double cognates (English-Spanish), and 24 triple cognates (German-English-Spanish). 
 The stimulus list can be found in Appendix A.
-All items had between 4 and 6 letters.
+All items contained between 4 and 6 letters.
 Pseudowords were created using UniPseudo [@new_etal_2024] and were phonologically and orthographically legal constructions in Spanish. 
 Real words were matched for lexical frequency, which was calculated using SUBTLEX-ESP [@cuetos_etal_2011].
 Double and triple cognates were orthographically identical.
@@ -122,13 +123,13 @@ ft
 ### Proficiency Measure: adapted LexTALE
 
 In addition to self-rated proficiency, participants' accuracy on the experimental lexical decision task was used as an additional proficiency measure. 
-Specifically, we considered the psuedoword and non-cognates trials as an adapted version of the LexTALE [@lemhofer_broersma_2012; @izura_etal_2014].
+Specifically, we considered the pseudoword and non-cognate trials as an adapted version of the LexTALE [@lemhofer_broersma_2012; @izura_etal_2014].
 The item set was constructed to include real words with a broad range of frequencies in order to capture lexical knowledge across proficiency levels. 
 Cognates were excluded from the item pool to minimize the possibility that participants could rely on cross-linguistic form overlap rather than target-language lexical knowledge.
 As a result of these design choices, the trials from the experimental task used to calculate a proficiency score contained 48 real words and 96 pseudowords.
-Scores were calculated using a similar scoring system to the original LexTALE to avoid a yes/no bias and to account for the unequal proportion of real words and pseudowords in the included data. 
-Specifically, following formula was used: (number of real words correct/48 x 100 + number of pseudowords correct/98 x 100)/2.
-The results returned a score from 0 to 100, in which a score of 50 would represent saying either "yes" or "no" to all trials.
+Scores were calculated using a similar scoring system to that of the original LexTALE to avoid a yes/no bias and to account for the unequal proportion of real words and pseudowords in the included data. 
+Specifically, the following formula was used: (number of real words correct/48 x 100 + number of pseudowords correct/98 x 100)/2.
+The results yielded a score from 0 to 100, in which a score of 50 would represent saying either "yes" or "no" to all trials.
 Figure \@ref(fig:profplot) in the appendix shows the distribution of adapted LexTALE scores.
 The scores ranged from `r prof_lo` to `r prof_hi` with a mean of `r prof_mean` (sd = `r prof_sd`).
 
@@ -136,28 +137,28 @@ The scores ranged from `r prof_lo` to `r prof_hi` with a mean of `r prof_mean` (
 
 ### Analysis justification
 A Bayesian approach was chosen for two primary reasons. 
-First, Bayesian models allow for a more gradient analysis than the often used frequentist p-value, in which is is more typical to take a binary, all-or-nothing approach (e.g. there either is or is not evidence for a difference between conditions).
+First, Bayesian models allow for a more gradient analysis than the often used frequentist p-value, in which it is more typical to take a binary, all-or-nothing approach (e.g. there either is or is not evidence for a difference between conditions).
 Additionally, frequentist models test against the null hypothesis, but are unable to provide direct evidence that the null hypothesis is true.
-Taken together, the Bayesian Framework offers both flexibility and for more gradient interpretations of both the null and alternative hypotheses.
+Taken together, the Bayesian Framework offers greater flexibility and allows for more gradient interpretations of both the null and alternative hypotheses.
 
 In the Bayesian framework, several metrics are reported. 
 First, the 95% Highest Density Interval (95% HDI) refers to the range of the most credible 95% of the posterior distribution as determined by a probability density function.
 Next, the probability of direction (pd) refers to the probability that a parameter is positive or negative and ranges from 50% to 100%. 
-It is mathematically defined as the proportion of the posterior distribution that is the same sign its median estimate [@makowski2019indices].
+It is mathematically defined as the proportion of the posterior distribution that is the same sign as its median estimate [@makowski2019indices].
 Finally, the Region of Practical Equivalence (ROPE) is used to determine what proportion of the entire posterior distribution falls within researcher-specified upper and lower bounds and can be used to provide evidence for the null hypothesis.
 
 Although the HDI and ROPE can be combined to create decision rules (e.g., concluding that a difference is credible when the entire 95% HDI falls outside the ROPE [@kruschke2018rejecting]), such binary decisions are not required in Bayesian inference. 
 Rather, Bayesian analyses permit a more graded evaluation of evidence by examining the location and spread of the posterior distribution, the probability of direction, and the proportion of the posterior falling within the ROPE.
 Consequently, evidence can be interpreted as varying continuously in strength rather than being reduced to a dichotomous significant/non-significant outcome.
 
-### Model speficications
-The data were analyzed using two Bayesian multilevel regression models for accuracy and reaction time.
-Both models were fit to the data using the brms [@burkner2017brms] package in R and were estimated with Markov chain Monte Carlo sampling using 4 chains, each with 4000 iterations, including 2000 warm-up. 
+### Model Speficications
+The data were analyzed using two Bayesian multilevel regression models for accuracy and response time.
+Both models were fit using the brms package in R [@burkner2017brms] and estimated with Markov chain Monte Carlo sampling using 4 chains, each with 4000 iterations, including 2000 warm-up iterations. 
 Model convergence was evaluated using effective sample sizes and R-hat values. 
 All regression coefficients were assigned Student's t(3, 0, 2.5) priors, while the residual standard deviation was assigned a half-Student's t(3, 0, 2.5) prior.
 The accuracy model was a multilevel Bayesian logistic regression model that predicted the log-odds of a correct trial (coded as 1 or 0) as a function of the fixed effect predictors word type (3 levels: non-cognate, two-way cognate, three-way cognate; reference level two-way cognates), lexical frequency (z-scored log frequency), and proficiency (z-scored adapted LexTALE score).
-The random effects structure include a random slope for each participant and a random intercept for word (stimulus).
+The random-effects structure included a random slope for each participant and a random intercept for word (stimulus).
 The ROPE was set to +/-0.18 in log-odds, proportional to a negligible effect size of Cohen's d = .1 [@plonsky2014big].
-The reaction time model predicted the log reaction time of correct responses as a function of the same predictors and random effect structure.
-In this case, the ROPE was set to +/-0.0065 log reaction time, or +/- approximately 5ms.
+The response-time model predicted the log response time of correct responses as a function of the same predictors and random effect structure.
+In this case, the ROPE was set to +/-0.0065 log reaction time, or +/- approximately 5 ms.
 
