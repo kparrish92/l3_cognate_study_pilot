@@ -1,0 +1,21 @@
+﻿lextale_instructions.started,lextale_instructions.stopped,lextale_instructions_loop.thisRepN,lextale_instructions_loop.thisTrialN,lextale_instructions_loop.thisN,lextale_instructions_loop.thisIndex,lextale_instructions_loop.ran,instructions_text,continue_text,participant,session,date,expName,psychopyVersion,OS,frameRate,lextale_practice.started,lextale_practice.stopped,key_resp_lextale_practice.keys,key_resp_lextale_practice.corr,key_resp_lextale_practice.rt,key_resp_lextale_practice.duration,lextale_practice_feedback.started,lextale_practice_feedback.stopped,lextale_practice_trials.thisRepN,lextale_practice_trials.thisTrialN,lextale_practice_trials.thisN,lextale_practice_trials.thisIndex,lextale_practice_trials.ran,stim,word,correct_response,prac_button_real,prac_button_false
+0.0035,1.2439,0,0,0,0,1,"Este es un test de vocabulario en español. 
+  
+  A continuación vas a ver 90 secuencias de letras que parecen 'españolas'.
+  
+  Solo algunas de ellas son palabras de verdad.",(presiona la barra espaciadora para continuar),,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,,,,,,,,,,,,,,,,,,
+1.2446,2.1932,0,1,1,1,1,"Por favor, señala las palabras que tú conoces (aquellas que estás convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).",(presiona la barra espaciadora para continuar),,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,,,,,,,,,,,,,,,,,,
+2.1939,3.7605,0,2,2,2,1,Pero cuidado: los errores se penalizan. Por eso no tiene sentido tratar de incrementar tu puntuación marcando como reales palabras que nunca has visto.,(presiona la barra espaciadora para continuar),,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,,,,,,,,,,,,,,,,,,
+3.7613,5.2271,0,3,3,3,1,"Presiona la tecla 1 si piensas que es una palabra real y la tecla 
+  0 si piensas que es una palabra falsa. 
+  
+  Vamos a practicar un poco...",(presiona la barra espaciadora para continuar),,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,5.2317,6.7779,0,1,1.015,,6.7781,7.7775,0,0,0,0,1,0,depiste,0,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,7.7966,8.9602,1,1,0.6357,,8.9602,9.9603,0,1,1,1,1,0,sí,1,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,9.961,11.1607,0,1,0.6637,,11.1608,12.1608,0,2,2,2,1,0,coné,0,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,12.1614,13.644,0,1,0.9567,,13.644,14.6441,0,3,3,3,1,0,calpar,0,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,14.6448,15.9109,0,1,0.7385,,15.911,16.9111,0,4,4,4,1,0,joten,0,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,16.9117,18.0943,0,0,0.6546,,18.0944,19.0946,0,5,5,5,1,0,sacapuntas,1,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,19.0952,20.4446,0,1,0.8227,,20.4446,21.4444,0,6,6,6,1,0,priba,0,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,21.4449,22.8119,0,1,0.8395,,22.8119,23.8116,0,7,7,7,1,0,pelasula,0,REAL,FALSA
+,,,,,,,,,,001,2024-06-07_07h16.40.069,empathy_intonation_perc,2024.1.4,Win32,59.17159763,23.8285,25.8452,1,1,1.4814,,25.8452,26.8449,0,8,8,8,1,0,bien,1,REAL,FALSA

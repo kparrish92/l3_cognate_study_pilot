@@ -1,0 +1,27 @@
+﻿lextale_instructions.started,lextale_instructions.stopped,lextale_instructions_loop.thisRepN,lextale_instructions_loop.thisTrialN,lextale_instructions_loop.thisN,lextale_instructions_loop.thisIndex,lextale_instructions_loop.ran,instructions_text,continue_text,participant,session,date,expName,psychopyVersion,OS,frameRate,lextale_practice.started,lextale_practice.stopped,key_resp_lextale_practice.keys,key_resp_lextale_practice.corr,key_resp_lextale_practice.rt,key_resp_lextale_practice.duration,lextale_practice_feedback.started,lextale_practice_feedback.stopped,lextale_practice_trials.thisRepN,lextale_practice_trials.thisTrialN,lextale_practice_trials.thisN,lextale_practice_trials.thisIndex,lextale_practice_trials.ran,stim,word,correct_response,prac_button_real,prac_button_false,lextale_check.started,lextale_check.stopped,lextale_trial.started,lextale_trial.stopped,key_resp_lextale_trial.keys,key_resp_lextale_trial.corr,key_resp_lextale_trial.rt,key_resp_lextale_trial.duration,lextail_trials.thisRepN,lextail_trials.thisTrialN,lextail_trials.thisN,lextail_trials.thisIndex,lextail_trials.ran,type,correct_reponse,button_real,button_false
+0.004,1.237,0,0,0,0,1,"Este es un test de vocabulario en español. 
+  
+  A continuación vas a ver 90 secuencias de letras que parecen 'españolas'.
+  
+  Solo algunas de ellas son palabras de verdad.",(presiona la barra espaciadora para continuar),,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1.238,3.804,0,1,1,1,1,"Por favor, señala las palabras que tú conoces (aquellas que estás convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).",(presiona la barra espaciadora para continuar),,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3.804,4.854,0,2,2,2,1,Pero cuidado: los errores se penalizan. Por eso no tiene sentido tratar de incrementar tu puntuación marcando como reales palabras que nunca has visto.,(presiona la barra espaciadora para continuar),,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+4.854,8.437,0,3,3,3,1,"Presiona la tecla 1 si piensas que es una palabra real y la tecla 
+  0 si piensas que es una palabra falsa. 
+  
+  Vamos a practicar un poco...",(presiona la barra espaciadora para continuar),,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,8.439,10.004,0,1,1.038,,10.004,11.004,0,0,0,0,1,0,depiste,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,11.005,12.321,0,0,0.785,,12.321,13.321,0,1,1,1,1,0,sí,1,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,13.321,14.804,1,0,0.949,,14.804,15.804,0,2,2,2,1,0,coné,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,15.805,16.554,0,1,0.224,,16.554,17.554,0,3,3,3,1,0,calpar,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,17.554,18.738,0,1,0.675,,18.738,19.738,0,4,4,4,1,0,joten,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,19.738,21.021,1,1,0.769,,21.021,22.021,0,5,5,5,1,0,sacapuntas,1,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,22.021,23.221,0,1,0.684,,23.221,24.221,0,6,6,6,1,0,priba,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,24.221,25.688,0,1,0.958,,25.688,26.688,0,7,7,7,1,0,pelasula,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,26.688,27.871,1,1,0.658,,27.872,28.872,0,8,8,8,1,0,bien,1,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,28.872,30.172,1,1,0.767,,30.172,31.172,0,9,9,9,1,0,casa,1,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,31.172,32.538,0,1,0.835,,32.538,33.538,0,10,10,10,1,0,lejo,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,33.539,34.805,0,1,0.731,,34.805,35.805,0,11,11,11,1,0,pretantas,0,REAL,FALSA,,,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,,,,,,35.806,36.955,,,,,,,,,,,,,,,
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,140,chorde,,,,,,36.962,38.172,0,1,0.685,,0,0,0,139,1,pseudoword,0,REAL,FALSA
+,,,,,,,,,,001,2025-01-21_16h12.08.215,empathy_intonation_perc,2024.1.4,MacIntel,62.5,,,,,,,,,,,,,,111,monue,,,,,,38.173,39.439,0,1,0.739,,0,1,1,110,1,pseudoword,0,REAL,FALSA

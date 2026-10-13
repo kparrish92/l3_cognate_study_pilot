@@ -1,0 +1,8 @@
+﻿key_resp_lextale_trial.keys,key_resp_lextale_trial.corr,key_resp_lextale_trial.rt,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,trials.ran,stim,word,correct_response,button_real,button_false,id,Variety of Spanish that is most familiar to you?,date,expName,psychopyVersion,OS,frameRate
+0,0,2.1051,0,0,0,88,1,89,prisa,1,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921
+0,0,0.6258,0,1,1,75,1,76,atar,1,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921
+1,0,0.6861,0,2,2,62,1,63,esposante,0,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921
+1,1,0.9704,0,3,3,80,1,81,pozo,1,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921
+0,0,1.0566,0,4,4,24,1,25,bisagra,1,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921
+1,1,0.6584,0,5,5,85,1,86,barato,1,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921
+0,0,0.9669,0,6,6,53,1,54,fomentar,1,REAL,FAKE,5a542b96e0cf3d0001260df1,tex mex,2022-03-11_13h26.30.644,lextale_sp,2021.2.3,Win32,120.4238921

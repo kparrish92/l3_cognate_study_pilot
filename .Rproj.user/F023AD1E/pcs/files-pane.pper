@@ -2,12 +2,12 @@
     "sortOrder": [
         {
             "columnIndex": 2,
-            "ascending": true
+            "ascending": false
         },
         {
             "columnIndex": 4,
             "ascending": false
         }
     ],
-    "path": "~/Documents/GitHub/l3_cognate_study_pilot/scripts"
+    "path": "~/Documents/GitHub/l3_cognate_study_pilot/data/find_lextales"
 }
