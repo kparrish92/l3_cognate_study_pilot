@@ -1,6 +1,6 @@
 source(here::here("scripts", "00_libraries.R"))
 
-## just need to tidy + add lextale 
+
 
 ppts_remove = c("5bbbdca68f3bd70001e713ef",
                 "6789000b08f2703ba0b959b1",
@@ -21,7 +21,7 @@ p_data = read.csv(here("data", "tidy", "tidy_data.csv")) %>%
   filter(!participant %in% ppts_remove) %>% 
   filter(!word %in% words_remove) %>% 
   mutate(frequency_z = scale(frequency)[,1]) %>% 
-  mutate(proficiency_z = scale(ps_lextale_score)[,1])
+  mutate(proficiency_z = scale(lextale_score)[,1])
 
 
 rt_trials = p_data %>% 
@@ -32,7 +32,7 @@ rt_trials = p_data %>%
   filter(!participant %in% ppts_remove) %>% 
   filter(!word %in% words_remove) %>% 
   mutate(frequency_z = scale(frequency)[,1]) %>% 
-  mutate(proficiency_z = scale(ps_lextale_score)[,1])
+  mutate(proficiency_z = scale(lextale_score)[,1])
 
 ps_removed = nrow(p_data %>% filter(type == "pseudoword"))
 too_fast = nrow(p_data %>% filter(key_resp_lextale_trial.rt < .5))

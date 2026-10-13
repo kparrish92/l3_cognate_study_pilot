@@ -65,6 +65,12 @@ p_lexTALE_score <- function(words_correct, nonwords_correct) {
      (nonwords_correct / 96 * 100)) / 2
 }
 
+
+lexTALE_score <- function(words_correct, nonwords_correct) {
+  ((words_correct / 60 * 100) +
+     (nonwords_correct / 30 * 100)) / 2
+}
+
 ### plotting function
 
 custom_theme <- function() {

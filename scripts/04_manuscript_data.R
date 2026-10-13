@@ -62,10 +62,10 @@ prof_hi = round(range(rt_trials$ps_lextale_score), digits = 1)[2]
 # Figure 1: Histogram of adapted lextale scores
 rt_trials %>% 
   group_by(participant) %>% 
-  summarise(mean_lextale = mean(ps_lextale_score)) %>% 
+  summarise(mean_lextale = mean(lextale_score)) %>% 
   ggplot(aes(x = mean_lextale)) + 
-  geom_histogram(binwidth = 8, color = "black", fill = "orange3") + custom_theme() +
-  xlab("Mean adapted LexTALE")
+  geom_histogram(binwidth = 3.5, color = "black", fill = "orange3") + custom_theme() +
+  xlab("Mean LexTALE")
 
 ggsave(here("docs", "plots", "apapted_lextale_hist.png"), dpi = 600)
 
@@ -190,7 +190,7 @@ ggsave(here("docs", "plots", "acc_mod.png"), dpi = 600)
 
 # Fit reaction time model
 l3_model_rt = brms::brm(log_rt ~ type*proficiency_z + frequency_z + (type | participant) + (1 | word),
-                           iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z2.rds"))
+                           iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z3.rds"))
 
 
 # Figure 6: Overall reaction times

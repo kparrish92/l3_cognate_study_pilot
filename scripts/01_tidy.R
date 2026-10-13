@@ -1,5 +1,13 @@
 source(here::here("scripts", "00_libraries.R"))
 
+# Read in the data
+lextale <- fs::dir_ls(here("data", "l3_lextale_sp"),
+                        regexp = "\\.csv$") %>%
+  map_dfr(read_csv, .id = "source", 
+          col_types = cols(.default = "c")) %>% 
+  mutate(is_correct = ifelse(correct_response == 1 & key_resp_lextale_trial.keys == 1 | 
+                            correct_response == 0 & key_resp_lextale_trial.keys == 0, 1, 0)) 
+
 
 inc = read.csv(here("data", "tidy", "complete_ppts.csv"))
 # Read in the data
@@ -32,13 +40,18 @@ frequency = read.csv(here("data", "stimuli", "stim_detailed.csv")) %>%
   rename(word = es_wordform) %>% 
   rename(frequency = subtlex_es_log10_abs_1)
 
-correct_per_person = tidy_data %>%
-  group_by(participant, type, is_correct) %>% 
+correct_per_person = lextale %>%
+  group_by(id, is_correct, correct_response) %>% 
   summarise(n = n()) %>% 
+  mutate(type = ifelse(correct_response == 1, "Real", "Pseudoword")) %>% 
   filter(is_correct == 1) %>% 
+  ungroup() %>% 
+  select(-is_correct, -correct_response) %>% 
   pivot_wider(names_from = type, values_from = n) %>% 
-  mutate(ps_lextale_score = p_lexTALE_score(non_cognate, pseudoword)) %>% 
-  select(-is_correct)
+  mutate(lextale_score = lexTALE_score(Real, Pseudoword)) %>% 
+  rename("participant" = "id") %>% 
+  select(participant, lextale_score)
+
 ## Create Log RTS 
 tidy_data$key_resp_lextale_trial.rt = as.numeric(tidy_data$key_resp_lextale_trial.rt)
 tidy_data$log_rt = log(tidy_data$key_resp_lextale_trial.rt)
@@ -49,7 +62,3 @@ df = tidy_data %>%
   left_join(correct_per_person, by = "participant") %>% 
   left_join(frequency, by = "word") %>% 
   write.csv(here("data", "tidy", "tidy_data.csv"))
-
-
-
-
