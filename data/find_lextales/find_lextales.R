@@ -1,3 +1,5 @@
+library(tidyverse)
+library(here)
 # Read in the data
 completed_lextale = read.csv(here("data" ,"find_lextales", "comp_lex.csv")) %>% 
   filter(Status == "APPROVED") 
