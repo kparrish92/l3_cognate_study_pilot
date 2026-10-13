@@ -1,6 +1,7 @@
 source(here::here("scripts", "00_libraries.R"))
 
 
+inc = read.csv(here("data", "tidy", "complete_ppts.csv"))
 # Read in the data
 tidy_data <- fs::dir_ls(here("data", "main_exp"),
                         regexp = "\\.csv$") %>%
@@ -8,6 +9,7 @@ tidy_data <- fs::dir_ls(here("data", "main_exp"),
           col_types = cols(.default = "c")) %>% 
   mutate(source = str_remove(source, "/Users/kyleparrish/Documents/GitHub/l3_cognate_study_pilot/data/main_exp/")) %>% 
   filter(!is.na(participant)) %>% 
+  filter(participant %in% inc$participant) %>% 
   select(participant, word, type, correct_reponse, key_resp_lextale_trial.keys, 
          key_resp_lextale_trial.rt) %>% 
   filter(!is.na(key_resp_lextale_trial.rt)) %>% 

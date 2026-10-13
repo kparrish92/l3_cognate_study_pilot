@@ -2,6 +2,7 @@
 source(here::here("scripts", "00_libraries.R"))
 source(here::here("scripts", "02_load_data.R"))
 
+length(unique(p_data$participant))
 
 # gender demographics 
 gender_pct = survey_data %>% 
@@ -188,8 +189,8 @@ describe_posterior(accuracy_mod_b)
 ggsave(here("docs", "plots", "acc_mod.png"), dpi = 600)
 
 # Fit reaction time model
-l3_model_rt = brms::brm(log_rt ~ type + frequency_z + proficiency_z + (type | participant) + (1 | word),
-                           iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z.rds"))
+l3_model_rt = brms::brm(log_rt ~ type*proficiency_z + frequency_z + (type | participant) + (1 | word),
+                           iter = 4000, data = rt_trials, file = here("data", "models", "rt_mod_z2.rds"))
 
 
 # Figure 6: Overall reaction times
@@ -217,6 +218,8 @@ report_rt = rt_trials %>%
   summarise(mean_rt = mean(key_resp_lextale_trial.rt), 
             sd_log_rt = sd(key_resp_lextale_trial.rt),
             n = n())
+
+conditional_effects(l3_model_rt)
 
 
 # Calculate individual desc effects 

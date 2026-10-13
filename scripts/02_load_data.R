@@ -1,6 +1,6 @@
 source(here::here("scripts", "00_libraries.R"))
 
-
+## just need to tidy + add lextale 
 
 ppts_remove = c("5bbbdca68f3bd70001e713ef",
                 "6789000b08f2703ba0b959b1",
